@@ -13,6 +13,7 @@ $bigel = $dom->getElementsByTagName('font');
 foreach($bigel as $val){
     //if(strpos($val ->nodeValue, 'ตรวจสลากกินแบ่งรัฐบาล')){
         echo $val ->nodeValue.'<br>';
+        echo strpos($val ->nodeValue, 'ตรวจสลากกินแบ่งรัฐบาล').'<br>';
     //}
 }
 ?>
