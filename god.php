@@ -1,12 +1,12 @@
 <?php
 
-$year = 2533;
-
 header('Access-Control-Allow-Origin: *');
 
-while($year <= 2563) {
+$year = 2533;
 
+$yearlist = array();
 
+while($year <= 2543) {
 
     //echo htmlspecialchars(file_get_contents("https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-2533.aspx"));
 
@@ -18,7 +18,9 @@ while($year <= 2563) {
 
     foreach($bigel as $val){
         if(is_numeric(strpos($val ->nodeValue, 'ตรวจสลากกินแบ่งรัฐบาล'))){
+            echo substr($val ->nodeValue, 30);
             echo $val ->nodeValue.'<br>';
+            //array_push($yearlist,"blue");
         }
     }
 
