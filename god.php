@@ -14,7 +14,7 @@ if($elementCount == 0){
     $year = 2533;
     $yearlist = array();
 }
-$nextyear = $year+15;
+$nextyear = $year+10;
 while($year <= $nextyear) {
     $peryear = array();
     $string  = file_get_contents('https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-'.strval($year).'.aspx');
