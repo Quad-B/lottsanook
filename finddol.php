@@ -27,6 +27,7 @@ while($whatdate <= strtotime(date("d-m-Y"))) {
             fclose($myfile);
         }
   
+        echo $aday;
         $whatdate = strtotime("1 day", $whatdate);
 }
 
