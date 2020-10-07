@@ -2,7 +2,7 @@
 header('Access-Control-Allow-Origin: *');
 $year = 2533;
 $yearlist = array();
-while($year <= 2543) {
+while($year <= 2540) {
     $string  = file_get_contents('https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-'.strval($year).'.aspx');
     $dom = new DOMDocument();
     $dom->loadHTML($string);
