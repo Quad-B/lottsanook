@@ -35,9 +35,9 @@ while($year <= $nextyear) {
                 case 'ธันวาคม' : $monthnum="12"; break;
             }
             array_unshift($peryear,sprintf("%02d",$day[0]).$monthnum.$day[3]);
-            array_push($yearlist,$peryear);
         }
     }
+    array_push($yearlist,$peryear);
     $year += 1;
 }
 
