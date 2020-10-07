@@ -4,10 +4,10 @@ $json_string  = file_get_contents('https://lottsanook.herokuapp.com/test.txt');
 $json_array  = json_decode($json_string, true);
 $elementCount  = count($json_array);
 $year = $json_array[$elementCount-1];
-$yearlist = array();
+$yearlist = $json_array;
 if($elementCount == 0){
     $year = 2533;
-    $yearlist = $json_array;
+    $yearlist = array();
 }
 $nextyear = $year+7;
 while($year <= $nextyear) {
