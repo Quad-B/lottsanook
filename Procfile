@@ -1,1 +1,1 @@
-worker: php -f finddol.php
+# worker: php -f finddol.php
