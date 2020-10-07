@@ -119,7 +119,7 @@ while($whatdate !== strtotime(date("d-m-Y"))) {
     { 
         foreach ($value as $inside)
         { 
-            if($inside==;0;){
+            if($inside=='0'){
                 continue;
             } else {
                 if($_GET['number'] == $inside){
