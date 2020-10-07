@@ -9,6 +9,9 @@ if($elementCount == 0){
     $year = 2533;
     $yearlist = array();
 }
+echo $elementCount;
+echo $year;
+echo $yearlist;
 $nextyear = $year+7;
 while($year <= $nextyear) {
     $peryear = array();
@@ -41,7 +44,7 @@ while($year <= $nextyear) {
     foreach($peryear as $val){
         array_push($yearlist,$val);
     }
-    
+
     $year += 1;
 }
 
