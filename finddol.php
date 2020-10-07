@@ -18,7 +18,7 @@ foreach($json_array as $val){
         }
 
         $string  = file_get_contents('https://lottsanook.herokuapp.com/?date='.$val);
-        $number_array  = json_decode($json_string, true);
+        $number_array  = json_decode($string, true);
 
         if(Search($_GET['search'], $number_array)){
             echo 'yes';
