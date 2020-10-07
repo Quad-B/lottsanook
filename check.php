@@ -1,3 +1,4 @@
+<?php
 if ($handle = opendir('.')) {
 
     while (false !== ($entry = readdir($handle))) {
@@ -10,3 +11,4 @@ if ($handle = opendir('.')) {
 
     closedir($handle);
 }
+?>
