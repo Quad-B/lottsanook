@@ -1,1 +1,1 @@
-worker: php -f finddol.php > newfile.txt
+worker: php -f finddol.php
