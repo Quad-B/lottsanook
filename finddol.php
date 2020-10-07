@@ -21,7 +21,7 @@ while($whatdate <= strtotime(date("d-m-Y"))) {
         $string  = file_get_contents('https://news.sanook.com/lotto/check/'.$aday.'/');
 
         if (strpos($string, 'ผลสลากกินแบ่งรัฐบาล รางวัลที่ 2 มี 5 รางวัลๆละ 200,000 บาท') || strpos($string, 'ผลสลากกินแบ่งรัฐบาล รางวัลที่ 2 มี 5 รางวัลๆละ 100,000 บาท')) {
-            $wtf .= $aday
+            $wtf .= $aday;
         }
   
         $whatdate = strtotime("1 day", $whatdate);
