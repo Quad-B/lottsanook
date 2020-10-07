@@ -29,9 +29,11 @@ foreach($el as $val){
         if ($val ->nodeValue == 'ผลสลากกินแบ่งรัฐบาล รางวัลที่ 2 มี 5 รางวัลๆละ 200,000 บาท' || $val ->nodeValue == 'ผลสลากกินแบ่งรัฐบาล รางวัลที่ 2 มี 5 รางวัลๆละ 100,000 บาท') {
             echo 'วันนี้หวยออก';
             $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
-  fwrite($myfile, $wow);
+  fwrite($myfile, $aday);
   fclose($myfile);
         }
+        
+        break;
 
 }
         $whatdate = strtotime("1 day", $whatdate);
