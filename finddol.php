@@ -27,7 +27,7 @@ while($whatdate <= strtotime(date("d-m-Y"))) {
         $whatdate = strtotime("1 day", $whatdate);
 }
 
-$start  = file_get_contents('https://lottsanook.herokuapp.com/ohmygod.php?wow='.$aday);
+$start  = file_get_contents('https://lottsanook.herokuapp.com/ohmygod.php?wow='.$wtf);
 $end = $start;
 echo 'เสร็จแล้ว';
 ?>
