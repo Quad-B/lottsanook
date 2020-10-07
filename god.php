@@ -18,7 +18,7 @@ while($year <= 2543) {
 
     foreach($bigel as $val){
         if(is_numeric(strpos($val ->nodeValue, 'ตรวจสลากกินแบ่งรัฐบาล'))){
-            echo substr($val ->nodeValue, 60);
+            echo substr($val ->nodeValue, 65);
             //echo $val ->nodeValue.'<br>';
             //array_push($yearlist,"blue");
         }
