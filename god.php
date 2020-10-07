@@ -42,17 +42,12 @@ while($year <= $nextyear) {
             array_unshift($peryear,sprintf("%02d",$day[0]).$monthnum.$day[3]);
         }
     }
-
     foreach($peryear as $val){
         array_push($yearlist,$val);
     }
-
     $year += 1;
 }
-
 $file = fopen("test.txt","w");
 echo fwrite($file,json_encode($yearlist));
 fclose($file);
-
-//var_dump($yearlist);
 ?>
