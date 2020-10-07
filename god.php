@@ -32,7 +32,7 @@ while($year <= $nextyear) {
                 case 'พฤศจิกายน' : $monthnum="11"; break;
                 case 'ธันวาคม' : $monthnum="12"; break;
             }
-            array_push($yearlist,sprintf("%02d",$day[0]).$monthnum.$day[3]);
+            array_unshift($yearlist,sprintf("%02d",$day[0]).$monthnum.$day[3]);
         }
     }
     $year += 1;
