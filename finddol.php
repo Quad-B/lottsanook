@@ -4,7 +4,7 @@ header('Access-Control-Allow-Origin: *');
 
 //echo htmlspecialchars(file_get_contents("https://news.sanook.com/lotto/check/01092560/"));
 
-$texttime = "15-07-2020";
+$texttime = "29-12-2006";
 
 $your_date = strtotime("1 day", strtotime($texttime));
 $new_date = date("dmY", $your_date);
