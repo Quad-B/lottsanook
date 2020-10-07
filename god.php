@@ -30,5 +30,10 @@ while($year <= 2540) {
     }
     $year += 1;
 }
-var_dump($yearlist);
+
+$file = fopen("test.txt","w");
+echo fwrite($file,json_encode($yearlist));
+fclose($file);
+
+//var_dump($yearlist);
 ?>
