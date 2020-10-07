@@ -29,4 +29,6 @@ while($whatdate <= strtotime(date("d-m-Y"))) {
   
         $whatdate = strtotime("1 day", $whatdate);
 }
+
+echo 'เสร็จแล้ว';
 ?>
