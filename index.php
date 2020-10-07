@@ -1,7 +1,5 @@
 <?php
 
-header('Access-Control-Allow-Origin: *');
-
 //echo htmlspecialchars(file_get_contents("https://news.sanook.com/lotto/check/01092560/"));
 
 $string  = file_get_contents('https://news.sanook.com/lotto/check/'.$_GET['date'].'/');
