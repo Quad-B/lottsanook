@@ -1,4 +1,7 @@
 <?php
+
+header('Access-Control-Allow-Origin: *');
+
 //header('Location: https://quadbproject.000webhostapp.com/testfind.html');
 
 //error_reporting(E_ERROR | E_PARSE);
