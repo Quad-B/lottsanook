@@ -11,6 +11,8 @@ $dom->preserveWhiteSpace = false;
 $bigel = $dom->getElementsByTagName('font');
 
 foreach($bigel as $val){
-    echo $val ->nodeValue.'<br>';
+    if(strpos($val ->nodeValue, 'ตรวจสลากกินแบ่งรัฐบาล')){
+        echo $val ->nodeValue.'<br>';
+    }
 }
 ?>
