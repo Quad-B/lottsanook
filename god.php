@@ -42,7 +42,7 @@ while($year <= 2543) {
                 case 'ธันวาคม' : $monthnum="12"; break;
             }
 
-            array_push($yearlist,sprintf("%08d",$day[0]).$monthnum.$day[3]);
+            array_push($yearlist,sprintf("%02d",$day[0]).$monthnum.$day[3]);
         }
     }
 
