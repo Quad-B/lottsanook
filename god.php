@@ -11,10 +11,8 @@ $dom->preserveWhiteSpace = false;
 $bigel = $dom->getElementsByTagName('font');
 
 foreach($bigel as $val){
-    //if(strpos($val ->nodeValue, 'ตรวจสลากกินแบ่งรัฐบาล')){
+    if(is_numeric(strpos($val ->nodeValue, 'ตรวจสลากกินแบ่งรัฐบาล'))){
         echo $val ->nodeValue.'<br>';
-        $wow = 'เลข';
-        echo strpos($val->nodeValue, $wow).'<br>';
-    //}
+    }
 }
 ?>
