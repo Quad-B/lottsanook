@@ -1,4 +1,3 @@
-
 <?php
 
 
@@ -12,9 +11,13 @@ $your_date = strtotime("1 day", strtotime($texttime));
 $new_date = date("dmY", $your_date);
 
 $whatdate = $your_date;
-while($whatdate !== strtotime(date("d-m-Y"))) {
+while($whatdate <= strtotime(date("d-m-Y"))) {
         
-        $aday = date("dm",$whatdate).date("Y",$whatdate)+543;
+    $aday = date("dm",$whatdate).date("Y",$whatdate)+543;
+    if (strlen($aday) == 7) {
+        $aday = sprintf("%08d",date("dm",$whatdate).date("Y",$whatdate)+543);
+    }
+        
 
 $string  = file_get_contents('https://news.sanook.com/lotto/check/'.$aday.'/');
 
