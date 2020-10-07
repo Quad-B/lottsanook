@@ -21,6 +21,10 @@ while($year <= 2543) {
             echo substr($val ->nodeValue, 74).'<br>';
             //echo $val ->nodeValue.'<br>';
             //array_push($yearlist,"blue");
+            $day = explode(" ", $val ->nodeValue);
+            echo $day[0];
+            echo $day[1];
+            echo $day[2];
         }
     }
 
