@@ -22,10 +22,10 @@ while($year <= 2543) {
             //echo $val ->nodeValue.'<br>';
             $day = explode(" ", substr($val ->nodeValue, 74));
             //print_r($day);
-            echo $day[0];
-            echo $day[2];
-            echo $day[3];
-            echo '<br>';
+            //echo $day[0];
+            //echo $day[2];
+            //echo $day[3];
+            //echo '<br>';
 
             switch ($day[2]){
                 case 'มกราคม' : $monthnum="01"; break;
