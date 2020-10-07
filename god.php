@@ -4,7 +4,7 @@ $json_string  = file_get_contents('https://lottsanook.herokuapp.com/test.txt');
 $json_array  = json_decode($json_string, true);
 $elementCount  = count($json_array);
 $year = substr($json_array[$elementCount-1],-4);
-if($year == date('Y')){
+if($year-543 == date('Y')){
     echo 'จะเอาปีหน้าด้วยหรอหรือยังไง?';
     exit();
 }
