@@ -37,8 +37,11 @@ while($year <= $nextyear) {
             array_unshift($peryear,sprintf("%02d",$day[0]).$monthnum.$day[3]);
         }
     }
-    $yearlist+=$peryear;
-    //array_push($yearlist,$peryear);
+
+    foreach($peryear as $val){
+        array_push($yearlist,$val);
+    }
+    
     $year += 1;
 }
 
