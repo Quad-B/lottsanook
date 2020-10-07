@@ -11,6 +11,7 @@ if($elementCount == 0){
 }
 $nextyear = $year+7;
 while($year <= $nextyear) {
+    $peryear = array();
     $string  = file_get_contents('https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-'.strval($year).'.aspx');
     $dom = new DOMDocument();
     $dom->loadHTML($string);
@@ -33,7 +34,8 @@ while($year <= $nextyear) {
                 case 'พฤศจิกายน' : $monthnum="11"; break;
                 case 'ธันวาคม' : $monthnum="12"; break;
             }
-            array_unshift($yearlist,sprintf("%02d",$day[0]).$monthnum.$day[3]);
+            array_unshift($peryear,sprintf("%02d",$day[0]).$monthnum.$day[3]);
+            array_push($yearlist,$peryear);
         }
     }
     $year += 1;
