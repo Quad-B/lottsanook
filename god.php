@@ -26,21 +26,22 @@ while($year <= 2543) {
             echo $day[2];
             echo $day[3];
             echo '<br>';
-            switch ($day[2])
-    {
-      case 'มกราคม' : $monthnum="01"; break;
-      case 'กุมภาพันธ์' : $monthnum="02"; break;
-      case 'มีนาคม' : $monthnum="03"; break;
-      case 'เมษายน' : $monthnum="04"; break;
-      case 'พฤษภาคม' : $monthnum="05"; break;
-      case 'มิถุนายน' : $monthnum="06"; break;
-      case 'กรกฎาคม' : $monthnum="07"; break;
-      case 'สิงหาคม' : $monthnum="08"; break;
-      case 'กันยายน' : $monthnum="09"; break;
-      case 'ตุลาคม' : $monthnum="10"; break;
-      case 'พฤศจิกายน' : $monthnum="11"; break;
-      case 'ธันวาคม' : $monthnum="12"; break;
-    }
+
+            switch ($day[2]){
+                case 'มกราคม' : $monthnum="01"; break;
+                case 'กุมภาพันธ์' : $monthnum="02"; break;
+                case 'มีนาคม' : $monthnum="03"; break;
+                case 'เมษายน' : $monthnum="04"; break;
+                case 'พฤษภาคม' : $monthnum="05"; break;
+                case 'มิถุนายน' : $monthnum="06"; break;
+                case 'กรกฎาคม' : $monthnum="07"; break;
+                case 'สิงหาคม' : $monthnum="08"; break;
+                case 'กันยายน' : $monthnum="09"; break;
+                case 'ตุลาคม' : $monthnum="10"; break;
+                case 'พฤศจิกายน' : $monthnum="11"; break;
+                case 'ธันวาคม' : $monthnum="12"; break;
+            }
+
             array_push($yearlist,sprintf("%08d",$day[0]).$monthnum.$day[3]);
         }
     }
@@ -48,4 +49,6 @@ while($year <= 2543) {
     $year += 1;
 
 }
+
+var_dump($yearlist);
 ?>
