@@ -11,6 +11,6 @@ $dom->preserveWhiteSpace = false;
 $bigel = $dom->getElementsByTagName('font');
 
 foreach($bigel as $val){
-    echo $val ->nodeValue;
+    echo $val ->nodeValue.'<br>';
 }
 ?>
