@@ -6,8 +6,8 @@ header('Access-Control-Allow-Origin: *');
 
 $string  = file_get_contents('https://news.sanook.com/lotto/check/'.$_GET['date'].'/');
 $dom = new DOMDocument();
-$dom->loadHTML(mb_convert_encoding($string, 'HTML-ENTITIES', 'UTF-8'));
-//$dom->loadHTML($string);
+//$dom->loadHTML(mb_convert_encoding($string, 'HTML-ENTITIES', 'UTF-8'));
+$dom->loadHTML($string);
 $dom->preserveWhiteSpace = false;
 //get all meta tags
 $bigel = $dom->getElementsByTagName('strong');
