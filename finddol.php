@@ -2,8 +2,6 @@
 
 header('Access-Control-Allow-Origin: *');
 
-file_put_contents("php://stderr", "hello, this is a test!\n");
-
 //echo htmlspecialchars(file_get_contents("https://news.sanook.com/lotto/check/01092560/"));
 
 $texttime = "15-09-2020";
