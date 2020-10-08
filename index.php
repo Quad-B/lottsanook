@@ -4,18 +4,6 @@ $filename = $_GET['date'].".txt";
 $day = substr($_GET['date'], 0,2);
 $month = substr($_GET['date'], 2,2);
 $year = substr($_GET['date'], 4,4);
-if(file_exists($filename)){
-    $myfile = fopen($filename,"r") or die("Unable to open file!");
-    $readwow = fread($myfile,filesize($filename));
-    if (isset($_GET['from'])) {
-        $readwow = json_decode($readwow, true);
-        $readwow[0][0] = $day.' '.$monthtext.' '.$year;
-        $readwow = json_encode($readwow);
-    }
-    echo $readwow;
-    fclose($myfile);
-    exit();
-}
 switch ($month)
     {
       case '01' : $monthtext="มกราคม"; break;
@@ -31,6 +19,18 @@ switch ($month)
       case '11' : $monthtext="พฤศจิกายน"; break;
       case '12' : $monthtext="ธันวาคม"; break;
     }
+if(file_exists($filename)){
+    $myfile = fopen($filename,"r") or die("Unable to open file!");
+    $readwow = fread($myfile,filesize($filename));
+    if (isset($_GET['from'])) {
+        $readwow = json_decode($readwow, true);
+        $readwow[0][0] = $day.' '.$monthtext.' '.$year;
+        $readwow = json_encode($readwow);
+    }
+    echo $readwow;
+    fclose($myfile);
+    exit();
+}
 $url = "https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%87%E0%B8%A7%E0%B8%94-".$day."-".urlencode($monthtext)."-".$year.".aspx";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
