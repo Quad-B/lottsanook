@@ -65,7 +65,7 @@ while($year <= $nextyear) {
     do {
         $status = curl_multi_exec($mh, $active);
         if ($active) {
-            curl_multi_select($mh);
+            //curl_multi_select($mh);
         }
     } while ($active && $status == CURLM_OK);
 
