@@ -15,10 +15,13 @@ header('Access-Control-Allow-Origin: *');
 //    $yearlist = array();
 //}
 //$nextyear = $year+10;
+
 $nextyear = 2563;
+$channel = array();
+
 while($year <= $nextyear) {
     $mh = curl_multi_init();
-    $channel = [];
+    $channel = array();
 
     for ($i=0; $i < 10; $i++) {
         $ayear = $year+$i;
