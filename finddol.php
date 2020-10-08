@@ -3,7 +3,7 @@ header('Access-Control-Allow-Origin: *');
 $myfile = fopen("test.txt","r") or die("Unable to open file!");
 $json_string = fread($myfile,filesize("test.txt"));
 fclose($myfile);
-$json_array  = json_decode($json_string, true);
+$json_array  = json_decode($json_string);
 $count = 0;
 foreach($json_array as $val){
     if($count <= 408){
@@ -16,7 +16,7 @@ foreach($json_array as $val){
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     $response = curl_exec($ch);
     curl_close($ch);
-    $number_array  = json_decode($response, true);
+    $number_array  = json_decode($response);
     //var_dump($number_array);
     if (in_array($_GET['search'], $number_array)) {
         echo 'yes';
