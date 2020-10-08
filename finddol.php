@@ -16,7 +16,6 @@ foreach($json_array as $val){
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     $response = curl_exec($ch);
     curl_close($ch);
-    //$string  = file_get_contents('https://lottsanook.herokuapp.com/?date='.$val.'');
     $number_array  = json_decode($response, true);
     if(array_search($_GET['search'], $number_array)){
         echo $val;

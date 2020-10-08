@@ -1,7 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 $filename = $_GET['date'].".txt";
-echo $filename;
 if(file_exists($filename)){
     $myfile = fopen($filename,"r") or die("Unable to open file!");
     echo fread($myfile,filesize($filename));
@@ -14,10 +13,8 @@ curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $response = curl_exec($ch);
 curl_close($ch);
-//$string  = file_get_contents('https://news.sanook.com/lotto/check/'.$_GET['date'].'/');
 $dom = new DOMDocument();
 $dom->loadHTML($response);
-//$dom->loadHTML($string);
 $dom->preserveWhiteSpace = false;
 $bigel = $dom->getElementsByTagName('strong');
 $el = $dom->getElementsByTagName('span');
