@@ -19,7 +19,7 @@ foreach($json_array as $val){
     $number_array  = json_decode($response, true);
     if(array_search($_GET['search'], $number_array)){
         echo $val;
+        echo 'เสร็จแล้ว';
     }
 }
-echo 'เสร็จแล้ว';
 ?>
