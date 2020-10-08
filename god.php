@@ -23,6 +23,8 @@ while($year <= $nextyear) {
     for ($i=0; $i < 10; $i++) {
         $channel[$i] = curl_init("https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-".strval($year).".aspx");
         curl_setopt($channel[$i], CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($channel[$i], CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($channel[$i], CURLOPT_SSL_VERIFYPEER, 0);
         curl_multi_add_handle($mh,$channel[$i]);
     }
 
