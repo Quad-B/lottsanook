@@ -1,5 +1,8 @@
 <?php
 header('Access-Control-Allow-Origin: *');
+
+echo 'Current PHP version: ' . phpversion();
+
 //$json_string  = file_get_contents('https://lottsanook.herokuapp.com/test.txt');
 //$json_array  = json_decode($json_string, true);
 //$elementCount  = count($json_array);
