@@ -63,8 +63,8 @@ while($year <= $nextyear) {
     curl_multi_add_handle($mh,$ch10);
 
     do {
-        $status = curl_multi_exec($mh, $active);
-        if ($active) {
+        //$status = curl_multi_exec($mh, $active);
+        //if ($active) {
             //for ($i=1; $i <= 10; $i++) { 
                 //$var = "ch$i";
                 $string = $status;
@@ -100,7 +100,7 @@ while($year <= $nextyear) {
                     array_push($yearlist,$val);
                 }
             //}
-        }
+        //}
     } while ($active && $status == CURLM_OK);
 
     curl_multi_remove_handle($mh, $ch1);
