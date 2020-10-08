@@ -10,7 +10,7 @@ foreach($json_array as $val){
         $count += 1;
         continue;
     }
-    $url = "https://lottsanook.herokuapp.com/?date=".$val;
+    $url = "https://lottsanook.herokuapp.com/?date=".$val."&from";
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -21,11 +21,7 @@ foreach($json_array as $val){
     foreach($number_array as $vall){
         if (in_array($_GET['search'], $vall))
         {
-            echo "Match found";
-        }
-        else
-        {
-            echo "Match not found";
+            echo $number_array[0][0];
         }
         foreach($vall as $wow){
             //echo $wow;
