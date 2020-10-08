@@ -15,7 +15,7 @@ header('Access-Control-Allow-Origin: *');
 //$yearlist = $json_array;
 //if($elementCount == 0){
     $year = 2533;
-//    $yearlist = array();
+    $yearlist = array();
 //}
 //$nextyear = $year+10;
 
