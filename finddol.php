@@ -14,9 +14,11 @@ echo $json_array[0];
 foreach($json_array as $val){
 
     if($count <= 408){
-        continue;
         $count += 1;
+        continue;
     }
+
+    echo $val;
 
     $string  = file_get_contents('https://lottsanook.herokuapp.com/?date='.$val.'');
     $number_array  = json_decode($string, true);
