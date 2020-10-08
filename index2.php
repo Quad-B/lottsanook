@@ -1,6 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-$day = substr($_GET['date'], 0,1);
+$day = substr($_GET['date'], 0,2);
 $month = substr($_GET['date'], 2,2);
 $year = substr($_GET['date'], 4,4);
 switch ($month)
@@ -79,5 +79,6 @@ foreach($el as $val){
         $maxwave = 100;
         $wave = 8;
     }
+}
 echo json_encode($lottapi);
 ?>
