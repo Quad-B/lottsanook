@@ -1,7 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 
-echo 'Current PHP version: ' . phpversion();
+//echo 'Current PHP version: ' . phpversion();
 
 //$json_string  = file_get_contents('https://lottsanook.herokuapp.com/test.txt');
 //$json_array  = json_decode($json_string, true);
@@ -90,16 +90,17 @@ while($year <= $nextyear) {
     
     curl_multi_close($mh);
 
-    $response = [];
+    //$response = [];
 
-    var_dump($channel);
+    //var_dump($channel);
     for ($i=0; $i < 10; $i++) {
         $res    = curl_multi_getcontent($channel[$i]);
 
-        $response[$i]  =   ($res === false) ? null : json_decode($res, true);
+        //$response[$i]  =   ($res === false) ? null : json_decode($res, true);
 
         $peryear = array();
-        $string = $response[$i];
+        $string = $res;
+        //$string = $response[$i];
         $dom = new DOMDocument();
         $dom->loadHTML($string);
         $dom->preserveWhiteSpace = false;
