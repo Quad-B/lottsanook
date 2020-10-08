@@ -1,6 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-$json_string  = file_get_contents('https://lottsanook.herokuapp.com/test.txt');
+$json_string  = fopen("test.txt","r");
 $json_array  = json_decode($json_string, true);
 $count = 0;
 foreach($json_array as $val){

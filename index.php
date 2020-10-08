@@ -1,5 +1,8 @@
 <?php
 header('Access-Control-Allow-Origin: *');
+/*if(file_exists($_GET['date'].'txt')){
+
+}*/
 $url = "https://news.sanook.com/lotto/check/".$_GET['date']."/";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
