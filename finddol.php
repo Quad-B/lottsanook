@@ -19,8 +19,16 @@ foreach($json_array as $val){
     $number_array  = json_decode($response);
     //var_dump($number_array);
     foreach($number_array as $vall){
+        if (in_array($_GET['search'], $vall))
+        {
+            echo "Match found";
+        }
+        else
+        {
+            echo "Match not found";
+        }
         foreach($vall as $wow){
-            echo $wow;
+            //echo $wow;
         }
     }
 }
