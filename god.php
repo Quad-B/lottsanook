@@ -21,7 +21,7 @@ while($year <= $nextyear) {
     $channel = [];
 
     for ($i=0; $i < 10; $i++) {
-        $channel[$i] = curl_init("https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-".strval($year+$i).".aspx");
+        $channel[$i] = curl_init("https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-".strval($year).".aspx");
         curl_setopt($channel[$i], CURLOPT_RETURNTRANSFER, 1);
         curl_multi_add_handle($mh,$channel[$i]);
     }
@@ -89,6 +89,7 @@ while($year <= $nextyear) {
 
         $response[$i]  =   ($res === false) ? null : json_decode($res, true);
 
+        $peryear = array();
         $string = $response[$i];
         $dom = new DOMDocument();
         $dom->loadHTML($string);
