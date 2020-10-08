@@ -85,6 +85,8 @@ while($year <= $nextyear) {
     for ($i=0; $i < 10; $i++) {
         $res    = curl_multi_getcontent($channels[$i]);
 
+        echo $res;
+
         $response[$i]  =   ($res === false) ? null : json_decode($res, true);
 
         $string = $response[$i];
