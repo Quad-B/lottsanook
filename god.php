@@ -62,12 +62,12 @@ while($year <= $nextyear) {
     curl_multi_add_handle($mh,$ch9);
     curl_multi_add_handle($mh,$ch10);
 
-    //do {
+    do {
         //$status = curl_multi_exec($mh, $active);
-        //if ($active) {
+        if ($active) {
             for ($i=0; $i < 10; $i++) { 
                 $var = "ch$i";
-                $string = curl_multi_getcontent($var);
+                //$string = curl_multi_getcontent($var);
                 //$string = $status;
                 //$string = curl_multi_select($mh);
                 //($$var)
@@ -101,8 +101,8 @@ while($year <= $nextyear) {
                     array_push($yearlist,$val);
                 }
             }
-        //}
-    //} while ($active && $status == CURLM_OK);
+        }
+    } while ($active && $status == CURLM_OK);
 
     curl_multi_remove_handle($mh, $ch1);
     curl_multi_remove_handle($mh, $ch2);
