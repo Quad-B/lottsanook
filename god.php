@@ -103,6 +103,18 @@ while($year <= $nextyear) {
         }
     } while ($active && $status == CURLM_OK);
 
+    curl_multi_remove_handle($mh, $ch1);
+    curl_multi_remove_handle($mh, $ch2);
+    curl_multi_remove_handle($mh, $ch3);
+    curl_multi_remove_handle($mh, $ch4);
+    curl_multi_remove_handle($mh, $ch5);
+    curl_multi_remove_handle($mh, $ch6);
+    curl_multi_remove_handle($mh, $ch7);
+    curl_multi_remove_handle($mh, $ch8);
+    curl_multi_remove_handle($mh, $ch9);
+    curl_multi_remove_handle($mh, $ch10);
+    curl_multi_close($mh);
+
     $year += 10;
 }
 $file = fopen("test.txt","w");
