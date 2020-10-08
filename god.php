@@ -65,7 +65,7 @@ while($year <= $nextyear) {
     do {
         $status = curl_multi_exec($mh, $active);
         if ($active) {
-            for ($i=1; $i <= 10; $i++) { 
+            //for ($i=1; $i <= 10; $i++) { 
                 //$var = "ch$i";
                 $string = curl_multi_select($mh);
                 //($$var)
@@ -98,7 +98,7 @@ while($year <= $nextyear) {
                 foreach($peryear as $val){
                     array_push($yearlist,$val);
                 }
-            }
+            //}
         }
     } while ($active && $status == CURLM_OK);
 
