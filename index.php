@@ -1,6 +1,9 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 $filename = $_GET['date'].".txt";
+$day = substr($_GET['date'], 0,2);
+$month = substr($_GET['date'], 2,2);
+$year = substr($_GET['date'], 4,4);
 if(file_exists($filename)){
     $myfile = fopen($filename,"r") or die("Unable to open file!");
     $readwow = fread($myfile,filesize($filename));
@@ -13,9 +16,6 @@ if(file_exists($filename)){
     fclose($myfile);
     exit();
 }
-$day = substr($_GET['date'], 0,2);
-$month = substr($_GET['date'], 2,2);
-$year = substr($_GET['date'], 4,4);
 switch ($month)
     {
       case '01' : $monthtext="มกราคม"; break;
