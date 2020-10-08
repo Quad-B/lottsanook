@@ -19,7 +19,7 @@ foreach($json_array as $val){
     $number_array  = json_decode($response);
     //var_dump($number_array);
     foreach($number_array as $vall){
-        echo $vall;
+        echo $vall[0];
     }
 }
 ?>
