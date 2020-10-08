@@ -7,8 +7,13 @@ header('Access-Control-Allow-Origin: *');
 $json_string  = file_get_contents('https://lottsanook.herokuapp.com/test.txt');
 $json_array  = json_decode($json_string, true);
 
-$start = Search('16012550',$json_array);
+$start = array_search('16012550',$json_array);
 $count = 0;
+?>
+<script type="text/javascript">
+console.log(<?php echo $start; ?>);
+</script>
+<?php
 
 foreach($json_array as $val){
 
@@ -20,7 +25,7 @@ foreach($json_array as $val){
         $string  = file_get_contents('https://lottsanook.herokuapp.com/?date='.$val);
         $number_array  = json_decode($string, true);
 
-        if(Search($_GET['search'], $number_array)){
+        if(array_search($_GET['search'], $number_array)){
             echo 'yes';
         }
 
