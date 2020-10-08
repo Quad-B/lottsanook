@@ -1,24 +1,13 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-$day = substr($_GET['date'], 0,2);
-$month = substr($_GET['date'], 2,2);
-$year = substr($_GET['date'], 4,4);
-switch ($month)
-    {
-      case '01' : $monthtext="มกราคม"; break;
-      case '02' : $monthtext="กุมภาพันธ์"; break;
-      case '03' : $monthtext="มีนาคม"; break;
-      case '04' : $monthtext="เมษายน"; break;
-      case '05' : $monthtext="พฤษภาคม"; break;
-      case '06' : $monthtext="มิถุนายน"; break;
-      case '07' : $monthtext="กรกฎาคม"; break;
-      case '08' : $monthtext="สิงหาคม"; break;
-      case '09' : $monthtext="กันยายน"; break;
-      case '10' : $monthtext="ตุลาคม"; break;
-      case '11' : $monthtext="พฤศจิกายน"; break;
-      case '12' : $monthtext="ธันวาคม"; break;
-    }
-$url = "https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%87%E0%B8%A7%E0%B8%94-".$day."-".urlencode($monthtext)."-".$year.".aspx";
+$filename = $_GET['date'].".txt";
+if(file_exists($filename)){
+    $myfile = fopen($filename,"r") or die("Unable to open file!");
+    echo fread($myfile,filesize($filename));
+    fclose($myfile);
+    exit();
+}
+$url = "https://news.sanook.com/lotto/check/".$_GET['date']."/";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -27,9 +16,8 @@ curl_close($ch);
 $dom = new DOMDocument();
 $dom->loadHTML($response);
 $dom->preserveWhiteSpace = false;
-$findday = $dom->getElementsByTagName('strong');
-$bigel = $dom->getElementsByTagName('b');
-$el = $dom->getElementsByTagName('div');
+$bigel = $dom->getElementsByTagName('strong');
+$el = $dom->getElementsByTagName('span');
 $lottapi = array (
     array("รางวัลที่1",0),
     array("เลขหน้า3ตัว",0,0),
@@ -41,44 +29,71 @@ $lottapi = array (
     array("รางวัลที่4",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
     array("รางวัลที่5",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
 );
-$wave = 5;
 $minwave = 0;
 $maxwave = 5;
-$lottapi[0][1] = $bigel[2] ->nodeValue;
-$threefirst = explode(" ",$bigel[3] ->nodeValue);
-$threeend = explode(" ",$bigel[4] ->nodeValue);
-if(count($threefirst) == 1){
-    $lottapi[1][1] = 0;
-    $lottapi[1][2] = 0;
-}else{
-    $lottapi[1][1] = preg_replace('/\xc2\xa0/', '', $threefirst[0]);
-    $lottapi[1][2] = preg_replace('/\xc2\xa0/', '', $threefirst[1]);
-}
-$lottapi[2][1] = preg_replace('/\xc2\xa0/', '', $threeend[0]);
-$lottapi[2][2] = preg_replace('/\xc2\xa0/', '', $threeend[1]);
-$lottapi[3][1] = $bigel[5] ->nodeValue;
 foreach($el as $val){
-    if($val -> getAttribute('class') == 'ltr_dc ltr-fx ltr_c20'){
-        if ($minwave < $maxwave) {
-            $minwave++;
+    if ($val -> getAttribute('class') == 'lotto__number' || $val -> getAttribute('class') == 'default-font--reward') {
+        if ($minwave >= 1 && $minwave <= $maxwave) {
             $lottapi[$wave][$minwave] = $val ->nodeValue;
+            $minwave++;
+        } else {
+            $minwave = 0;
+        }
+        if ($val ->nodeValue == 'ผลสลากกินแบ่งรัฐบาล รางวัลที่ 2 มี 5 รางวัลๆละ 200,000 บาท' || $val ->nodeValue == 'ผลสลากกินแบ่งรัฐบาล รางวัลที่ 2 มี 5 รางวัลๆละ 100,000 บาท') {
+            $minwave += 1;
+            $maxwave = 5;
+            $wave = 5;
+        }
+        if ($val ->nodeValue == 'ผลสลากกินแบ่งรัฐบาล รางวัลที่ 3 มี 10 รางวัลๆละ 80,000 บาท' || $val ->nodeValue == 'ผลสลากกินแบ่งรัฐบาล รางวัลที่ 3 มี 10 รางวัลๆละ 40,000 บาท') {
+            $minwave += 1;
+            $maxwave = 10;
+            $wave = 6;
+        }
+        if ($val ->nodeValue == 'ผลสลากกินแบ่งรัฐบาล รางวัลที่ 4 มี 50 รางวัลๆละ 40,000 บาท' || $val ->nodeValue == 'ผลสลากกินแบ่งรัฐบาล รางวัลที่ 4 มี 50 รางวัลๆละ 20,000 บาท') {
+            $minwave += 1;
+            $maxwave = 50;
+            $wave = 7;
+        }
+        if ($val ->nodeValue == 'ผลสลากกินแบ่งรัฐบาล รางวัลที่ 5 มี 100 รางวัลๆละ 20,000 บาท' || $val ->nodeValue == 'ผลสลากกินแบ่งรัฐบาล รางวัลที่ 5 มี 100 รางวัลๆละ 10,000 บาท') {
+            $minwave += 1;
+            $maxwave = 100;
+            $wave = 8;
         }
     }
-    if ($minwave == $maxwave && $wave == 5) {
-        $minwave = 0;
-        $maxwave = 10;
-        $wave = 6;
-    }
-    if ($minwave == $maxwave && $wave == 6) {
-        $minwave = 0;
-        $maxwave = 50;
-        $wave = 7;
-    }
-    if ($minwave == $maxwave && $wave == 7) {
-        $minwave = 0;
-        $maxwave = 100;
-        $wave = 8;
+    if ($val ->nodeValue == 'รางวัลที่ 1') {
+        $lottapi[0][1] = $bigel[0] ->nodeValue;
+    } else if ($val ->nodeValue == 'เลขหน้า 3 ตัว') {
+        $lottapi[1][1] = $bigel[1] ->nodeValue;
+        $lottapi[1][2] = $bigel[2] ->nodeValue;
+    } else if ($val ->nodeValue == 'เลขท้าย 3 ตัว') {
+        if (substr($_GET['date'],4,4) <= 2558) {
+            if (substr($_GET['date'],2,2) <= 8 && substr($_GET['date'],4,4) <= 2558 || substr($_GET['date'],4,4) < 2558) {
+                $lottapi[2][1] = $bigel[1] ->nodeValue;
+                $lottapi[2][2] = $bigel[2] ->nodeValue;
+                $lottapi[2][3] = $bigel[3] ->nodeValue;
+                $lottapi[2][4] = $bigel[4] ->nodeValue;
+            } else {
+                $lottapi[2][1] = $bigel[3] ->nodeValue;
+                $lottapi[2][2] = $bigel[4] ->nodeValue;
+            }
+        } else {
+            $lottapi[2][1] = $bigel[3] ->nodeValue;
+            $lottapi[2][2] = $bigel[4] ->nodeValue;
+        }
+    } else if ($val ->nodeValue == 'เลขท้าย 2 ตัว') {
+        $lottapi[3][1] = $bigel[5] ->nodeValue;
+    } else if ($val ->nodeValue == 'รางวัลข้างเคียงรางวัลที่ 1') {
+        if (is_numeric($bigel[6] ->nodeValue)) {
+            $lottapi[4][1] = $bigel[6] ->nodeValue;
+            $lottapi[4][2] = $bigel[7] ->nodeValue;
+        } else {
+            $lottapi[4][1] = $bigel[7] ->nodeValue;
+            $lottapi[4][2] = $bigel[8] ->nodeValue;
+        }
     }
 }
+$myfile = fopen($filename, "w") or die("Unable to open file!");
+fwrite($myfile, json_encode($lottapi));
+fclose($myfile);
 echo json_encode($lottapi);
 ?>
