@@ -20,11 +20,11 @@ echo 'Current PHP version: ' . phpversion();
 //$nextyear = $year+10;
 
 $nextyear = 2563;
-$channel = array();
+$channel = [];
 
 while($year <= $nextyear) {
     $mh = curl_multi_init();
-    $channel = array();
+    $channel = [];
 
     for ($i=0; $i < 10; $i++) {
         $ayear = $year+$i;
@@ -85,16 +85,16 @@ while($year <= $nextyear) {
     curl_multi_add_handle($mh,$ch10);*/
 
     for ($i=0; $i < 10; $i++) { 
-        curl_multi_remove_handle($mh, $channels[$i]);
+        curl_multi_remove_handle($mh, $channel[$i]);
     }
     
     curl_multi_close($mh);
 
     $response = [];
 
-    var_dump($channels);
+    var_dump($channel);
     for ($i=0; $i < 10; $i++) {
-        $res    = curl_multi_getcontent($channels[$i]);
+        $res    = curl_multi_getcontent($channel[$i]);
 
         echo $res;
 
