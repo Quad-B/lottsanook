@@ -63,7 +63,8 @@ while($year <= $nextyear) {
     curl_multi_add_handle($mh,$ch10);
 
     for ($i=1; $i <= 10; $i++) { 
-        $string = curl_multi_getcontent($ch$$$$i);
+        $var = "ch$i";
+        $string = curl_multi_getcontent($$var);
         $peryear = array();
         //$string  = file_get_contents('https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-'.strval($year).'.aspx');
         $dom = new DOMDocument();
