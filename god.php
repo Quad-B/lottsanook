@@ -30,24 +30,34 @@ while($year <= $nextyear) {
 
     curl_setopt($ch1, CURLOPT_URL, "https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-".strval($year).".aspx");
     curl_setopt($ch1, CURLOPT_HEADER, 0);
+    curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch2, CURLOPT_URL, "https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-".strval($year+1).".aspx");
     curl_setopt($ch2, CURLOPT_HEADER, 0);
+    curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch3, CURLOPT_URL, "https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-".strval($year+2).".aspx");
     curl_setopt($ch3, CURLOPT_HEADER, 0);
+    curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch4, CURLOPT_URL, "https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-".strval($year+3).".aspx");
     curl_setopt($ch4, CURLOPT_HEADER, 0);
+    curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch5, CURLOPT_URL, "https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-".strval($year+4).".aspx");
     curl_setopt($ch5, CURLOPT_HEADER, 0);
+    curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch6, CURLOPT_URL, "https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-".strval($year+5).".aspx");
     curl_setopt($ch6, CURLOPT_HEADER, 0);
+    curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch7, CURLOPT_URL, "https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-".strval($year+6).".aspx");
     curl_setopt($ch7, CURLOPT_HEADER, 0);
+    curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch8, CURLOPT_URL, "https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-".strval($year+7).".aspx");
     curl_setopt($ch8, CURLOPT_HEADER, 0);
+    curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch9, CURLOPT_URL, "https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-".strval($year+8).".aspx");
     curl_setopt($ch9, CURLOPT_HEADER, 0);
+    curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch10, CURLOPT_URL, "https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-".strval($year+9).".aspx");
     curl_setopt($ch10, CURLOPT_HEADER, 0);
+    curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1);
 
     $mh = curl_multi_init();
 
@@ -63,14 +73,14 @@ while($year <= $nextyear) {
     curl_multi_add_handle($mh,$ch10);
 
     do {
-        //$status = curl_multi_exec($mh, $active);
+        $status = curl_multi_exec($mh, $active);
         if ($active) {
             for ($i=0; $i < 10; $i++) { 
                 $var = "ch$i";
                 //$string = curl_multi_getcontent($var);
                 //$string = $status;
-                //$string = curl_multi_select($mh);
-                //($$var)
+                $string = curl_multi_select($mh);
+                //echo ($$var);
                 $peryear = array();
                 //$string  = file_get_contents('https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-'.strval($year).'.aspx');
                 $dom = new DOMDocument();
