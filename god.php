@@ -96,15 +96,16 @@ while($year <= $nextyear) {
     for ($i=0; $i < 10; $i++) {
         $res = curl_multi_getcontent($channel[$i]);
 
-        echo $res;
+        //echo $res;
 
         //$response[$i]  =   ($res === false) ? null : json_decode($res, true);
 
         $peryear = array();
-        $string = $res;
+        //$string = $res;
         //$string = $response[$i];
         $dom = new DOMDocument();
-        $dom->loadHTML($string);
+        //$dom->loadHTML($string);
+        $dom->loadHTML($res);
         $dom->preserveWhiteSpace = false;
         $bigel = $dom->getElementsByTagName('font');
         foreach($bigel as $val){
