@@ -1,7 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 $year = $_GET['year'];
-$txtyear = strval($ayear).".txt";
+$txtyear = strval($year).".txt";
 if(file_exists($txtyear)){
     $myfile = fopen($txtyear,"r") or die("Unable to open file!");
     echo fread($myfile,filesize($txtyear));
@@ -9,7 +9,7 @@ if(file_exists($txtyear)){
     exit();
 }
 $yearlist = array();
-$url = "https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-".strval($ayear).".aspx";
+$url = "https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-".strval($year).".aspx";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -44,7 +44,7 @@ foreach($peryear as $val){
     array_push($yearlist,$val);
 }
 
-$file = fopen(strval($ayear).".txt","w");
+$file = fopen(strval($year).".txt","w");
 echo fwrite($file,json_encode($yearlist));
 fclose($file);
 ?>
