@@ -12,9 +12,9 @@ $count = 0;
 
 foreach($json_array as $val){
 
-        if($count == 0){
-            continue 40;
-            $count = 1;
+        if($count <= 40){
+            continue;
+            $count += 1;
         }
 
         $string  = file_get_contents('https://lottsanook.herokuapp.com/?date='.$val);
