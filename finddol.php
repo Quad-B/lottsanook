@@ -9,6 +9,8 @@ $json_array  = json_decode($json_string, true);
 
 $count = 0;
 
+echo $json_array[0];
+
 foreach($json_array as $val){
 
     echo $val;
