@@ -3,7 +3,13 @@ header('Access-Control-Allow-Origin: *');
 $filename = $_GET['date'].".txt";
 if(file_exists($filename)){
     $myfile = fopen($filename,"r") or die("Unable to open file!");
-    echo fread($myfile,filesize($filename));
+    $readwow = fread($myfile,filesize($filename));
+    if (isset($_GET['from'])) {
+        $readwow = json_decode($readwow, true);
+        $readwow[0][0] = $day.' '.$monthtext.' '.$year;
+        $readwow = json_encode($readwow);
+    }
+    echo $readwow;
     fclose($myfile);
     exit();
 }
@@ -96,6 +102,7 @@ foreach($el as $val){
         $wave = 8;
     }
 }
+$lottapi[0][0] = "รางวัลที่1";
 $myfile = fopen($filename, "w") or die("Unable to open file!");
 fwrite($myfile, json_encode($lottapi));
 fclose($myfile);
