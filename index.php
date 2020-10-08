@@ -51,7 +51,10 @@ $lottapi = array (
 $wave = 5;
 $minwave = 0;
 $maxwave = 5;
-echo $bigel[2] ->nodeValue;
+if($bigel[2] ->nodeValue == null){
+    echo json_encode($lottapi);
+    exit();
+}
 $lottapi[0][1] = $bigel[2] ->nodeValue;
 $threefirst = explode(" ",$bigel[3] ->nodeValue);
 $threeend = explode(" ",$bigel[4] ->nodeValue);
