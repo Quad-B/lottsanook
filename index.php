@@ -1,9 +1,11 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-if(file_exists($_GET['date'].'txt')){
-    $myfile = fopen($_GET['date']."txt","r") or die("Unable to open file!");
-    echo fread($myfile,filesize($_GET['date']."txt","r"));
+$filename = $_GET['date'].".txt";
+if(file_exists($filename)){
+    $myfile = fopen($filename,"r") or die("Unable to open file!");
+    echo fread($myfile,filesize($filename,"r"));
     fclose($myfile);
+    exit();
 }
 $url = "https://news.sanook.com/lotto/check/".$_GET['date']."/";
 $ch = curl_init();
@@ -92,8 +94,8 @@ foreach($el as $val){
         }
     }
 }
-echo json_encode($lottapi);
-$myfile = fopen($_GET['date'].".txt", "w") or die("Unable to open file!");
+$myfile = fopen($filename, "w") or die("Unable to open file!");
 fwrite($myfile, json_encode($lottapi));
 fclose($myfile);
+echo json_encode($lottapi);
 ?>
