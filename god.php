@@ -17,7 +17,22 @@ header('Access-Control-Allow-Origin: *');
 //$nextyear = $year+10;
 $nextyear = 2563;
 while($year <= $nextyear) {
-    $ch1 = curl_init();
+    $mh = curl_multi_init();
+    $channel = [];
+
+    for ($i=0; $i < 10; $i++) { 
+        $channel[$i] = curl_init("https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-".strval($year+$i).".aspx");
+        curl_setopt($channel[$i], CURLOPT_HEADER, 0);
+        curl_multi_add_handle($mh,$channel[$i]);
+    }
+
+    $running = null;
+    do {
+        curl_multi_exec($mh, $running);
+        curl_multi_select($mh);
+    } while ($running > 0);
+
+    /*$ch1 = curl_init();
     $ch2 = curl_init();
     $ch3 = curl_init();
     $ch4 = curl_init();
@@ -49,8 +64,6 @@ while($year <= $nextyear) {
     curl_setopt($ch10, CURLOPT_URL, "https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-".strval($year+9).".aspx");
     curl_setopt($ch10, CURLOPT_HEADER, 0);
 
-    $mh = curl_multi_init();
-
     curl_multi_add_handle($mh,$ch1);
     curl_multi_add_handle($mh,$ch2);
     curl_multi_add_handle($mh,$ch3);
@@ -60,19 +73,34 @@ while($year <= $nextyear) {
     curl_multi_add_handle($mh,$ch7);
     curl_multi_add_handle($mh,$ch8);
     curl_multi_add_handle($mh,$ch9);
-    curl_multi_add_handle($mh,$ch10);
+    curl_multi_add_handle($mh,$ch10);*/
 
-    do {
+    for ($i=0; $i < 10; $i++) { 
+        curl_multi_remove_handle($mh, $channels[$i]);
+    }
+    
+    curl_multi_close($mh);
+
+    $response   =    [];
+    for ($i=0; $i < 10; $i++) {
+        $res    = curl_multi_getcontent($channels[$i]);
+
+        $response[$i]  =   ($res === false) ? null : json_decode($res, true);
+    }
+
+    echo htmlspecialchars(print_r($response));
+
+    /*do {
         $status = curl_multi_exec($mh, $active);
         if ($active) {
             for ($i=0; $i < 10; $i++) { 
                 $var = "ch$i";
-                //$string = curl_multi_getcontent($var);
-                //$string = $status;
+                $string = curl_multi_getcontent($var);
+                $string = $status;
                 $string = curl_multi_select($mh);
-                //echo ($$var);
+                echo ($$var);
                 $peryear = array();
-                //$string  = file_get_contents('https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-'.strval($year).'.aspx');
+                $string  = file_get_contents('https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%9B%E0%B8%B5-'.strval($year).'.aspx');
                 $dom = new DOMDocument();
                 $dom->loadHTML($string);
                 $dom->preserveWhiteSpace = false;
@@ -114,7 +142,7 @@ while($year <= $nextyear) {
     curl_multi_remove_handle($mh, $ch8);
     curl_multi_remove_handle($mh, $ch9);
     curl_multi_remove_handle($mh, $ch10);
-    curl_multi_close($mh);
+    curl_multi_close($mh);*/
 
     $year += 10;
 }
