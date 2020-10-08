@@ -45,6 +45,8 @@ foreach($peryear as $val){
 }
 
 $file = fopen(strval($year).".txt","w");
-echo fwrite($file,json_encode($yearlist));
+fwrite($file,json_encode($yearlist));
 fclose($file);
+
+echo json_encode($yearlist);
 ?>
