@@ -11,7 +11,7 @@ foreach ($rss->getElementsByTagName('item') as $node)
     'desc' => $node->getElementsByTagName('description')->item(0)->nodeValue,
     'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
     'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue,
-    'img' => $node->getElementsByTagName('content')->item(0)->getAttribute("url"),
+    'img' => $node->getElementsByTagName('content')->item(1)->getAttribute("url"),
     );
 array_push($feed, $item);
 }
