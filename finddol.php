@@ -9,25 +9,25 @@ $json_array  = json_decode($json_string, true);
 
 $count = 0;
 
-echo $json_array;
-
 foreach($json_array as $val){
 
-        if($count <= 408){
-            continue;
-            $count += 1;
-        }
+    echo $val;
 
-        echo $val;
+    if($count <= 408){
+        continue;
+        $count += 1;
+    }
 
-        $string  = file_get_contents('https://lottsanook.herokuapp.com/?date='.$val.'');
-        $number_array  = json_decode($string, true);
+    echo $val;
 
-        echo $string;
+    $string  = file_get_contents('https://lottsanook.herokuapp.com/?date='.$val.'');
+    $number_array  = json_decode($string, true);
 
-        if(array_search($_GET['search'], $number_array)){
-            echo 'yes';
-        }
+    echo $string;
+
+    if(array_search($_GET['search'], $number_array)){
+        echo 'yes';
+    }
 
 }
 
