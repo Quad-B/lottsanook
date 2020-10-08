@@ -2,7 +2,7 @@
 header('Access-Control-Allow-Origin: *');
 $url = "https://news.sanook.com/lotto/check/".$_GET['date']."/";
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_URL, urlencode($url));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $response = curl_exec($ch);
 curl_close($ch);

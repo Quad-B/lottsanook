@@ -11,7 +11,7 @@ foreach($json_array as $val){
     $url = "https://lottsanook.herokuapp.com/?date=".$val;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, urlencode($url));
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     $response = curl_exec($ch);
     curl_close($ch);
     //$string  = file_get_contents('https://lottsanook.herokuapp.com/?date='.$val.'');
