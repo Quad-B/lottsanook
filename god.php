@@ -85,6 +85,8 @@ while($year <= $nextyear) {
     curl_multi_close($mh);
 
     $response = [];
+
+    var_dump($channels);
     for ($i=0; $i < 10; $i++) {
         $res    = curl_multi_getcontent($channels[$i]);
 
