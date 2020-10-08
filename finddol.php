@@ -8,8 +8,14 @@ foreach($json_array as $val){
         $count += 1;
         continue;
     }
-    $string  = file_get_contents('https://lottsanook.herokuapp.com/?date='.$val.'');
-    $number_array  = json_decode($string, true);
+    $url = "https://lottsanook.herokuapp.com/?date=".$val;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, urlencode($url));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $response = curl_exec($ch);
+    curl_close($ch);
+    //$string  = file_get_contents('https://lottsanook.herokuapp.com/?date='.$val.'');
+    $number_array  = json_decode($response, true);
     if(array_search($_GET['search'], $number_array)){
         echo $val;
     }
