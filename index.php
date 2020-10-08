@@ -3,8 +3,8 @@ header('Access-Control-Allow-Origin: *');
 $filename = $_GET['date'].".txt";
 echo $filename;
 if(file_exists($filename)){
-    $myfile = fopen($filename,"r") or die("Unable to open file!");
-    echo fread($myfile,filesize($filename,"r"));
+    $myfile = fopen($_GET['date'].".txt","r") or die("Unable to open file!");
+    echo fread($myfile,filesize($_GET['date'].".txt","r"));
     fclose($myfile);
     exit();
 }
