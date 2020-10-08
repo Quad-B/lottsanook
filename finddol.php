@@ -16,7 +16,9 @@ foreach($json_array as $val){
             $count += 1;
         }
 
-        $string  = file_get_contents('https://lottsanook.herokuapp.com/?date='.$val);
+        echo $val;
+
+        $string  = file_get_contents('https://lottsanook.herokuapp.com/?date='.$val.'');
         $number_array  = json_decode($string, true);
 
         echo $string;
