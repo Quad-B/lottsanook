@@ -22,5 +22,6 @@ foreach($json_array as $val){
         echo 'เสร็จแล้ว';
     }
     echo array_search($_GET['search'], $number_array);
+    echo $_GET['search'];
 }
 ?>
