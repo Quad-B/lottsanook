@@ -62,8 +62,6 @@ while($year <= $nextyear) {
     curl_multi_add_handle($mh,$ch9);
     curl_multi_add_handle($mh,$ch10);
 
-    var_dump($mh);
-    
     do {
         $status = curl_multi_exec($mh, $active);
         if ($active) {
