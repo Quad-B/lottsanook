@@ -88,7 +88,7 @@ while($year <= $nextyear) {
         $response[$i]  =   ($res === false) ? null : json_decode($res, true);
     }
 
-    echo htmlspecialchars(print_r($response));
+    //echo htmlspecialchars(print_r($response));
 
     /*do {
         $status = curl_multi_exec($mh, $active);
