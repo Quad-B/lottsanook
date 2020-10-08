@@ -103,8 +103,10 @@ foreach($el as $val){
     }
 }
 $lottapi[0][0] = "รางวัลที่1";
-$myfile = fopen($filename, "w") or die("Unable to open file!");
-fwrite($myfile, json_encode($lottapi));
-fclose($myfile);
+if($bigel[2] ->nodeValue != null){
+    $myfile = fopen($filename, "w") or die("Unable to open file!");
+    fwrite($myfile, json_encode($lottapi));
+    fclose($myfile);
+}
 echo json_encode($lottapi);
 ?>
