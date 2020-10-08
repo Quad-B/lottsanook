@@ -17,6 +17,9 @@ foreach($json_array as $val){
     $response = curl_exec($ch);
     curl_close($ch);
     $number_array  = json_decode($response, true);
-    var_dump($number_array);
+    //var_dump($number_array);
+    if (in_array($_GET['search'], $number_array)) {
+        echo 'yes';
+    }
 }
 ?>
