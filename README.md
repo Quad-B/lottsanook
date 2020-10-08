@@ -14,6 +14,6 @@ get lott from sanook.com and myhora.com
 
 * [listวันหวยออกปีนั้นๆ](https://lottsanook.herokuapp.com/gdpy.php?year=2555)
 
-* [เช็คหวยออกทั้งหมดว่ากี่ครั้ง (ตั้งแต่ 2550 ถึง 2563)](https://lottsanook.herokuapp.com/finddol.php?search=81)
+* [เช็คหวยออกทั้งหมดว่ากี่ครั้ง แบบง่าย (ตั้งแต่ 2543 ถึง 2563)](https://lottsanook.herokuapp.com/finddol.php?search=81)
 
 * [หน้าแสดงผลหวยวันนี้ (สำหรับนำไปใช้ที่ไลน์บอทหรือโพสต์เฟสบุ๊คอัตโนมัติ)](https://lottsanook.herokuapp.com/viewlot.php)
