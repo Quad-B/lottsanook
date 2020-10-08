@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 $rss = new DOMDocument();
 $rss->load('https://boyphongsakorn.wordpress.com/feed/');
 
