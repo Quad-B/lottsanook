@@ -2,6 +2,7 @@
 header('Access-Control-Allow-Origin: *');
 $year = 2533;
 $preyearlist = array();
+$preyearsuperlist = array();
 $yearlist = array();
 $nextyear = date('Y')+543;
 $channel = [];
@@ -26,6 +27,7 @@ while($year <= $nextyear) {
     }
     curl_multi_close($mh);
     for ($i=0; $i < 10; $i++) {
+        $preyearsuperlist = array();
         $preyearlist = array();
         $res = curl_multi_getcontent($channel[$i]);
         $peryear = array();
@@ -51,11 +53,14 @@ while($year <= $nextyear) {
                     case 'ธันวาคม' : $monthnum="12"; break;
                 }
                 array_unshift($peryear,sprintf("%02d",$day[0]).$monthnum.$day[3]);
+                array_unshift($preyearsuperlist,sprintf("%02d",$day[0]).$monthnum.$day[3]);
             }
         }
         foreach($peryear as $val){
-            array_push($preyearlist,$val);
             array_push($yearlist,$val);
+        }
+        foreach($preyearsuperlist as $val){
+            array_push($preyearlist,$val);
             $prefile = fopen($day[3].".txt","w");
             fwrite($prefile,json_encode($preyearlist));
             fclose($prefile);
