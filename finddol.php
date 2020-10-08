@@ -17,7 +17,7 @@ foreach($json_array as $val){
     $response = curl_exec($ch);
     curl_close($ch);
     $number_array  = json_decode($response, true);
-    if(array_search($_GET['search'], $number_array)){
+    if(is_numeric(array_search($_GET['search'], $number_array))){
         echo $val;
         echo 'เสร็จแล้ว';
     }
