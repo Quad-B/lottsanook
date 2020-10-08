@@ -31,7 +31,6 @@ curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $response = curl_exec($ch);
 curl_close($ch);
-echo $response.'<br>';
 $dom = new DOMDocument();
 $dom->loadHTML($response);
 $dom->preserveWhiteSpace = false;
@@ -52,6 +51,7 @@ $lottapi = array (
 $wave = 5;
 $minwave = 0;
 $maxwave = 5;
+echo $bigel[2] ->nodeValue;
 $lottapi[0][1] = $bigel[2] ->nodeValue;
 $threefirst = explode(" ",$bigel[3] ->nodeValue);
 $threeend = explode(" ",$bigel[4] ->nodeValue);
