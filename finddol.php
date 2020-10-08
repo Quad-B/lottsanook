@@ -13,7 +13,7 @@ $count = 0;
 foreach($json_array as $val){
 
         if($count == 0){
-            continue $start;
+            continue 40;
             $count = 1;
         }
 
