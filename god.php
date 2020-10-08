@@ -96,8 +96,6 @@ while($year <= $nextyear) {
     for ($i=0; $i < 10; $i++) {
         $res    = curl_multi_getcontent($channel[$i]);
 
-        echo $res;
-
         $response[$i]  =   ($res === false) ? null : json_decode($res, true);
 
         $peryear = array();
