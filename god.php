@@ -57,7 +57,7 @@ while($year <= $nextyear) {
             array_push($preyearlist,$val);
             array_push($yearlist,$val);
             $prefile = fopen($day[3].".txt","w");
-            fwrite($prefile,json_encode($yearlist));
+            fwrite($prefile,json_encode($preyearlist));
             fclose($prefile);
         }
     }
