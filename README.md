@@ -1,7 +1,7 @@
-# lottsanook
+# ล็อตสนุก
 เป็นการดึงผลสลากกินแบ่งรัฐบาลจากเว็บ sanook.com และ myhora.com มาเก็บไว้เป็นแบบ json เขียนโดย php
 
-# link
+# ลิงค์ต่างๆ
 * [เช็คหวยออกวันนั้นๆ](https://lottsanook.herokuapp.com/?date=01102563) (ดึงมาจาก sanook.com สำหรับปีปัจจุปัน และ myhora.com สำหรับปีที่ผ่านมา)
 
 * [เช็คหวยออกวันนั้นๆ (สำรอง)](https://lottsanook.herokuapp.com/index2.php?date=01102563) (ดึงมาจาก sanook.com เท่านั้น สามารถดูได้เฉพาะตั้งแต่ปี 2550 ถึง ปัจจุปัน)
