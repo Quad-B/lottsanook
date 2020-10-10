@@ -111,4 +111,5 @@ if($bigel[2] ->nodeValue != null || $bigel[2] ->nodeValue != ' เวลา 14:3
     fwrite($myfile, json_encode($lottapi));
     fclose($myfile);
 }
+echo $bigel[2] ->nodeValue;
 ?>
