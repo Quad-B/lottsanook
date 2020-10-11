@@ -1,9 +1,32 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 $filename = $_GET['date'].".txt";
+$day = substr($_GET['date'], 0,2);
+$month = substr($_GET['date'], 2,2);
+$year = substr($_GET['date'], 4,4);
+switch ($month){
+    case '01' : $monthtext="มกราคม"; break;
+    case '02' : $monthtext="กุมภาพันธ์"; break;
+    case '03' : $monthtext="มีนาคม"; break;
+    case '04' : $monthtext="เมษายน"; break;
+    case '05' : $monthtext="พฤษภาคม"; break;
+    case '06' : $monthtext="มิถุนายน"; break;
+    case '07' : $monthtext="กรกฎาคม"; break;
+    case '08' : $monthtext="สิงหาคม"; break;
+    case '09' : $monthtext="กันยายน"; break;
+    case '10' : $monthtext="ตุลาคม"; break;
+    case '11' : $monthtext="พฤศจิกายน"; break;
+    case '12' : $monthtext="ธันวาคม"; break;
+}
 if(file_exists($filename)){
     $myfile = fopen($filename,"r") or die("Unable to open file!");
-    echo fread($myfile,filesize($filename));
+    $readwow = fread($myfile,filesize($filename));
+    if (isset($_GET['from'])) {
+        $readwow = json_decode($readwow, true);
+        $readwow[0][0] = $day.' '.$monthtext.' '.$year;
+        $readwow = json_encode($readwow);
+    }
+    echo $readwow;
     fclose($myfile);
     exit();
 }
