@@ -1,16 +1,16 @@
-# lottsanook
-get lott from sanook.com and myhora.com
+# ล็อตสนุก
+เป็นการดึงผลสลากกินแบ่งรัฐบาลจากเว็บ sanook.com และ myhora.com มาเก็บไว้เป็นแบบ json เขียนโดย php
 
-# link
-* [เช็คหวยออกวันนั้นๆ](https://lottsanook.herokuapp.com/?date=01102563)
+# ลิงค์ต่างๆ
+* [เช็คหวยออกวันนั้นๆ](https://lottsanook.herokuapp.com/?date=01102563) (ดึงมาจาก sanook.com สำหรับปีปัจจุปัน และ myhora.com สำหรับปีที่ผ่านมา)
 
-* [เช็คหวยออกวันนั้นๆ (สำรอง)](https://lottsanook.herokuapp.com/index2.php?date=01102563)
+* [เช็คหวยออกวันนั้นๆ (สำรอง)](https://lottsanook.herokuapp.com/index2.php?date=01102563) (ดึงมาจาก sanook.com เท่านั้น สามารถดูได้เฉพาะตั้งแต่ปี 2550 ถึง ปัจจุปัน)
 
 * [listวันหวยออกทั้งหมด](https://lottsanook.herokuapp.com/test.txt)
 
 * [listวันหวยออกทั้งหมด (ไฟล์เบื้องต้นใน Github เมื่อเซิฟเวอร์มีปัญหา)](https://raw.githubusercontent.com/Quad-B/lottsanook/main/test.txt)
 
-* [listวันหวยออกทั้งหมด (PHP Content)](https://lottsanook.herokuapp.com/god.php)
+* [listวันหวยออกทั้งหมด (PHP Content)](https://lottsanook.herokuapp.com/god.php) (Update ทุกวัน)
 
 * [listวันหวยออกปีนั้นๆ](https://lottsanook.herokuapp.com/gdpy.php?year=2555)
 
