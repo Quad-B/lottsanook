@@ -5,6 +5,7 @@ $json_string = fread($myfile,filesize("test.txt"));
 fclose($myfile);
 $json_array  = json_decode($json_string);
 $count = 0;
+$allwin = array();
 foreach($json_array as $val){
     if($count <= 408){
         $count += 1;
@@ -21,11 +22,11 @@ foreach($json_array as $val){
     foreach($number_array as $vall){
         if (in_array($_GET['search'], $vall))
         {
-            echo $number_array[0][0];
-        }
-        foreach($vall as $wow){
-            //echo $wow;
+            array_push($allwin,$number_array[0][0]);
+            //echo $number_array[0][0];
         }
     }
 }
+
+echo json_encode($allwin);
 ?>
