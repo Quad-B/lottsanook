@@ -5,13 +5,14 @@ $day = substr($_GET['date'], 0,2);
 $month = substr($_GET['date'], 2,2);
 $year = substr($_GET['date'], 4,4);
 if ($year == date('Y')+543) {
-    $url = "https://lottsanook.herokuapp.com/index2.php?date=".$_GET['date'];
+    /*$url = "https://lottsanook.herokuapp.com/index2.php?date=".$_GET['date'];
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     $response = curl_exec($ch);
     curl_close($ch);
-    echo $response;
+    echo $response;*/
+    header('Location: https://lottsanook.herokuapp.com/index2.php?date='.$_GET['date']);
     exit();
 }
 switch ($month)
