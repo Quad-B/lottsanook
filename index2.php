@@ -92,8 +92,10 @@ foreach($el as $val){
         }
     }
 }
-$myfile = fopen($filename, "w") or die("Unable to open file!");
-fwrite($myfile, json_encode($lottapi));
-fclose($myfile);
+if(preg_match('~[0-9]+~', $lottapi[0][1])){
+    $myfile = fopen($filename, "w") or die("Unable to open file!");
+    fwrite($myfile, json_encode($lottapi));
+    fclose($myfile);
+}
 echo json_encode($lottapi);
 ?>
