@@ -2,9 +2,9 @@
 header('Access-Control-Allow-Origin: *');
 $year = $_GET['year'];
 $txtyear = strval($year).".txt";
-if(file_exists($txtyear)){
-    $myfile = fopen($txtyear,"r") or die("Unable to open file!");
-    echo fread($myfile,filesize($txtyear));
+if(file_exists("cache/".$txtyear)){
+    $myfile = fopen("cache/".$txtyear,"r") or die("Unable to open file!");
+    echo fread($myfile,filesize("cache/".$txtyear));
     fclose($myfile);
     exit();
 }
@@ -44,7 +44,7 @@ foreach($peryear as $val){
     array_push($yearlist,$val);
 }
 
-$file = fopen(strval($year).".txt","w");
+$file = fopen("cache/".strval($year).".txt","w");
 fwrite($file,json_encode($yearlist));
 fclose($file);
 

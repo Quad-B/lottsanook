@@ -68,7 +68,7 @@ while($year <= $nextyear) {
     }
     $year += 10;
 }
-$file = fopen("test.txt","w");
+$file = fopen("cache/test.txt","w");
 fwrite($file,json_encode($yearlist));
 fclose($file);
 

@@ -18,9 +18,9 @@ switch ($month){
     case '11' : $monthtext="พฤศจิกายน"; break;
     case '12' : $monthtext="ธันวาคม"; break;
 }
-if(file_exists($filename)){
-    $myfile = fopen($filename,"r") or die("Unable to open file!");
-    $readwow = fread($myfile,filesize($filename));
+if(file_exists("cache/".$filename)){
+    $myfile = fopen("cache/".$filename,"r") or die("Unable to open file!");
+    $readwow = fread($myfile,filesize("cache/".$filename));
     if (isset($_GET['from'])) {
         $readwow = json_decode($readwow, true);
         $readwow[0][0] = $day.' '.$monthtext.' '.$year;
@@ -123,7 +123,7 @@ if (isset($_GET['from'])) {
     $lottapi[0][0] = "รางวัลที่1";
 }
 if(preg_match('~[0-9]+~', $lottapi[0][1])){
-    $myfile = fopen($filename, "w") or die("Unable to open file!");
+    $myfile = fopen("cache/".$filename, "w") or die("Unable to open file!");
     fwrite($myfile, json_encode($lottapi));
     fclose($myfile);
 }
