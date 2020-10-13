@@ -23,10 +23,10 @@ foreach($json_array as $id){
     }
     
     $channels[$id] = curl_init($fetchURL);
-    curl_setopt($channels[$id], CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($channels[$id], CURLOPT_SSL_VERIFYHOST, 0);
-    curl_setopt($channels[$id], CURLOPT_SSL_VERIFYPEER, 0);
-    curl_multi_add_handle($mh, $channels[$id]);
+    curl_setopt($channels[."'".$id."'"], CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($channels[."'".$id."'"], CURLOPT_SSL_VERIFYHOST, 0);
+    curl_setopt($channels[."'".$id."'"], CURLOPT_SSL_VERIFYPEER, 0);
+    curl_multi_add_handle($mh, $channels[."'".$id."'"]);
 }
 
 $running = null;
@@ -40,7 +40,7 @@ foreach ($json_array as $id) {
         $count += 1;
         continue;
     }
-    curl_multi_remove_handle($mh, $channels[$id]);
+    curl_multi_remove_handle($mh, $channels[."'".$id."'"]);
 }
 
 curl_multi_close($mh);
@@ -51,7 +51,7 @@ foreach($json_array as $id){
         continue;
     }
 
-    $res    = curl_multi_getcontent($channels[$id]);
+    $res = curl_multi_getcontent($channels[."'".$id."'"]);
 
     $number_array  = json_decode($res);
     foreach($number_array as $vall){
