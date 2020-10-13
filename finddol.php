@@ -28,5 +28,6 @@ foreach($json_array as $val){
     }
 }
 
+echo $_GET['search'];
 echo json_encode($allwin);
 ?>
