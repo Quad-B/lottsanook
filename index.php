@@ -6,9 +6,19 @@ $month = substr($_GET['date'], 2,2);
 $year = substr($_GET['date'], 4,4);
 if ($year == date('Y')+543) {
     if (isset($_GET['from'])) {
-        header('Location: https://lottsanook.herokuapp.com/index2.php?date='.$_GET['date'].'&from');
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://lottsanook.herokuapp.com/index2.php?date='.$_GET['date'].'&from');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        //header('Location: https://lottsanook.herokuapp.com/index2.php?date='.$_GET['date'].'&from');
     }else{
-        header('Location: https://lottsanook.herokuapp.com/index2.php?date='.$_GET['date']);
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://lottsanook.herokuapp.com/index2.php?date='.$_GET['date']);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        //header('Location: https://lottsanook.herokuapp.com/index2.php?date='.$_GET['date']);
     }
     exit();
 }
