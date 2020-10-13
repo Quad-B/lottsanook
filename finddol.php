@@ -29,6 +29,11 @@ $channels = [];
 }*/
 
 foreach($json_array as $id){
+    if($count <= 408){
+        $count += 1;
+        continue;
+    }
+
     $fetchURL = "https://lottsanook.herokuapp.com/?date=".$id."&from";
     
     $channels[$id] = curl_init($fetchURL);
@@ -45,12 +50,21 @@ do {
 } while ($running > 0);
 
 foreach ($json_array as $id) {
+    if($count <= 408){
+        $count += 1;
+        continue;
+    }
     curl_multi_remove_handle($mh, $channels[$id]);
 }
 
 curl_multi_close($mh);
 
 foreach($json_array as $id){
+    if($count <= 408){
+        $count += 1;
+        continue;
+    }
+    
     $res    = curl_multi_getcontent($channels[$id]);
 
     $number_array  = json_decode($res);
@@ -61,7 +75,6 @@ foreach($json_array as $id){
         }
     }
 }
-
 
 echo json_encode($allwin);
 ?>
