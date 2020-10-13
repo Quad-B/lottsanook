@@ -16,7 +16,7 @@ foreach($json_array as $id){
 
     $selnum = rand(1,10);
 
-    if($selnum < 8){
+    if($selnum < 9){
         $fetchURL = "https://quadbproject.000webhostapp.com/forfind/?date=".$id."&from";
     }else{
         $fetchURL = "https://lottsanook.herokuapp.com/?date=".$id."&from";
