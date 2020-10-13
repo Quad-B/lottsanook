@@ -11,7 +11,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-sm">
+            <div class="col">
                 <div class="card" style="width: 18rem;">
                     <div class="card-header">
                         รางวัลที่1
@@ -21,30 +21,30 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm">
+            <div class="col">
                 <div class="card" style="width: 18rem;">
                     <div class="card-header">
-                        รางวัลที่1
+                        รางวัลเลขหน้าสามตัว
                     </div>
                     <div class="card-body">
                         <p class="card-text">000000</p>
                     </div>
                 </div>
             </div>
-            <div class="col-sm">
+            <div class="col">
                 <div class="card" style="width: 18rem;">
                     <div class="card-header">
-                        รางวัลที่1
+                        รางวัลเลขท้ายสามตัว
                     </div>
                     <div class="card-body">
                         <p class="card-text">000000</p>
                     </div>
                 </div>
             </div>
-            <div class="col-sm">
+            <div class="col">
                 <div class="card" style="width: 18rem;">
                     <div class="card-header">
-                        รางวัลที่1
+                        รางวัลเลขท้ายสองตัว
                     </div>
                     <div class="card-body">
                         <p class="card-text">000000</p>
