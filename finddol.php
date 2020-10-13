@@ -6,6 +6,8 @@ fclose($myfile);
 $json_array  = json_decode($json_string);
 $count = 0;
 $allwin = array();
+$mh = curl_multi_init();
+$channels = [];
 foreach($json_array as $val){
     if($count <= 408){
         $count += 1;
@@ -26,6 +28,9 @@ foreach($json_array as $val){
             //echo $number_array[0][0];
         }
     }
+}
+
+foreach($json_array as $val){
 }
 
 echo $_GET['search'];
