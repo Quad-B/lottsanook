@@ -90,19 +90,19 @@ $threeend = explode(" ",$bigel[4] ->nodeValue);
 if(count($threefirst) == 1){
     $lottapi[1][1] = 0;
     $lottapi[1][2] = 0;
+    $lottapi[2][3] = preg_replace('/\xc2\xa0/', '', $threeend[2]);
+    $lottapi[2][4] = preg_replace('/\xc2\xa0/', '', $threeend[3]);
 }else{
     $lottapi[1][1] = preg_replace('/\xc2\xa0/', '', $threefirst[0]);
     $lottapi[1][2] = preg_replace('/\xc2\xa0/', '', $threefirst[1]);
 }
 $lottapi[2][1] = preg_replace('/\xc2\xa0/', '', $threeend[0]);
 $lottapi[2][2] = preg_replace('/\xc2\xa0/', '', $threeend[1]);
-$lottapi[2][3] = preg_replace('/\xc2\xa0/', '', $threeend[2]);
-$lottapi[2][4] = preg_replace('/\xc2\xa0/', '', $threeend[3]);
 $lottapi[3][1] = $bigel[5] ->nodeValue;
 $lottapi[4][1] = $lottapi[0][1]-1;
 $lottapi[4][2] = $lottapi[0][1]+1;
 foreach($el as $val){
-    if($val -> getAttribute('class') == 'ltr_dc ltr-fx ltr_c20'){
+    if($val -> getAttribute('class') == 'ltr_dc ltr-fx ltr_c20' || $val -> getAttribute('class') == 'ltr_dc ltr-fx'){
         if ($minwave < $maxwave) {
             $minwave++;
             $lottapi[$wave][$minwave] = $val ->nodeValue;
