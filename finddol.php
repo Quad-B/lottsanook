@@ -8,33 +8,18 @@ $count = 0;
 $allwin = array();
 $mh = curl_multi_init();
 $channels = [];
-/*foreach($json_array as $val){
-    if($count <= 408){
-        $count += 1;
-        continue;
-    }
-    $url = "https://lottsanook.herokuapp.com/?date=".$val."&from";
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    $response = curl_exec($ch);
-    curl_close($ch);
-    $number_array  = json_decode($response);
-    foreach($number_array as $vall){
-        if (in_array($_GET['search'], $vall))
-        {
-            array_push($allwin,$number_array[0][0]);
-        }
-    }
-}*/
-
 foreach($json_array as $id){
     if($count <= 408){
         $count += 1;
         continue;
     }
 
-    $fetchURL = "https://lottsanook.herokuapp.com/?date=".$id."&from";
+    if(rand(0,1) == 1){
+        $fetchURL = "https://quadbproject.000webhostapp.com/forfind/?date=".$id."&from";
+    }else{
+        $fetchURL = "https://lottsanook.herokuapp.com/?date=".$id."&from";
+    }
+    
     
     $channels[$id] = curl_init($fetchURL);
     curl_setopt($channels[$id], CURLOPT_RETURNTRANSFER, 1);
@@ -64,7 +49,7 @@ foreach($json_array as $id){
         $count += 1;
         continue;
     }
-    
+
     $res    = curl_multi_getcontent($channels[$id]);
 
     $number_array  = json_decode($res);
