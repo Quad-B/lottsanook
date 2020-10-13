@@ -30,9 +30,9 @@ foreach($json_array as $val){
     }
 }
 
-foreach($json_array as $val){
-}
+/*foreach($json_array as $val){
+}*/
 
-echo $_GET['search'];
+//echo $_GET['search'];
 echo json_encode($allwin);
 ?>
