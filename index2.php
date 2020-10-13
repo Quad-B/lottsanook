@@ -52,6 +52,9 @@ $lottapi = array (
     array("รางวัลที่4",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
     array("รางวัลที่5",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
 );
+if (isset($_GET['from'])) {
+    $lottapi[0][0] = $day.' '.$monthtext.' '.$year;
+}
 $minwave = 0;
 $maxwave = 5;
 foreach($el as $val){
@@ -115,10 +118,13 @@ foreach($el as $val){
         }
     }
 }
+echo json_encode($lottapi);
+if (isset($_GET['from'])) {
+    $lottapi[0][0] = "รางวัลที่1";
+}
 if(preg_match('~[0-9]+~', $lottapi[0][1])){
     $myfile = fopen($filename, "w") or die("Unable to open file!");
     fwrite($myfile, json_encode($lottapi));
     fclose($myfile);
 }
-echo json_encode($lottapi);
 ?>
