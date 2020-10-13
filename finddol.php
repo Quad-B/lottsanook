@@ -14,7 +14,7 @@ foreach($json_array as $id){
         continue;
     }
 
-    if(rand(0,1) == 1){
+    if(rand(0,1) == '0'){
         $fetchURL = "https://quadbproject.000webhostapp.com/forfind/?date=".$id."&from";
     }else{
         $fetchURL = "https://lottsanook.herokuapp.com/?date=".$id."&from";
