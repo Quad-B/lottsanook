@@ -102,7 +102,7 @@ $lottapi[3][1] = $bigel[5] ->nodeValue;
 $lottapi[4][1] = $lottapi[0][1]-1;
 $lottapi[4][2] = $lottapi[0][1]+1;
 foreach($el as $val){
-    if($val -> getAttribute('class') == 'ltr_dc ltr-fx ltr_c20' || $val -> getAttribute('class') == 'ltr_dc ltr-fx'){
+    if($val -> getAttribute('class') == 'ltr_dc ltr-fx ltr_c20'){
         if ($minwave < $maxwave) {
             $minwave++;
             $lottapi[$wave][$minwave] = $val ->nodeValue;
