@@ -20,7 +20,7 @@
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-header">
-                        รางวัลที่1
+                        <center>รางวัลที่1</center>
                     </div>
                     <div class="card-body">
                         <p class="card-text"><center><h3>000000</h3></center></p>
@@ -30,7 +30,7 @@
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-header">
-                        รางวัลเลขหน้าสามตัว
+                        <center>รางวัลเลขหน้าสามตัว</center>
                     </div>
                     <div class="card-body">
                         <p class="card-text"><center><h3>000 | 000</h3></center></p>
@@ -40,7 +40,7 @@
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-header">
-                        รางวัลเลขท้ายสามตัว
+                        <center>รางวัลเลขท้ายสามตัว</center>
                     </div>
                     <div class="card-body">
                         <p class="card-text"><center><h3>000 | 000</h3></center></p>
@@ -50,7 +50,7 @@
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-header">
-                        รางวัลเลขท้ายสองตัว
+                        <center>รางวัลเลขท้ายสองตัว</center>
                     </div>
                     <div class="card-body">
                         <p class="card-text"><center><h3>00</h3></center></p>
