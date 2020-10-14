@@ -8,7 +8,7 @@
 
 * [listวันหวยออกทั้งหมด](https://lottsanook.herokuapp.com/cache/test.txt)
 
-* [listวันหวยออกทั้งหมด (ไฟล์เบื้องต้นใน Github เมื่อเซิฟเวอร์มีปัญหา)](https://raw.githubusercontent.com/Quad-B/lottsanook/main/test.txt)
+* [listวันหวยออกทั้งหมด (ไฟล์เบื้องต้นใน Github เมื่อเซิฟเวอร์มีปัญหา)](https://raw.githubusercontent.com/Quad-B/lottsanook/main/cache/test.txt)
 
 * [listวันหวยออกทั้งหมด (PHP Content)](https://lottsanook.herokuapp.com/god.php) (Update ทุกวัน)
 
