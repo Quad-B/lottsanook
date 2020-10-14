@@ -15,6 +15,12 @@
     </style>
 </head>
 <body>
+    <?php
+    $json = file_get_contents('https://lottsanook.herokuapp.com/god.php');
+    $obj = json_decode($json);
+    $json = file_get_contents('https://lottsanook.herokuapp.com/?date='.end($obj).'');
+    $obj = json_decode($json);
+    ?>
     <div class="container">
         <div class="mb-2 mt-2" style="font-size: 10vh"><center><span class="badge bg-secondary">ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ 1 ตุลาคม 2563</span></center></div>
         <div class="row">
@@ -24,7 +30,7 @@
                         <center>รางวัลที่1</center>
                     </div>
                     <div class="card-body">
-                        <p class="card-text"><center><h3>000000</h3></center></p>
+                        <p class="card-text"><center><h3><?php echo $obj[0][1] ?></h3></center></p>
                     </div>
                 </div>
             </div>
@@ -34,7 +40,7 @@
                         <center>รางวัลเลขหน้าสามตัว</center>
                     </div>
                     <div class="card-body">
-                        <p class="card-text"><center><h3>000 | 000</h3></center></p>
+                        <p class="card-text"><center><h3><?php echo $obj[1][1] ?> | <?php echo $obj[1[2] ?></h3></center></p>
                     </div>
                 </div>
             </div>
@@ -44,7 +50,7 @@
                         <center>รางวัลเลขท้ายสามตัว</center>
                     </div>
                     <div class="card-body">
-                        <p class="card-text"><center><h3>000 | 000</h3></center></p>
+                        <p class="card-text"><center><h3><?php echo $obj[2][1] ?> | <?php echo $obj[2][2] ?></h3></center></p>
                     </div>
                 </div>
             </div>
@@ -54,7 +60,7 @@
                         <center>รางวัลเลขท้ายสองตัว</center>
                     </div>
                     <div class="card-body">
-                        <p class="card-text"><center><h3>00</h3></center></p>
+                        <p class="card-text"><center><h3><?php echo $obj[3][1] ?></h3></center></p>
                     </div>
                 </div>
             </div>
