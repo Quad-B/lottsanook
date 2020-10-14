@@ -16,7 +16,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="mb-2" style="font-size: 10vh"><center><span class="badge bg-secondary">ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ 1 ตุลาคม 2563</span></center></div>
+        <div class="mb-2 mt-2" style="font-size: 10vh"><center><span class="badge bg-secondary">ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ 1 ตุลาคม 2563</span></center></div>
         <div class="row">
             <div class="col-md-3">
                 <div class="card">
