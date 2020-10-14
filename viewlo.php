@@ -11,8 +11,8 @@
 
     <div class="container">
         <div class="row">
-            <div class="col">
-                <div class="card" style="width: 18rem;">
+            <div class="col-md-3">
+                <div class="card">
                     <div class="card-header">
                         รางวัลที่1
                     </div>
@@ -21,8 +21,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
+            <div class="col-md-3">
+                <div class="card">
                     <div class="card-header">
                         รางวัลเลขหน้าสามตัว
                     </div>
@@ -31,8 +31,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
+            <div class="col-md-3">
+                <div class="card">
                     <div class="card-header">
                         รางวัลเลขท้ายสามตัว
                     </div>
@@ -41,8 +41,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
+            <div class="col-md-3">
+                <div class="card">
                     <div class="card-header">
                         รางวัลเลขท้ายสองตัว
                     </div>
