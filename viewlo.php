@@ -100,7 +100,7 @@
         }
         $json = file_get_contents('https://lottsanook.herokuapp.com/finddol.php?search='.$numsel);
         $obj = json_decode($json);
-        if(count($obj) > 0) {
+        if(count($obj) > 1) {
         ?>
         <div class="card mt-2">
             <div class="card-header">
