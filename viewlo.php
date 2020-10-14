@@ -23,7 +23,7 @@
                         รางวัลที่1
                     </div>
                     <div class="card-body">
-                        <p class="card-text">000000</p>
+                        <p class="card-text"><h3>000000</h3></p>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                         รางวัลเลขหน้าสามตัว
                     </div>
                     <div class="card-body">
-                        <p class="card-text">000000</p>
+                        <p class="card-text"><h3>000 | 000</h3></p>
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                         รางวัลเลขท้ายสามตัว
                     </div>
                     <div class="card-body">
-                        <p class="card-text">000000</p>
+                        <p class="card-text"><h3>000 | 000</h3></p>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                         รางวัลเลขท้ายสองตัว
                     </div>
                     <div class="card-body">
-                        <p class="card-text">000000</p>
+                        <p class="card-text"><h3>00</h3></p>
                     </div>
                 </div>
             </div>
