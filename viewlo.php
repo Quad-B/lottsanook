@@ -19,7 +19,7 @@
         <div class="mb-2" style="font-size: 10vh"><center>ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ 1 ตุลาคม 2563</center></div>
         <div class="row">
             <div class="col-md-3">
-                <div class="card">
+                <div class="card bg-success">
                     <div class="card-header">
                         <center>รางวัลที่1</center>
                     </div>
@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card">
+                <div class="card bg-info">
                     <div class="card-header">
                         <center>รางวัลเลขหน้าสามตัว</center>
                     </div>
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card">
+                <div class="card bg-info">
                     <div class="card-header">
                         <center>รางวัลเลขท้ายสามตัว</center>
                     </div>
@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card">
+                <div class="card bg-info">
                     <div class="card-header">
                         <center>รางวัลเลขท้ายสองตัว</center>
                     </div>
