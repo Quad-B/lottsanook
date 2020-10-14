@@ -18,7 +18,7 @@
     <?php
     $json = file_get_contents('https://lottsanook.herokuapp.com/god.php');
     $obj = json_decode($json);
-    $json = file_get_contents('https://lottsanook.herokuapp.com/?date='.end($obj).'');
+    $json = file_get_contents('https://lottsanook.herokuapp.com/?date='.end($obj));
     $obj = json_decode($json);
     ?>
     <div class="container">
@@ -40,7 +40,7 @@
                         <center>รางวัลเลขหน้าสามตัว</center>
                     </div>
                     <div class="card-body">
-                        <p class="card-text"><center><h3><?php echo $obj[1][1] ?> | <?php echo $obj[1[2] ?></h3></center></p>
+                        <p class="card-text"><center><h3><?php echo $obj[1][1] ?> | <?php echo $obj[1][2] ?></h3></center></p>
                     </div>
                 </div>
             </div>
