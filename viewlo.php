@@ -18,11 +18,12 @@
     <?php
     $json = file_get_contents('https://lottsanook.herokuapp.com/god.php');
     $obj = json_decode($json);
-    $json = file_get_contents('https://lottsanook.herokuapp.com/?date='.end($obj));
+    $lastday=end($obj);
+    $json = file_get_contents('https://lottsanook.herokuapp.com/?date='.$lastday);
     $obj = json_decode($json);
-    $day = substr(end($obj), 0,2);
-    $month = substr(end($obj), 2,2);
-    $year = substr(end($obj), 4,4);
+    $day = substr($lastday, 0,2);
+    $month = substr($lastday, 2,2);
+    $year = substr($lastday, 4,4);
     switch ($month) {
       case '01' : $monthtext="มกราคม"; break;
       case '02' : $monthtext="กุมภาพันธ์"; break;
@@ -39,7 +40,7 @@
     }
     ?>
     <div class="container">
-        <div class="mb-2 mt-2" style="font-size: 10vh"><center><span class="badge bg-secondary">ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ <?php echo substr(end($obj), 0,2) ?> <?php echo $monthtext ?> <?php echo substr(end($obj), 4,4) ?></span></center></div>
+        <div class="mb-2 mt-2" style="font-size: 10vh"><center><span class="badge bg-secondary">ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ <?php echo $day ?> <?php echo $monthtext ?> <?php echo $year ?></span></center></div>
         <div class="row">
             <div class="col-md-3">
                 <div class="card">
