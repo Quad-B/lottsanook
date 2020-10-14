@@ -16,11 +16,11 @@
 </head>
 <body>
     <div class="container">
-        <div class="mb-2" style="font-size: 10vh"><center>ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ 1 ตุลาคม 2563</center></div>
+        <div class="mb-2" style="font-size: 10vh"><center><span class="badge bg-secondary">ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ 1 ตุลาคม 2563</span></center></div>
         <div class="row">
             <div class="col-md-3">
-                <div class="card bg-success">
-                    <div class="card-header">
+                <div class="card">
+                    <div class="card-header bg-success">
                         <center>รางวัลที่1</center>
                     </div>
                     <div class="card-body">
@@ -29,8 +29,8 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card bg-info">
-                    <div class="card-header">
+                <div class="card">
+                    <div class="card-header bg-info">
                         <center>รางวัลเลขหน้าสามตัว</center>
                     </div>
                     <div class="card-body">
@@ -39,8 +39,8 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card bg-info">
-                    <div class="card-header">
+                <div class="card">
+                    <div class="card-header bg-info">
                         <center>รางวัลเลขท้ายสามตัว</center>
                     </div>
                     <div class="card-body">
@@ -49,8 +49,8 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card bg-info">
-                    <div class="card-header">
+                <div class="card">
+                    <div class="card-header bg-warning">
                         <center>รางวัลเลขท้ายสองตัว</center>
                     </div>
                     <div class="card-body">
