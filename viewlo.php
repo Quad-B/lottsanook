@@ -10,7 +10,7 @@
 
         body{
             font-family: 'Charm', cursive;
-            background-image: url('https://pixabay.com/get/57e1d0404f51a414f6da8c7dda2a3376103bdaec4e50774977297fdc9448c0_1280.jpg');
+            background-image: url('https://quadbproject.000webhostapp.com/money-1153538_1280.jpg');
         }
     </style>
 </head>
@@ -20,9 +20,26 @@
     $obj = json_decode($json);
     $json = file_get_contents('https://lottsanook.herokuapp.com/?date='.end($obj));
     $obj = json_decode($json);
+    $day = substr(end($obj), 0,2);
+    $month = substr(end($obj), 2,2);
+    $year = substr(end($obj), 4,4);
+    switch ($month) {
+      case '01' : $monthtext="มกราคม"; break;
+      case '02' : $monthtext="กุมภาพันธ์"; break;
+      case '03' : $monthtext="มีนาคม"; break;
+      case '04' : $monthtext="เมษายน"; break;
+      case '05' : $monthtext="พฤษภาคม"; break;
+      case '06' : $monthtext="มิถุนายน"; break;
+      case '07' : $monthtext="กรกฎาคม"; break;
+      case '08' : $monthtext="สิงหาคม"; break;
+      case '09' : $monthtext="กันยายน"; break;
+      case '10' : $monthtext="ตุลาคม"; break;
+      case '11' : $monthtext="พฤศจิกายน"; break;
+      case '12' : $monthtext="ธันวาคม"; break;
+    }
     ?>
     <div class="container">
-        <div class="mb-2 mt-2" style="font-size: 10vh"><center><span class="badge bg-secondary">ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ 1 ตุลาคม 2563</span></center></div>
+        <div class="mb-2 mt-2" style="font-size: 10vh"><center><span class="badge bg-secondary">ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ <?php echo $day ?> <?php echo $monthtext ?> <?php echo $year ?></span></center></div>
         <div class="row">
             <div class="col-md-3">
                 <div class="card">
