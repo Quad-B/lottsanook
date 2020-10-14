@@ -107,7 +107,7 @@
                 Fun Fact
             </div>
             <div class="card-body">
-                <p class="card-text"><?php echo $numsel ?>เคยออกมาแล้ว <?php echo count($obj) ?> ครั้ง ในรอบ 13 ปี</p>
+                <p class="card-text"><?php echo $numsel ?> เคยออกมาแล้ว <?php echo count($obj) ?> ครั้ง ในรอบ 13 ปี</p>
             </div>
         </div>
         <?php
