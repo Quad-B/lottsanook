@@ -84,7 +84,21 @@
             </div>
         </div>
         <?php
-        $json = file_get_contents('https://lottsanook.herokuapp.com/finddol.php?search='.$obj[3][1]);
+        $randnum = rand(1,6);
+        if($randnum == 1){
+            $numsel = $obj[0][1];
+        } else if($randnum == 2) {
+            $numsel = $obj[1][1];
+        } else if($randnum == 3) {
+            $numsel = $obj[1][2];
+        } else if($randnum == 4) {
+            $numsel = $obj[2][1];
+        } else if($randnum == 5) {
+            $numsel = $obj[2][2];
+        } else if($randnum == 6) {
+            $numsel = $obj[3][1];
+        }
+        $json = file_get_contents('https://lottsanook.herokuapp.com/finddol.php?search='.$numsel);
         $obj = json_decode($json);
         if(count($obj) > 0) {
         ?>
@@ -93,7 +107,7 @@
                 Fun Fact
             </div>
             <div class="card-body">
-                <p class="card-text">เลขนี้เคยออกมาแล้ว <?php echo count($obj) ?> ล้านครั้ง ในรอบ 13 ปี</p>
+                <p class="card-text"><?php $numsel ?>เคยออกมาแล้ว <?php echo count($obj) ?> ล้านครั้ง ในรอบ 13 ปี</p>
             </div>
         </div>
         <?php
