@@ -39,7 +39,7 @@
     }
     ?>
     <div class="container">
-        <div class="mb-2 mt-2" style="font-size: 10vh"><center><span class="badge bg-secondary">ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ <?php echo $day ?> <?php echo $monthtext ?> <?php echo $year ?></span></center></div>
+        <div class="mb-2 mt-2" style="font-size: 10vh"><center><span class="badge bg-secondary">ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ <?php echo substr(end($obj), 0,2) ?> <?php echo $monthtext ?> <?php echo substr(end($obj), 4,4) ?></span></center></div>
         <div class="row">
             <div class="col-md-3">
                 <div class="card">
