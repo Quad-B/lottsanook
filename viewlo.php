@@ -10,6 +10,7 @@
 
         body{
             font-family: 'Charm', cursive;
+            background-image: url('https://pixabay.com/get/57e1d0404f51a414f6da8c7dda2a3376103bdaec4e50774977297fdc9448c0_1280.jpg');
         }
     </style>
 </head>
