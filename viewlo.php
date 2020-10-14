@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" style="width: 100vw">
         ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ 1 ตุลาคม 2563
         <div class="row">
             <div class="col-md-3">
