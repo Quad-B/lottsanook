@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');
+
+        body{
+            font-family: 'Charm', cursive;
+        }
+    </style>
 </head>
 <body>
-    ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ 1 ตุลาคม 2563
-
     <div class="container">
+        ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ 1 ตุลาคม 2563
         <div class="row">
             <div class="col-md-3">
                 <div class="card">
