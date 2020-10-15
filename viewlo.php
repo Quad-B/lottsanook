@@ -64,7 +64,7 @@
                 Fun Fact
             </div>
             <div class="card-body">
-                <p class="card-text d-inline"><div id="numfind" class="d-inline"></div> เคยออกมาแล้ว <div id="numcount" class="d-inline"></div> ครั้ง ในรอบ 13 ปี</p>
+                <div id="numfind" class="d-inline"></div> เคยออกมาแล้ว <div id="numcount" class="d-inline"></div> ครั้ง ในรอบ 13 ปี
             </div>
         </div>
     </div>
