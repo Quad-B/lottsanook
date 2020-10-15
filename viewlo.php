@@ -16,9 +16,6 @@
 </head>
 <body>
     <?php
-    $json = file_get_contents('https://lottsanook.herokuapp.com/god.php');
-    $obj = json_decode($json);
-    $lastday=end($obj);
     $json = file_get_contents('https://lottsanook.herokuapp.com/?date='.$lastday);
     $obj = json_decode($json);
     $day = substr($lastday, 0,2);
@@ -113,10 +110,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
     <script>
     document.getElementById('numfind').innerText = '<?php echo $numsel ?>'
-    $.getJSON('https://lottsanook.herokuapp.com/finddol.php?search=<?php echo $numsel ?>', function(data) {
-        console.log(data.length)
-        document.getElementById('numfind').innerText = data.length
+    $.getJSON('https://lottsanook.herokuapp.com/god.php', function(data1) {
+        $.getJSON('https://lottsanook.herokuapp.com/finddol.php?search=<?php echo $numsel ?>'+data1[data1.length - 1], function(data2) {
+            $.getJSON('https://lottsanook.herokuapp.com/finddol.php?search=<?php echo $numsel ?>', function(data3) {
+                console.log(data3.length)
+                document.getElementById('numfind').innerText = data3.length
+            });
+        });
     });
+    
     </script>
 </body>
 </html>
