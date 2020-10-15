@@ -16,7 +16,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="mb-2 mt-2" style="font-size: 10vh"><center><span class="badge bg-secondary">ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ <?php echo (int)$day ?> <?php echo $monthtext ?> <?php echo $year ?></span></center></div>
+        <div class="mb-2 mt-2" style="font-size: 10vh"><center><span class="badge bg-secondary">ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ </span></center></div>
         <div class="row">
             <div class="col-md-3">
                 <div class="card">
@@ -24,7 +24,7 @@
                         <center>รางวัลที่1</center>
                     </div>
                     <div class="card-body">
-                        <p class="card-text"><center><h3><?php echo $obj[0][1] ?></h3></center></p>
+                        <p class="card-text"><center><h3></h3></center></p>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                         <center>รางวัลเลขหน้าสามตัว</center>
                     </div>
                     <div class="card-body">
-                        <p class="card-text"><center><h3><?php echo $obj[1][1] ?> | <?php echo $obj[1][2] ?></h3></center></p>
+                        <p class="card-text"><center><h3> | </h3></center></p>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                         <center>รางวัลเลขท้ายสามตัว</center>
                     </div>
                     <div class="card-body">
-                        <p class="card-text"><center><h3><?php echo $obj[2][1] ?> | <?php echo $obj[2][2] ?></h3></center></p>
+                        <p class="card-text"><center><h3> | </h3></center></p>
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                         <center>รางวัลเลขท้ายสองตัว</center>
                     </div>
                     <div class="card-body">
-                        <p class="card-text"><center><h3><?php echo $obj[3][1] ?></h3></center></p>
+                        <p class="card-text"><center><h3></h3></center></p>
                     </div>
                 </div>
             </div>
@@ -74,24 +74,24 @@
     <script>
     $.getJSON('https://lottsanook.herokuapp.com/god.php', function(data1) {
         $.getJSON('https://lottsanook.herokuapp.com/?date='+data1[data1.length - 1], function(data2) {
-            randnum = rand(1,6);
+            randnum = Math.floor((Math.random() * 6) + 1);
             if(randnum == 1){
-                numsel = $obj[0][1];
+                numsel = data2[0][1]
             } else if(randnum == 2) {
-                numsel = $obj[1][1];
+                numsel = data2[1][1]
             } else if(randnum == 3) {
-                numsel = $obj[1][2];
+                numsel = data2[1][2]
             } else if(randnum == 4) {
-                numsel = $obj[2][1];
+                numsel = data2[2][1]
             } else if(randnum == 5) {
-                numsel = $obj[2][2];
+                numsel = data2[2][2]
             } else if(randnum == 6) {
-                numsel = $obj[3][1];
+                numsel = data2[3][1]
             }
             $.getJSON('https://lottsanook.herokuapp.com/finddol.php?search=<?php echo $numsel ?>', function(data3) {
                 document.getElementById('numfind').innerText = numsel
                 console.log(data3.length)
-                document.getElementById('numfind').innerText = data3.length
+                document.getElementById('numcount').innerText = data3.length
             });
         });
     });
