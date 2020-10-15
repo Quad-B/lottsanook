@@ -98,28 +98,24 @@
         } else if($randnum == 6) {
             $numsel = $obj[3][1];
         }
-        $json = file_get_contents('https://lottsanook.herokuapp.com/finddol.php?search='.$numsel);
-        $obj = json_decode($json);
-        if(count($obj) > 1) {
         ?>
         <div class="card mt-2">
             <div class="card-header">
                 Fun Fact
             </div>
             <div class="card-body">
-                <p class="card-text"><?php echo $numsel ?> เคยออกมาแล้ว <?php echo count($obj) ?> ครั้ง ในรอบ 13 ปี</p>
+                <p class="card-text"><div id="numfind"></div> เคยออกมาแล้ว <div id="numcount"></div> ครั้ง ในรอบ 13 ปี</p>
             </div>
         </div>
-        <?php
-        }
-        ?>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
     <script>
+    document.getElementById('numfind').innerText = '<?php echo $numsel ?>'
     $.getJSON('https://lottsanook.herokuapp.com/finddol.php?search=<?php echo $numsel ?>', function(data) {
         console.log(data.length)
+        document.getElementById('numfind').innerText = data.length
     });
     </script>
 </body>
