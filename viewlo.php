@@ -15,27 +15,6 @@
     </style>
 </head>
 <body>
-    <?php
-    $json = file_get_contents('https://lottsanook.herokuapp.com/?date='.$lastday);
-    $obj = json_decode($json);
-    $day = substr($lastday, 0,2);
-    $month = substr($lastday, 2,2);
-    $year = substr($lastday, 4,4);
-    switch ($month) {
-      case '01' : $monthtext="มกราคม"; break;
-      case '02' : $monthtext="กุมภาพันธ์"; break;
-      case '03' : $monthtext="มีนาคม"; break;
-      case '04' : $monthtext="เมษายน"; break;
-      case '05' : $monthtext="พฤษภาคม"; break;
-      case '06' : $monthtext="มิถุนายน"; break;
-      case '07' : $monthtext="กรกฎาคม"; break;
-      case '08' : $monthtext="สิงหาคม"; break;
-      case '09' : $monthtext="กันยายน"; break;
-      case '10' : $monthtext="ตุลาคม"; break;
-      case '11' : $monthtext="พฤศจิกายน"; break;
-      case '12' : $monthtext="ธันวาคม"; break;
-    }
-    ?>
     <div class="container">
         <div class="mb-2 mt-2" style="font-size: 10vh"><center><span class="badge bg-secondary">ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ <?php echo (int)$day ?> <?php echo $monthtext ?> <?php echo $year ?></span></center></div>
         <div class="row">
@@ -80,22 +59,6 @@
                 </div>
             </div>
         </div>
-        <?php
-        $randnum = rand(1,6);
-        if($randnum == 1){
-            $numsel = $obj[0][1];
-        } else if($randnum == 2) {
-            $numsel = $obj[1][1];
-        } else if($randnum == 3) {
-            $numsel = $obj[1][2];
-        } else if($randnum == 4) {
-            $numsel = $obj[2][1];
-        } else if($randnum == 5) {
-            $numsel = $obj[2][2];
-        } else if($randnum == 6) {
-            $numsel = $obj[3][1];
-        }
-        ?>
         <div class="card mt-2">
             <div class="card-header">
                 Fun Fact
@@ -109,10 +72,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
     <script>
-    document.getElementById('numfind').innerText = '<?php echo $numsel ?>'
     $.getJSON('https://lottsanook.herokuapp.com/god.php', function(data1) {
-        $.getJSON('https://lottsanook.herokuapp.com/finddol.php?search=<?php echo $numsel ?>'+data1[data1.length - 1], function(data2) {
+        $.getJSON('https://lottsanook.herokuapp.com/?date='+data1[data1.length - 1], function(data2) {
+            randnum = rand(1,6);
+            if(randnum == 1){
+                numsel = $obj[0][1];
+            } else if(randnum == 2) {
+                numsel = $obj[1][1];
+            } else if(randnum == 3) {
+                numsel = $obj[1][2];
+            } else if(randnum == 4) {
+                numsel = $obj[2][1];
+            } else if(randnum == 5) {
+                numsel = $obj[2][2];
+            } else if(randnum == 6) {
+                numsel = $obj[3][1];
+            }
             $.getJSON('https://lottsanook.herokuapp.com/finddol.php?search=<?php echo $numsel ?>', function(data3) {
+                document.getElementById('numfind').innerText = numsel
                 console.log(data3.length)
                 document.getElementById('numfind').innerText = data3.length
             });
