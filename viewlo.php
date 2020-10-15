@@ -74,40 +74,40 @@
     <script>
     $.getJSON('https://lottsanook.herokuapp.com/god.php', function(data1) {
         switch (data1[data1.length - 1].substring(2, 4)) {
-            case 1:
+            case '01':
                 month = "มกราคม";
                 break;
-            case 2:
+            case '02':
                 month = "กุมภาพันธ์";
                 break;
-            case 3:
+            case '03':
                 month = "มีนาคม";
                 break;
-            case 4:
+            case '04':
                 month = "เมษายน";
                 break;
-            case 5:
+            case '05':
                 month = "พฤษภาคม";
                 break;
-            case 6:
+            case '06':
                 month = "มิถุนายน";
                 break;
-            case 7:
+            case '07':
                 month = "กรกฎาคม";
                 break;
-            case 8:
+            case '08':
                 month = "สิงหาคม";
                 break;
-            case 9:
+            case '09':
                 month = "กันยายน";
                 break;
-            case 10:
+            case '10':
                 month = "ตุลาคม";
                 break;
-            case 11:
+            case '11':
                 month = "พฤศจิกายน";
                 break;
-            case 12:
+            case '12':
                 month = "ธันวาคม";
         }
 
