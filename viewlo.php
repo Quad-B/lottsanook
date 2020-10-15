@@ -16,7 +16,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="mb-2 mt-2" style="font-size: 10vh"><center><span class="badge bg-secondary">ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ </span></center></div>
+        <div class="mb-2 mt-2" style="font-size: 10vh"><center><span class="badge bg-secondary">ผลการออกสลากกินแบ่งรัฐบาล ประจำวันที่ <div id="datetext" class="d-inline"></div> </span></center></div>
         <div class="row">
             <div class="col-md-3">
                 <div class="card">
@@ -73,6 +73,46 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
     <script>
     $.getJSON('https://lottsanook.herokuapp.com/god.php', function(data1) {
+        switch (data1[data1.length - 1].substring(2, 4)) {
+            case 1:
+                month = "มกราคม";
+                break;
+            case 2:
+                month = "กุมภาพันธ์";
+                break;
+            case 3:
+                month = "มีนาคม";
+                break;
+            case 4:
+                month = "เมษายน";
+                break;
+            case 5:
+                month = "พฤษภาคม";
+                break;
+            case 6:
+                month = "มิถุนายน";
+                break;
+            case 7:
+                month = "กรกฎาคม";
+                break;
+            case 8:
+                month = "สิงหาคม";
+                break;
+            case 9:
+                month = "กันยายน";
+                break;
+            case 10:
+                month = "ตุลาคม";
+                break;
+            case 11:
+                month = "พฤศจิกายน";
+                break;
+            case 12:
+                month = "ธันวาคม";
+        }
+
+        document.getElementById('datetext').innerText = data1[data1.length - 1].substring(0, 2) + " " + data1[data1.length - 1].substring(2, 4) + " " + data1[data1.length - 1].substring(4, 8)
+
         $.getJSON('https://lottsanook.herokuapp.com/?date='+data1[data1.length - 1], function(data2) {
             document.getElementById('first').innerText = data2[0][1]
             document.getElementById('threefirst').innerText = data2[1][1]+' | '+data2[1][2]
