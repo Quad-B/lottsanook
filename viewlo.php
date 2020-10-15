@@ -64,7 +64,7 @@
                 Fun Fact
             </div>
             <div class="card-body">
-                <p class="card-text d-inline"><div id="numfind"></div> เคยออกมาแล้ว <div id="numcount"></div> ครั้ง ในรอบ 13 ปี</p>
+                <p class="card-text d-inline"><div id="numfind" class="d-inline"></div> เคยออกมาแล้ว <div id="numcount" class="d-inline"></div> ครั้ง ในรอบ 13 ปี</p>
             </div>
         </div>
     </div>
@@ -92,7 +92,7 @@
             } else if(randnum == 6) {
                 numsel = data2[3][1]
             }
-            $.getJSON('https://lottsanook.herokuapp.com/finddol.php?search=<?php echo $numsel ?>', function(data3) {
+            $.getJSON('https://lottsanook.herokuapp.com/finddol.php?search='+numsel, function(data3) {
                 document.getElementById('numfind').innerText = numsel
                 console.log(data3.length)
                 document.getElementById('numcount').innerText = data3.length
