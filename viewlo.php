@@ -24,7 +24,7 @@
                         <center>รางวัลที่1</center>
                     </div>
                     <div class="card-body">
-                        <p class="card-text"><center><h3></h3></center></p>
+                        <p class="card-text"><center><h3 id="first"> </h3></center></p>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                         <center>รางวัลเลขหน้าสามตัว</center>
                     </div>
                     <div class="card-body">
-                        <p class="card-text"><center><h3> | </h3></center></p>
+                        <p class="card-text"><center><h3 id="threefirst"> | </h3></center></p>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                         <center>รางวัลเลขท้ายสามตัว</center>
                     </div>
                     <div class="card-body">
-                        <p class="card-text"><center><h3> | </h3></center></p>
+                        <p class="card-text"><center><h3 id="threeend"> | </h3></center></p>
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                         <center>รางวัลเลขท้ายสองตัว</center>
                     </div>
                     <div class="card-body">
-                        <p class="card-text"><center><h3></h3></center></p>
+                        <p class="card-text"><center><h3 id="twoend"></h3></center></p>
                     </div>
                 </div>
             </div>
@@ -74,6 +74,10 @@
     <script>
     $.getJSON('https://lottsanook.herokuapp.com/god.php', function(data1) {
         $.getJSON('https://lottsanook.herokuapp.com/?date='+data1[data1.length - 1], function(data2) {
+            document.getElementById('first').innerText = data2[0][1]
+            document.getElementById('threefirst').innerText = data2[1][1]+' | '+data2[1][2]
+            document.getElementById('threeend').innerText = data2[2][1]+' | '+data2[2][2]
+            document.getElementById('twoend').innerText = data2[3][1]
             randnum = Math.floor((Math.random() * 6) + 1);
             if(randnum == 1){
                 numsel = data2[0][1]
