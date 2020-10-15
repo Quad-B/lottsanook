@@ -111,7 +111,7 @@
                 month = "ธันวาคม";
         }
 
-        document.getElementById('datetext').innerText = data1[data1.length - 1].substring(0, 2) + " " + data1[data1.length - 1].substring(2, 4) + " " + data1[data1.length - 1].substring(4, 8)
+        document.getElementById('datetext').innerText = parseInt(data1[data1.length - 1].substring(0, 2)) + " " + month + " " + data1[data1.length - 1].substring(4, 8)
 
         $.getJSON('https://lottsanook.herokuapp.com/?date='+data1[data1.length - 1], function(data2) {
             document.getElementById('first').innerText = data2[0][1]
