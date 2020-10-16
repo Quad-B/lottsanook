@@ -55,7 +55,7 @@ date_default_timezone_set("Asia/Bangkok");
     <h2 style="margin-top: 20px;margin-left: 325px;font-size: 60px;">เลขหน้า สามตัว</h2>
     <h2 style="font-size: 100px;margin-left: 260px;"><?php echo $obj[1][1]; ?> | <?php echo $obj[1][2]; ?></h2>
     <h2 style="margin-left: 875px;margin-top: -207px;font-size: 60px;">เลขท้าย สามตัว</h2>
-    <h2 style="font-size: 100px;margin-left: 805px;"><?php echo $obj[2][1]; ?> | <?php echo $obj[2][2]; ?></h2>
+    <h2 style="font-size: 5.96vw;margin-left: 805px;max-width: 475px;"><?php echo $obj[2][1]; ?> | <?php echo $obj[2][2]; ?></h2>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
