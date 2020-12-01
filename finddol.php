@@ -66,6 +66,4 @@ foreach($json_array as $id){
 }
 
 echo json_encode($allwin);
-//echo "<br>";
-//echo $_GET['search'];
 ?>
