@@ -55,7 +55,7 @@ foreach($json_array as $id){
 
     $number_array  = json_decode($res);
     foreach($number_array as $vall){
-        if (in_array($_GET['search'], $vall))
+        if (in_array("084", $vall))
         {
             array_push($allwin,$number_array[0][0]);
         }
