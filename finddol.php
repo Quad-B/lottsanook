@@ -55,13 +55,13 @@ foreach($json_array as $id){
 
     $number_array  = json_decode($res);
     foreach($number_array as $vall){
-        if (in_array($_GET['search'], $vall))
+        if (in_array("".$_GET['search']."", $vall))
         {
             array_push($allwin,$number_array[0][0]);
         }
+
     }
 }
 
 echo json_encode($allwin);
-echo $_GET['search'];
 ?>
