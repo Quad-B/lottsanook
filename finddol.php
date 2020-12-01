@@ -60,6 +60,7 @@ foreach($json_array as $id){
             array_push($allwin,$number_array[0][0]);
         }
         echo json_encode($vall);
+        echo "<br>";
 
     }
 }
