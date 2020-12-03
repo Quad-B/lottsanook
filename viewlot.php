@@ -20,9 +20,13 @@ date_default_timezone_set("Asia/Bangkok");
 <body>
     <?php
 
-    $nowtime = date("dm").date("Y")+543;
-    if (strlen($nowtime) == 7) {
-        $nowtime = sprintf("%08d",date("dm").date("Y")+543);
+    if(isset($_GET['date'])){
+        $nowtime = $_GET['date'];
+    }else{
+        $nowtime = date("dm").date("Y")+543;
+        if (strlen($nowtime) == 7) {
+            $nowtime = sprintf("%08d",date("dm").date("Y")+543);
+        }
     }
 
     $json = file_get_contents('https://lottsanook.herokuapp.com/?date='.$nowtime.'');
