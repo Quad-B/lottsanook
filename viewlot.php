@@ -56,7 +56,7 @@ date_default_timezone_set("Asia/Bangkok");
     <h2 style="font-size: 12.25vw;margin-left: 190px;margin-top: -40px;margin-right: 650px;text-align: center;"><?php echo $obj[0][1]; ?></h2>
     <h2 style="margin-left: 1095px;margin-top: -255px;font-size: 50px;">เลขท้าย สองตัว</h2>
     <h2 style="margin-left: 1120px;font-size: 150px;margin-top: -10px;"><?php echo $obj[3][1]; ?></h2>
-    <h2 style="margin-top: 20px;margin-left: 325px;font-size: 60px;">เลขหน้า สามตัว</h2>
+    <h2 style="margin-top: 25px;margin-left: 325px;font-size: 60px;">เลขหน้า สามตัว</h2>
     <h2 style="font-size: 100px;margin-left: 260px;"><?php echo $obj[1][1]; ?> | <?php echo $obj[1][2]; ?></h2>
     <h2 style="margin-left: 875px;margin-top: -207px;font-size: 60px;">เลขท้าย สามตัว</h2>
     <h2 style="font-size: 5.96vw;margin-left: 805px;max-width: 475px;"><?php echo $obj[2][1]; ?> | <?php echo $obj[2][2]; ?></h2>
