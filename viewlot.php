@@ -51,7 +51,7 @@ date_default_timezone_set("Asia/Bangkok");
     
     ?>
     <h1 style="margin-top: 150px;margin-left: 180px;font-size: 80px;">ผลรางวัลสลากกินแบ่งรัฐบาล</h1>
-    <h2 style="margin-top: 15px;margin-left: 210px;font-size: 50px;">เมื่อประจำวันที่ <?php echo date("j",strtotime(substr($nowtime,2,2)."/".substr($nowtime,0,2)."/".substr($nowtime,4,4))); ?> <?php echo $monthtext; ?> <?php echo date("Y",strtotime(substr($nowtime,2,2)."/".substr($nowtime,0,2)."/".substr($nowtime,4,4))); ?></h2>
+    <h2 style="margin-top: 15px;margin-left: 0px;font-size: 50px;margin-right: 590px;text-align: right;">เมื่อประจำวันที่ <?php echo date("j",strtotime(substr($nowtime,2,2)."/".substr($nowtime,0,2)."/".substr($nowtime,4,4))); ?> <?php echo $monthtext; ?> <?php echo date("Y",strtotime(substr($nowtime,2,2)."/".substr($nowtime,0,2)."/".substr($nowtime,4,4))); ?></h2>
     <h2 style="margin-top: 50px;font-size: 80px;margin-left: 450px;">รางวัลที่ 1</h2>
     <h2 style="font-size: 200px;margin-left: 200px;margin-top: -40px;"><?php echo $obj[0][1]; ?></h2>
     <h2 style="margin-left: 1095px;margin-top: -255px;font-size: 50px;">เลขท้าย สองตัว</h2>
