@@ -14,13 +14,13 @@ foreach($json_array as $id){
         continue;
     }
 
-    /*$selnum = rand(1,10);
+    $selnum = rand(1,10);
 
     if($selnum < 8){
         $fetchURL = "https://quadbproject.000webhostapp.com/forfind/?date=".$id."&from";
-    }else{*/
+    }else{
         $fetchURL = "https://lottsanook.herokuapp.com/?date=".$id."&from";
-    //}
+    }
     
     $channels[$id] = curl_init($fetchURL);
     curl_setopt($channels[$id], CURLOPT_RETURNTRANSFER, true);
