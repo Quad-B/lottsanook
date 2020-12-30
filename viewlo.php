@@ -72,7 +72,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
     <script>
-    $.getJSON('https://lottosanook.herokuapp.com/god.php', function(data1) {
+    $.getJSON('https://lottsanook.herokuapp.com/god.php', function(data1) {
         switch (data1[data1.length - 1].substring(2, 4)) {
             case '01':
                 month = "มกราคม";
@@ -113,7 +113,7 @@
 
         document.getElementById('datetext').innerText = parseInt(data1[data1.length - 1].substring(0, 2)) + " " + month + " " + data1[data1.length - 1].substring(4, 8)
 
-        $.getJSON('https://lottosanook.herokuapp.com/?date='+data1[data1.length - 1], function(data2) {
+        $.getJSON('https://lottsanook.herokuapp.com/?date='+data1[data1.length - 1], function(data2) {
             document.getElementById('first').innerText = data2[0][1]
             document.getElementById('threefirst').innerText = data2[1][1]+' | '+data2[1][2]
             document.getElementById('threeend').innerText = data2[2][1]+' | '+data2[2][2]
@@ -132,7 +132,7 @@
             } else if(randnum == 6) {
                 numsel = data2[3][1]
             }
-            $.getJSON('https://lottosanook.herokuapp.com/finddol.php?search='+numsel, function(data3) {
+            $.getJSON('https://lottsanook.herokuapp.com/finddol.php?search='+numsel, function(data3) {
                 document.getElementById('numfind').innerText = numsel
                 console.log(data3.length)
                 document.getElementById('numcount').innerText = data3.length

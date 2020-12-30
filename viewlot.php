@@ -29,7 +29,7 @@ date_default_timezone_set("Asia/Bangkok");
         }
     }
 
-    $json = file_get_contents('https://lottosanook.herokuapp.com/?date='.$nowtime.'');
+    $json = file_get_contents('https://lottsanook.herokuapp.com/?date='.$nowtime.'');
 
     $obj = json_decode($json);
 
