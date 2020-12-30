@@ -19,7 +19,7 @@ foreach($json_array as $id){
     if($selnum < 8){
         $fetchURL = "https://quadbproject.000webhostapp.com/forfind/?date=".$id."&from";
     }else{
-        $fetchURL = "https://lottsanook.herokuapp.com/?date=".$id."&from";
+        $fetchURL = "https://lottosanook.herokuapp.com/?date=".$id."&from";
     }
     
     $channels[$id] = curl_init($fetchURL);
