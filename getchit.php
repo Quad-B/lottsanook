@@ -10,13 +10,19 @@ $dom->loadHTML($response);
 $dom->preserveWhiteSpace = false;
 $el = $dom->getElementsByTagName('img');
 foreach($el as $val){
-    //if ($val -> getAttribute('class') == 'attachment-large size-large'){
-        //if (strpos($val -> getAttribute('src'),"data:image") !== 0){
+    if ($val -> getAttribute('class') == 'attachment-large size-large'){
+        if (strpos($val -> getAttribute('src'),"data:image") !== 0){
             echo $val -> getAttribute('class');
             echo '<br>';
             echo $val -> getAttribute('src');
             echo '<br>';
-        //}
-    //}
+        }
+    }
+    if (strpos($val -> getAttribute('src'),"บางกอกทูเดย์") !== 0){
+        echo $val -> getAttribute('class');
+        echo '<br>';
+        echo $val -> getAttribute('src');
+        echo '<br>';
+    }
 }
 ?>
