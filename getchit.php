@@ -9,7 +9,9 @@ $dom = new DOMDocument();
 $dom->loadHTML($response);
 $dom->preserveWhiteSpace = false;
 $el = $dom->getElementsByTagName('img');
-foreach($el as $val){
-    echo $val ->nodeValue;
+$xpath = new DOMXPath($el);
+foreach($xpath as $val){
+    $src = $val->evaluate("string(//img/@src)");
+    echo $src;
 }
 ?>
