@@ -12,6 +12,7 @@ $el = $dom->getElementsByTagName('img');
 foreach($el as $val){
     //if ($val -> getAttribute('class') == 'attachment-large size-large litespeed-loaded'){
         echo $val -> getAttribute('src');
+        echo '<br>';
     //}
 }
 ?>
