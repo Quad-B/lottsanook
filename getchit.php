@@ -9,6 +9,7 @@ $dom = new DOMDocument();
 $dom->loadHTML($response);
 $dom->preserveWhiteSpace = false;
 $el = $dom->getElementsByTagName('img');
+$a=array();
 foreach($el as $val){
     if ($val -> getAttribute('class') == 'attachment-large size-large'){
         if (strpos($val -> getAttribute('src'),"data:image") !== 0){
@@ -17,22 +18,29 @@ foreach($el as $val){
             if (strpos($val -> getAttribute('src'),"ไทยรัฐ") !== false){
                 //echo $val -> getAttribute('class');
                 //echo '<br>';
-                echo $val -> getAttribute('src');
-                echo '<br>';
+                //echo $val -> getAttribute('src');
+                //echo '<br>';
+                array_push($a,$val -> getAttribute('src'));
             }
             if (strpos($val -> getAttribute('src'),"เดลินิวส์") !== false){
                 //echo $val -> getAttribute('class');
                 //echo '<br>';
-                echo $val -> getAttribute('src');
-                echo '<br>';
+                //echo $val -> getAttribute('src');
+                //echo '<br>';
+                array_push($a,$val -> getAttribute('src'));
             }
         }
     }
     if (strpos($val -> getAttribute('src'),"บางกอกทูเดย์") !== false){
         //echo $val -> getAttribute('class');
         //echo '<br>';
-        echo $val -> getAttribute('src');
-        echo '<br>';
+        //echo $val -> getAttribute('src');
+        //echo '<br>';
+        array_push($a,$val -> getAttribute('src'));
+    }
+    if(count($a) == 3){
+        echo json_encode($a);
+        exit();
     }
 }
 ?>
