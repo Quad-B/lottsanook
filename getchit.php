@@ -10,6 +10,8 @@ $dom->loadHTML($response);
 $dom->preserveWhiteSpace = false;
 $el = $dom->getElementsByTagName('img');
 foreach($el as $val){
-    echo $val -> getAttribute('class');
+    if ($val -> getAttribute('class') == 'attachment-large size-large litespeed-loaded'){
+        echo $val -> getAttribute('src');
+    }
 }
 ?>
