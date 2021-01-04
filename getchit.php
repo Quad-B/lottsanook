@@ -20,7 +20,7 @@ foreach($el as $val){
     }
     if (strpos($val -> getAttribute('src'),"บางกอกทูเดย์") !== false){
         //echo $val -> getAttribute('class');
-       // echo '<br>';
+        //echo '<br>';
         echo $val -> getAttribute('src');
         echo '<br>';
     }
