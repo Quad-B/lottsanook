@@ -60,8 +60,6 @@ foreach($json_array as $id){
 
     $number_array  = json_decode($res);
     
-    print_r( $number_array , TRUE);
-    
     foreach($number_array as $vall){
         if (in_array(strval($_GET['search']), $vall))
         {
