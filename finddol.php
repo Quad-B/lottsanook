@@ -59,6 +59,9 @@ foreach($json_array as $id){
     $res = curl_multi_getcontent($channels[$id]);
 
     $number_array  = json_decode($res);
+    
+    print_r( $number_array , TRUE);
+    
     foreach($number_array as $vall){
         if (in_array(strval($_GET['search']), $vall))
         {
