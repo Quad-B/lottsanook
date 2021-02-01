@@ -1,9 +1,7 @@
 <?php
-error_reporting(E_ERROR | E_PARSE);
-
 header('Access-Control-Allow-Origin: *');
-$myfile = fopen("cache/test.txt","r") or die("Unable to open file!");
-$json_string = fread($myfile,filesize("cache/test.txt"));
+$myfile = fopen("test.txt","r") or die("Unable to open file!");
+$json_string = fread($myfile,filesize("test.txt"));
 fclose($myfile);
 $json_array  = json_decode($json_string);
 $count = 0;
@@ -31,6 +29,8 @@ foreach($json_array as $id){
     curl_multi_add_handle($mh, $channels[$id]);
 }
 
+$count = 0;
+
 $running = null;
 do {
     curl_multi_exec($mh, $running);
@@ -41,11 +41,14 @@ foreach ($json_array as $id) {
     if($count <= 408){
         $count += 1;
         continue;
+    }else{
+        curl_multi_remove_handle($mh, $channels[$id]);
     }
-    curl_multi_remove_handle($mh, $channels[$id]);
 }
 
 curl_multi_close($mh);
+
+$count = 0;
 
 foreach($json_array as $id){
     if($count <= 408){
