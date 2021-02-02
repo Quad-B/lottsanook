@@ -29,6 +29,8 @@ foreach($json_array as $id){
     curl_multi_add_handle($mh, $channels[$id]);
 }
 
+$count = 0;
+
 $running = null;
 do {
     curl_multi_exec($mh, $running);
@@ -39,11 +41,14 @@ foreach ($json_array as $id) {
     if($count <= 408){
         $count += 1;
         continue;
+    }else{
+        curl_multi_remove_handle($mh, $channels[$id]);
     }
-    curl_multi_remove_handle($mh, $channels[$id]);
 }
 
 curl_multi_close($mh);
+
+$count = 0;
 
 foreach($json_array as $id){
     if($count <= 408){
@@ -54,8 +59,9 @@ foreach($json_array as $id){
     $res = curl_multi_getcontent($channels[$id]);
 
     $number_array  = json_decode($res);
+    
     foreach($number_array as $vall){
-        if (in_array(strval($_GET['search']), $vall))
+        if (in_array(strval($_GET['search']), $vall, true))
         {
             array_push($allwin,$number_array[0][0]);
         }
