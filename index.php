@@ -31,7 +31,7 @@ if(file_exists("cache/".$filename)){
     fclose($myfile);
     exit();
 }
-if ($year == date('Y')+542) {
+if ($year == date('Y')+543) {
     if (isset($_GET['from'])) {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://lottsanook.herokuapp.com/index2.php?date='.$_GET['date'].'&from');
