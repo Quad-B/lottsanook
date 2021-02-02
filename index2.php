@@ -18,6 +18,11 @@ switch ($month){
     case '11' : $monthtext="พฤศจิกายน"; break;
     case '12' : $monthtext="ธันวาคม"; break;
 }
+if (isset($_GET['fresh'])) {
+    if(file_exists("cache/".$filename)){
+        unlink("cache/".$filename);
+    }
+}
 if(file_exists("cache/".$filename)){
     $myfile = fopen("cache/".$filename,"r") or die("Unable to open file!");
     $readwow = fread($myfile,filesize("cache/".$filename));
