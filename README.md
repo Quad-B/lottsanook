@@ -14,8 +14,6 @@
 
 * [List วันหวยออกปีนั้นๆ](https://lottsanook.herokuapp.com/gdpy.php?year=2555)
 
-* [List วันหวยออกปีนั้นๆ](https://lottsanook.herokuapp.com/gdpy.php?year=2555)
-
 * [ดึงรางวัลที่หนึ่ง สามตัวหน้า สามตัวท้าย และ สองตัว](https://lottsanook.herokuapp.com/getchit.php)
 
 * [เช็คหวยออกทั้งหมดว่ากี่ครั้ง แบบง่าย (ตั้งแต่ 2543 ถึง 2563)](https://lottsanook.herokuapp.com/finddol.php?search=81)
