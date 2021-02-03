@@ -6,13 +6,17 @@
 
 * [เช็คหวยออกวันนั้นๆ (สำรอง)](https://lottsanook.herokuapp.com/index2.php?date=01102563) (ดึงมาจาก sanook.com เท่านั้น สามารถดูได้เฉพาะตั้งแต่ปี 2550 ถึง ปัจจุปัน)
 
-* [listวันหวยออกทั้งหมด](https://lottsanook.herokuapp.com/cache/test.txt)
+* [List วันหวยออกทั้งหมด](https://lottsanook.herokuapp.com/cache/test.txt)
 
-* [listวันหวยออกทั้งหมด (ไฟล์เบื้องต้นใน Github เมื่อเซิฟเวอร์มีปัญหา)](https://raw.githubusercontent.com/Quad-B/lottsanook/main/cache/test.txt)
+* [List วันหวยออกทั้งหมด (ไฟล์เบื้องต้นใน Github เมื่อเซิฟเวอร์มีปัญหา)](https://raw.githubusercontent.com/Quad-B/lottsanook/main/cache/test.txt)
 
-* [listวันหวยออกทั้งหมด (PHP Content)](https://lottsanook.herokuapp.com/god.php) (Update ทุกวัน)
+* [List วันหวยออกทั้งหมด (PHP Content)](https://lottsanook.herokuapp.com/god.php) (Update ทุกวัน)
 
-* [listวันหวยออกปีนั้นๆ](https://lottsanook.herokuapp.com/gdpy.php?year=2555)
+* [List วันหวยออกปีนั้นๆ](https://lottsanook.herokuapp.com/gdpy.php?year=2555)
+
+* [List วันหวยออกปีนั้นๆ](https://lottsanook.herokuapp.com/gdpy.php?year=2555)
+
+* [ดึงรางวัลที่หนึ่ง สามตัวหน้า สามตัวท้าย และ สองตัว](https://lottsanook.herokuapp.com/getchit.php)
 
 * [เช็คหวยออกทั้งหมดว่ากี่ครั้ง แบบง่าย (ตั้งแต่ 2543 ถึง 2563)](https://lottsanook.herokuapp.com/finddol.php?search=81)
 
