@@ -9,15 +9,6 @@ date_default_timezone_set("Asia/Bangkok");
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Mitr', sans-serif;
-            background-image: url(fbbg.png);
-            color: white;
-        }
-    </style>
-</head>
-<body>
     <?php
 
     if(isset($_GET['date'])){
@@ -50,6 +41,19 @@ date_default_timezone_set("Asia/Bangkok");
     }
     
     ?>
+    <style>
+        body {
+            font-family: 'Mitr', sans-serif;
+            <? if(count($obj[2]) == 5) { ?>
+                background-image: url(fbbg_older.png);
+            <? } else { ?>
+                background-image: url(fbbg.png);
+            <? } ?>
+            color: white;
+        }
+    </style>
+</head>
+<body>
     <h1 style="margin-top: 150px;margin-left: 180px;font-size: 80px;">ผลรางวัลสลากกินแบ่งรัฐบาล</h1>
     <h2 style="margin-top: 15px;margin-left: 0px;font-size: 50px;margin-right: 590px;text-align: right;">เมื่อประจำวันที่ <?php echo date("j",strtotime(substr($nowtime,2,2)."/".substr($nowtime,0,2)."/".substr($nowtime,4,4))); ?> <?php echo $monthtext; ?> <?php echo date("Y",strtotime(substr($nowtime,2,2)."/".substr($nowtime,0,2)."/".substr($nowtime,4,4))); ?></h2>
     <h2 style="margin-top: 50px;font-size: 80px;margin-left: 450px;">รางวัลที่ 1</h2>
@@ -59,7 +63,11 @@ date_default_timezone_set("Asia/Bangkok");
     <h2 style="margin-top: 25px;margin-left: 325px;font-size: 60px;">เลขหน้า สามตัว</h2>
     <h2 style="font-size: 100px;margin-left: 260px;"><?php echo $obj[1][1]; ?> | <?php echo $obj[1][2]; ?></h2>
     <h2 style="margin-left: 875px;margin-top: -207px;font-size: 60px;">เลขท้าย สามตัว</h2>
-    <h2 style="font-size: 5.96vw;margin-left: 805px;max-width: 475px;"><?php echo $obj[2][1]; ?> | <?php echo $obj[2][2]; ?></h2>
+    <? if(count($obj[2]) == 5) { ?>
+        <h2 style="font-size: 5.96vw;margin-left: 805px;max-width: 475px;"><?php echo $obj[1][3]; ?> | <?php echo $obj[1][4]; ?></h2>
+    <? } else { ?>
+        <h2 style="font-size: 5.96vw;margin-left: 805px;max-width: 475px;"><?php echo $obj[2][1]; ?> | <?php echo $obj[2][2]; ?></h2>
+    <? } ?>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
