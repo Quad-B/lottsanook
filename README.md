@@ -2,9 +2,9 @@
 เป็นการดึงผลสลากกินแบ่งรัฐบาลจากเว็บ sanook.com และ myhora.com มาเก็บไว้เป็นแบบ json โดยใช้ PHP ในการเขียน
 
 # ลิงค์ต่างๆ สำหรับผู้พัฒนา
-* [เช็คหวยออกวันนั้นๆ](https://lottsanook.herokuapp.com/?date=01102563) (ใส่ &from หลังลิงค์เพื่อเปลี่ยน array แถวแรกอันดับแรก เป็นวันที่ในการหวยออก หรือ ใส่ &fresh เพื่อให้หวย Update อยู่ตลอดเวลา)
+* [เช็คหวยออกวันนั้นๆ](https://lottsanook.herokuapp.com/?date=01102563) (ใส่ &from หลังลิงค์เพื่อเปลี่ยน array แถวแรกอันดับแรกเป็นวันที่ในการหวยออก หรือ ใส่ &fresh เพื่อให้หวย Update อยู่ตลอดเวลา)
 
-* [เช็คหวยออกวันนั้นๆ (สำรอง)](https://lottsanook.herokuapp.com/index2.php?date=01102563) (ใส่ &from หลังลิงค์เพื่อเปลี่ยน array แถวแรกอันดับแรก เป็นวันที่ในการหวยออก หรือ ใส่ &fresh เพื่อให้หวย Update อยู่ตลอดเวลา)
+* [เช็คหวยออกวันนั้นๆ (สำรอง)](https://lottsanook.herokuapp.com/index2.php?date=01102563) (เช็คได้แค่ 10 ปี ย้อนหลัง)
 
 * [List วันหวยออกทั้งหมด (PHP Content)](https://lottsanook.herokuapp.com/god.php) (Update ตลอดเมื่อเรียกใช้)
 
@@ -20,8 +20,8 @@
 
 * [ดึงรูปภาพหวย/สลากกินแบ่งฯ เลขเด็ดจากเจ้าต่างๆ](https://lottsanook.herokuapp.com/getchit.php)
 
-* [หน้าแสดงผลหวย ขนาด 1600x1066](http://lottsanook.herokuapp.com/viewlot.php?date=01022564) (สามารถกำหนดวันได้ โดยเปลี่ยนวันเดือนปี หลังจาก date=)
+* [หน้าแสดงผลหวย ขนาด 1600x1066](http://lottsanook.herokuapp.com/viewlot.php?date=01022563) (สามารถกำหนดวันได้ โดยเปลี่ยนวันเดือนปี หลัง date=)
 
-* [หน้าแสดงผลหวยและราคาทองวันนี้ ขนาด 1600x1066](https://lottsanook.herokuapp.com/viewlot_gold.php) (ทำงานสมูบรณ์เมื่อวันหวยออกเท่านั้น)
+* [หน้าแสดงผลหวยและราคาทองวันนี้ ขนาด 1600x1066](https://lottsanook.herokuapp.com/viewlot_gold.php) (ทำงานสมูบรณ์เมื่อวันหวยออกเท่านั้น หรือ ใส่ ?test เพื่อเป็นการทดสอบ)
 
 * [หน้าแสดงผลหวยวันนี้ ขนาด 851x315](https://lottsanook.herokuapp.com/viewlo.php) (ประมวลผลนานแต่ใช้งานได้)
