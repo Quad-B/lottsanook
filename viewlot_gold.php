@@ -25,7 +25,7 @@ date_default_timezone_set("Asia/Bangkok");
         $nowtime = sprintf("%08d",date("dm").date("Y")+543);
     }
 
-    $json = file_get_contents('https://lottsanook.herokuapp.com/?date='.$nowtime.'');
+    $json = file_get_contents('https://lottsanook.herokuapp.com/?date=01022564');
 
     $obj = json_decode($json);
 
@@ -47,7 +47,7 @@ date_default_timezone_set("Asia/Bangkok");
 
     $json_gold = file_get_contents('https://thai-gold-api.herokuapp.com/latest');
 
-    $obj_gold = json_decode($json_gold);
+    $obj_gold = json_decode($json_gold, true);
     
     ?>
     <h1 style="margin-top: 15px;margin-left: 5px;font-size: 65px;">ผลรางวัลสลากกินแบ่งรัฐบาล</h1>
@@ -62,9 +62,9 @@ date_default_timezone_set("Asia/Bangkok");
     <h2 style="margin-left: 300px;font-size: 150px;margin-top: 22px;position: fixed;"><?php echo $obj[3][1]; ?></h2>
     <h1 style="margin-top: -765px;margin-left: 1010px;font-size: 65px;position: fixed;">ราคาทองวันนี้</h1>
     <h1 style="margin-top: -525px;margin-left: 820px;font-size: 65px;position: fixed;">ทองคำ</h1>
-    <h1 style="margin-top: -530px;margin-left: 825px;font-size: 65px;position: fixed;"><?php echo $obj_gold['response']['price']['gold']['buy']; ?></h1>
+    <h1 style="margin-top: -390px;margin-left: 850px;font-size: 65px;position: fixed;"><?php echo $obj_gold['response']['price']['gold']['buy']; ?> | <?php echo $obj_gold['response']['price']['gold']['sell']; ?></h1>
     <h1 style="margin-top: -250px;margin-left: 800px;font-size: 60px;position: fixed;background-color: gold;padding-top: 7px;padding-left: 5px;padding-right: 5px;">ทองคำแท่ง</h1>
-    <h1 style="margin-top: -250px;margin-left: 800px;font-size: 60px;position: fixed;background-color: gold;padding-top: 7px;"></h1>
+    <h1 style="margin-top: -110px;margin-left: 827px;font-size: 65px;position: fixed;"><?php echo $obj_gold['response']['price']['gold_bar']['buy']; ?> | <?php echo $obj_gold['response']['price']['gold_bar']['sell']; ?></h1>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
