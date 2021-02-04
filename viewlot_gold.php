@@ -25,7 +25,7 @@ date_default_timezone_set("Asia/Bangkok");
         $nowtime = sprintf("%08d",date("dm").date("Y")+543);
     }
 
-    $json = file_get_contents('https://lottsanook.herokuapp.com/?date=01022564');
+    $json = file_get_contents('https://lottsanook.herokuapp.com/?date='.$nowtime.'');
 
     $obj = json_decode($json);
 
