@@ -61,6 +61,8 @@ date_default_timezone_set("Asia/Bangkok");
     <h2 style="margin-top: 25px;font-size: 30px;position: fixed;">เลขท้าย สองตัว</h2>
     <h2 style="margin-left: 300px;font-size: 150px;margin-top: 22px;position: fixed;"><?php echo $obj[3][1]; ?></h2>
     <h1 style="margin-top: 15px;margin-left: 900px;font-size: 65px;position: fixed;">ราคาทองวันนี้</h1>
+    <h1 style="margin-top: 300px;margin-left: 900px;font-size: 65px;position: fixed;">ทองคำ</h1>
+    <h1 style="margin-top: 600px;margin-left: 900px;font-size: 65px;position: fixed;">ทองคำแท่ง</h1>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
