@@ -6,9 +6,9 @@
 
 * [เช็คหวยออกวันนั้นๆ (สำรอง)](https://lottsanook.herokuapp.com/index2.php?date=01102563) (ใส่ &from หลังลิงค์เพื่อเปลี่ยน array แถวแรกอันดับแรก เป็นวันที่ในการหวยออก หรือ ใส่ &fresh เพื่อให้หวย Update อยู่ตลอดเวลา)
 
-* [List วันหวยออกทั้งหมด (PHP Content)](https://lottsanook.herokuapp.com/god.php) (Update เวลา เมื่อเข้า)
+* [List วันหวยออกทั้งหมด (PHP Content)](https://lottsanook.herokuapp.com/god.php) (Update ตลอดเมื่อเรียกใช้)
 
-* [List วันหวยออกทั้งหมด (TXT File)](https://lottsanook.herokuapp.com/cache/test.txt) (Update หลังจากเข้า god.php)
+* [List วันหวยออกทั้งหมด (TXT File)](https://lottsanook.herokuapp.com/cache/test.txt) (Update หลังจากมีการเรียกใช้ god.php)
 
 * [List วันหวยออกทั้งหมด (TXT File)](https://raw.githubusercontent.com/Quad-B/lottsanook/main/cache/test.txt) (ไฟล์เบื้องต้นใน Github เมื่อเซิฟเวอร์มีปัญหา)
 
