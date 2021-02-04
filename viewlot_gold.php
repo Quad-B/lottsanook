@@ -54,12 +54,12 @@ date_default_timezone_set("Asia/Bangkok");
     <h2 style="margin-top: 40px;margin-left: 0px;font-size: 50px;margin-right: 450px;text-align: right;">เมื่อประจำวันที่ <?php echo date("j",strtotime(substr($nowtime,2,2)."/".substr($nowtime,0,2)."/".substr($nowtime,4,4))); ?> <?php echo $monthtext; ?> <?php echo date("Y",strtotime(substr($nowtime,2,2)."/".substr($nowtime,0,2)."/".substr($nowtime,4,4))); ?></h2>
     <h2 style="margin-top: 63px;font-size: 30px;margin-left: 0px;">รางวัลที่ 1</h2>
     <h2 style="font-size: 8vw;margin-left: 0px;margin-top: -35px;margin-right: 800px;text-align: center;"><?php echo $obj[0][1]; ?></h2>
-    <h2 style="margin-top: 25px;margin-left: 325px;font-size: 60px;">เลขหน้า สามตัว</h2>
-    <h2 style="font-size: 100px;margin-left: 260px;"><?php echo $obj[1][1]; ?> | <?php echo $obj[1][2]; ?></h2>
-    <h2 style="margin-left: 0px;font-size: 30px;margin-top: 30px;">เลขท้าย สามตัว</h2>
+    <h2 style="margin-top: 20px;font-size: 30px;">เลขหน้า สามตัว</h2>
+    <h2 style="font-size: 100px;margin-left: 147px;margin-top: -15px;"><?php echo $obj[1][1]; ?> | <?php echo $obj[1][2]; ?></h2>
+    <h2 style="margin-left: 0px;font-size: 30px;margin-top: 37px;">เลขท้าย สามตัว</h2>
     <h2 style="font-size: 5.96vw;margin-left: 180px;max-width: 475px;margin-top: -10px;"><?php echo $obj[2][1]; ?> | <?php echo $obj[2][2]; ?></h2>
-    <h2 style="margin-left: 1095px;margin-top: -255px;font-size: 50px;">เลขท้าย สองตัว</h2>
-    <h2 style="margin-left: 1120px;font-size: 150px;margin-top: -10px;"><?php echo $obj[3][1]; ?></h2>
+    <h2 style="margin-top: 25px;font-size: 30px;position: fixed;">เลขท้าย สองตัว</h2>
+    <h2 style="margin-left: 300px;font-size: 150px;margin-top: 22px;position: fixed;"><?php echo $obj[3][1]; ?></h2>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
