@@ -61,7 +61,7 @@ date_default_timezone_set("Asia/Bangkok");
     <h2 style="margin-left: 1095px;margin-top: -255px;font-size: 50px;">เลขท้าย สองตัว</h2>
     <h2 style="margin-left: 1120px;font-size: 150px;margin-top: -10px;"><?php echo $obj[3][1]; ?></h2>
     <? if(count($obj[2]) == 5) { ?>
-        <h2 style="margin-top: 25px;margin-left: 500px;font-size: 60px;">เลขท้าย สามตัว</h2>
+        <h2 style="margin-top: 25px;margin-left: 525px;font-size: 60px;">เลขท้าย สามตัว</h2>
         <h2 style="font-size: 100px;margin-left: 260px;"><?php echo $obj[2][1]; ?> | <?php echo $obj[2][2]; ?> | <?php echo $obj[2][3]; ?> | <?php echo $obj[2][4]; ?></h2>
     <? } else { ?>
         <h2 style="margin-top: 25px;margin-left: 325px;font-size: 60px;">เลขหน้า สามตัว</h2>
