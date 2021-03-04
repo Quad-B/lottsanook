@@ -44,7 +44,7 @@ date_default_timezone_set("Asia/Bangkok");
     <style>
         body {
             font-family: 'Mitr', sans-serif;
-            <? if(count($obj[2]) == 5 || $obj == "" ) { ?>
+            <? if(count($obj[2]) == 5 || $obj == "") { ?>
                 background-image: url(fbbg_older.png);
             <? } else { ?>
                 background-image: url(fbbg.png);
