@@ -44,10 +44,14 @@ date_default_timezone_set("Asia/Bangkok");
     <style>
         body {
             font-family: 'Mitr', sans-serif;
-            <? if($obj == "") { ?>
-                background-image: url(fbbg_older.png);
+            <? if($obj != ""){ ?>
+                <? if(count($obj[2]) == 5) { ?>
+                    background-image: url(fbbg_older.png);
+                <? } else { ?>
+                    background-image: url(fbbg.png);
+                <? } ?>
             <? } else { ?>
-                background-image: url(fbbg.png);
+                background-image: url(fbbg_older.png);
             <? } ?>
             color: white;
         }
