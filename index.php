@@ -36,7 +36,7 @@ if(file_exists("cache/".$filename)){
     fclose($myfile);
     exit();
 }
-if ($year == date('Y')+543) {
+/*if ($year == date('Y')+543) {
     if (isset($_GET['from'])) {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://lottsanook.herokuapp.com/index2.php?date='.$_GET['date'].'&from');
@@ -44,7 +44,6 @@ if ($year == date('Y')+543) {
         $response = curl_exec($ch);
         curl_close($ch);
         echo $response;
-        //header('Location: https://lottsanook.herokuapp.com/index2.php?date='.$_GET['date'].'&from');
     }else{
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://lottsanook.herokuapp.com/index2.php?date='.$_GET['date']);
@@ -52,10 +51,9 @@ if ($year == date('Y')+543) {
         $response = curl_exec($ch);
         curl_close($ch);
         echo $response;
-        //header('Location: https://lottsanook.herokuapp.com/index2.php?date='.$_GET['date']);
     }
     exit();
-}
+}*/
 $url = "https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%87%E0%B8%A7%E0%B8%94-".$day."-".urlencode($monthtext)."-".$year.".aspx";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
@@ -104,8 +102,8 @@ if(count($threefirst) == 1){
 $lottapi[2][1] = preg_replace('/\xc2\xa0/', '', $threeend[0]);
 $lottapi[2][2] = preg_replace('/\xc2\xa0/', '', $threeend[1]);
 $lottapi[3][1] = $bigel[5] ->nodeValue;
-$lottapi[4][1] = $lottapi[0][1]-1;
-$lottapi[4][2] = $lottapi[0][1]+1;
+$lottapi[4][1] = "". $lottapi[0][1]-1 ."";
+$lottapi[4][2] = "". $lottapi[0][1]+1 ."";
 foreach($el as $val){
     if($val -> getAttribute('class') == 'ltr_dc ltr-fx ltr_c20'){
         if ($minwave < $maxwave) {
