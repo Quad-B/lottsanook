@@ -42,6 +42,8 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $response = curl_exec($ch);
 curl_close($ch);
 $dom = new DOMDocument();
+echo $response;
+exit();
 $dom->loadHTML($response);
 $dom->preserveWhiteSpace = false;
 $bigel = $dom->getElementsByTagName('strong');
