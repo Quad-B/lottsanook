@@ -34,15 +34,15 @@ foreach($lot_array as $x => $val) {
             }
             if($x == 1){
                 //echo "111111";
-                $result .= "111111";
+                $result .= "333000";
             }
             if($x == 2){
                 //echo "111111";
-                $result .= "111111";
+                $result .= "000333";
             }
             if($x == 3){
                 //echo "111111";
-                $result .= "111111";
+                $result .= "000022";
             }
             if($x == 4){
                 //echo "111112";
