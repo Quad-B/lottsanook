@@ -26,8 +26,9 @@ $lot_array  = json_decode($yourlot);
 foreach($lot_array as $x => $val) {
     foreach($val as $y => $superval) {
         //echo "$x and $y = $val<br>";
-        if($superval == $_GET['search'] && $y != 0){
-            echo "hee";
+        if(/*$superval == $_GET['search'] &&*/ $y != 0){
+            //echo "hee";
+            echo $superval;
         }
         //echo $superval;
     }
