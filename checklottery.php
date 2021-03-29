@@ -40,6 +40,10 @@ foreach($lot_array as $x => $val) {
                 //echo "111111";
                 $result .= "111111";
             }
+            if($x == 3){
+                //echo "111111";
+                $result .= "111111";
+            }
             if($x == 4){
                 //echo "111112";
                 $result .= "111112";
