@@ -1,5 +1,9 @@
 <?php
 header('Access-Control-Allow-Origin: *');
+if(strlen($_GET['search']) != 6){
+    echo "error";
+    exit();
+}
 if(isset($_GET['by'])){
     $date=$_GET['by'];
 }
