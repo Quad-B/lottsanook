@@ -15,5 +15,8 @@ if(file_exists("cache/".$date.".txt")){
     $yourlot = fread($myfile,filesize("cache/".$date.".txt"));
 }
 $lot_array  = json_decode($yourlot);
-echo $yourlot;
+//echo $yourlot;
+if($lot_array[0][1] == "890422"){
+    echo "hee";
+}
 ?>
