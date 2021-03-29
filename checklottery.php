@@ -20,7 +20,13 @@ if(file_exists("cache/".$date.".txt")){
 }
 $lot_array  = json_decode($yourlot);
 //echo $yourlot;
-if($lot_array[0][1] == $_GET['search']){
+/*if($lot_array[0][1] == $_GET['search']){
     echo "hee";
+}*/
+foreach($lot_array as $x => $val) {
+    echo "$x = $val<br>";
+    /*if($lot_array[0][1] == $_GET['search']){
+        echo "hee";
+    }*/
 }
 ?>
