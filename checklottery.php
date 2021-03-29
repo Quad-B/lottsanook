@@ -28,7 +28,7 @@ foreach($lot_array as $x => $val) {
         //echo "$x and $y = $val<br>";
         if($superval == $_GET['search'] && $y != 0){
             //echo "hee";
-            if($x == 1){
+            if($x == 0){
                 echo "111111";
             }
             echo $superval;
