@@ -29,9 +29,30 @@ foreach($lot_array as $x => $val) {
         if($superval == $_GET['search'] && $y != 0){
             //echo "hee";
             if($x == 0){
-                echo "111111";
+                //echo "111111";
+                $result .= "111111";
             }
-            echo $superval;
+            if($x == 4){
+                //echo "111112";
+                $result .= "111112";
+            }
+            if($x == 5){
+                //echo "222222";
+                $result .= "222222";
+            }
+            if($x == 6){
+                //echo "333333";
+                $result .= "333333";
+            }
+            if($x == 7){
+                //echo "444444";
+                $result .= "444444";
+            }
+            if($x == 8){
+                //echo "555555";
+                $result .= "555555";
+            }
+            //echo $superval;
         }
         //echo $superval;
     }
@@ -39,4 +60,5 @@ foreach($lot_array as $x => $val) {
         echo "hee";
     }*/
 }
+echo $result;
 ?>
