@@ -1,6 +1,6 @@
 <?php
 date_default_timezone_set("Asia/Bangkok");
-header('Content-Type: image/jpeg');
+//header('Content-Type: image/jpeg');
 ?>
 <!DOCTYPE html>
 <html lang="en">
