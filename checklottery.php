@@ -73,5 +73,5 @@ foreach($lot_array as $x => $val) {
     }*/
 }
 //echo $result;
-echo substr($result, 1);
+echo substr($result, 0, -1);
 ?>
