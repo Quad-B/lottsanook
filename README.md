@@ -6,7 +6,7 @@
 
 * [เช็คหวยออกวันนั้นๆ (สำรอง)](https://lottsanook.herokuapp.com/index2.php?date=01102563) (เช็คได้แค่ 10 ปี ย้อนหลัง)
 
-* [ตรวจหวย](https://lottsanook.herokuapp.com/checklottery.php?by=01032564&search=835573) (เช็คได้แค่ 10 ปี ย้อนหลัง)
+* [ตรวจหวย](https://lottsanook.herokuapp.com/checklottery.php?by=01032564&search=835573)
 
 * [List วันหวยออกทั้งหมด (PHP Content)](https://lottsanook.herokuapp.com/god.php) (Update ตลอดเมื่อเรียกใช้)
 
