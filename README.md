@@ -27,3 +27,14 @@
 * [หน้าแสดงผลหวยและราคาทองวันนี้ ขนาด 1600x1066](https://lottsanook.herokuapp.com/viewlot_gold.php) (ทำงานสมูบรณ์เมื่อวันหวยออกเท่านั้น หรือ ใส่ ?test เพื่อเป็นการทดสอบ)
 
 * [หน้าแสดงผลหวยวันนี้ ขนาด 851x315](https://lottsanook.herokuapp.com/viewlo.php) (ประมวลผลนานแต่ใช้งานได้)
+
+# ลิงค์ต่างๆ สำหรับผู้พัฒนา (บน Vercel)
+* [เช็คหวยออกวันนั้นๆ](https://lottsanook.vercel.app/api/?date=01102563) (ใส่ &from หลังลิงค์เพื่อเปลี่ยน array แถวแรกอันดับแรกเป็นวันที่ในการหวยออก หรือ ใส่ &fresh เพื่อให้หวย Update อยู่ตลอดเวลา)
+
+* [เช็คหวยออกวันนั้นๆ (สำรอง)](https://lottsanook.vercel.app/api/index2.php?date=01102563) (เช็คได้แค่ 10 ปี ย้อนหลัง)
+
+* [ตรวจหวย](https://lottsanook.vercel.app/api/checklottery.php?by=01032564&search=835573)
+
+* [List วันหวยออกของปีนั้นๆ](https://lottsanook.vercel.app/api/gdpy.php?year=2555)
+
+* [ดึงรูปภาพหวย/สลากกินแบ่งฯ เลขเด็ดจากเจ้าต่างๆ](https://lottsanook.vercel.app/api/getchit.php)
