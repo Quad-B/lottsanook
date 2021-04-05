@@ -38,3 +38,5 @@
 * [List วันหวยออกของปีนั้นๆ](https://lottsanook.vercel.app/api/gdpy.php?year=2555)
 
 * [ดึงรูปภาพหวย/สลากกินแบ่งฯ เลขเด็ดจากเจ้าต่างๆ](https://lottsanook.vercel.app/api/getchit.php)
+
+* [ดึงรางวัลที่หนึ่ง สามตัวหน้า สามตัวท้าย และ สองตัว งวดล่าสุด](https://lottsanook.vercel.app/api/lastlot.php)
