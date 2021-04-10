@@ -1,6 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-$url = "https://lottsanook.herokuapp.com/?date=16042564";
+$url = "https://lottsanook.herokuapp.com/?date=".date("dmY");
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
