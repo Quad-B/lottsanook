@@ -22,6 +22,8 @@
 
 * [ดึงรูปภาพหวย/สลากกินแบ่งฯ เลขเด็ดจากเจ้าต่างๆ](https://lottsanook.herokuapp.com/getchit.php)
 
+* [เช็คว่าวันนี้หวย/สลากกินแบ่งฯ ออกหรือไม่](https://lottsanook.herokuapp.com/reto.php) (yes คือ ใช่ / no คือ ไม่)
+
 * [หน้าแสดงผลหวย ขนาด 1600x1066](http://lottsanook.herokuapp.com/viewlot.php?date=01022563) (สามารถกำหนดวันได้ โดยเปลี่ยนวันเดือนปี หลัง date=)
 
 * [หน้าแสดงผลหวยและราคาทองวันนี้ ขนาด 1600x1066](https://lottsanook.herokuapp.com/viewlot_gold.php) (ทำงานสมูบรณ์เมื่อวันหวยออกเท่านั้น หรือ ใส่ ?test เพื่อเป็นการทดสอบ)
@@ -40,3 +42,5 @@
 * [ดึงรูปภาพหวย/สลากกินแบ่งฯ เลขเด็ดจากเจ้าต่างๆ](https://lottsanook.vercel.app/api/getchit.php)
 
 * [ดึงรางวัลที่หนึ่ง สามตัวหน้า สามตัวท้าย และ สองตัว งวดล่าสุด](https://lottsanook.vercel.app/api/lastlot.php)
+
+* [เช็คว่าวันนี้หวย/สลากกินแบ่งฯ ออกหรือไม่](https://lottsanook.vercel.app/api/reto.php) (yes คือ ใช่ / no คือ ไม่)
