@@ -49,7 +49,11 @@ date_default_timezone_set("Asia/Bangkok");
                 <? if(count($obj[2]) == 5) { ?>
                     background-image: url(fbbg_older.png);
                 <? } else { ?>
+                    <? if(isset($_GET['rm'])) { ?>
+                        background-image: url(fbbg_rmbn.png);
+                    <? } else { ?>
                     background-image: url(fbbg.png);
+                    <? } ?>
                 <? } ?>
             <? } else { ?>
                 background-image: url(fbbg_older.png);
