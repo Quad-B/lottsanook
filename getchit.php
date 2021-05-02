@@ -1,6 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-$url = "https://www.lottovip.co/%E0%B8%AB%E0%B8%A7%E0%B8%A2%E0%B9%84%E0%B8%97%E0%B8%A2%E0%B8%A3%E0%B8%B1%E0%B8%90/";
+$url = "https://www.huayvips.com/luckynumber/";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -16,14 +16,14 @@ foreach($el as $val){
         //if (strpos($val -> getAttribute('src'),"data:image") !== 0){
             //echo $val -> getAttribute('class');
             //echo '<br>';
-            if (strpos($val -> getAttribute('src'),"ไทยรัฐ") !== false){
+            if (strpos($val -> getAttribute('src'),"TL") !== false){
                 //echo $val -> getAttribute('class');
                 //echo '<br>';
                 //echo $val -> getAttribute('src');
                 //echo '<br>';
                 array_push($a,$val -> getAttribute('src'));
             }
-            if (strpos($val -> getAttribute('src'),"เดลินิวส์") !== false){
+            if (strpos($val -> getAttribute('src'),"DN") !== false){
                 //echo $val -> getAttribute('class');
                 //echo '<br>';
                 //echo $val -> getAttribute('src');
@@ -32,7 +32,7 @@ foreach($el as $val){
             }
         //}
     //}
-    if (strpos($val -> getAttribute('src'),"บางกอกทูเดย์") !== false){
+    if (strpos($val -> getAttribute('src'),"BT") !== false){
         //echo $val -> getAttribute('class');
         //echo '<br>';
         //echo $val -> getAttribute('src');
