@@ -28,6 +28,4 @@
 
 # ลิงค์ API สำหรับผู้พัฒนา (ยามจำเป็น)
 
-* [List วันหวยออกทั้งหมด (TXT File)](https://raw.githubusercontent.com/Quad-B/lottsanook/main/cache/test.txt) (ไฟล์เบื้องต้นใน Github เมื่อเซิฟเวอร์มีปัญหา)
-
-* [List วันหวยออกทั้งหมด (TXT File)](https://lottsanook.herokuapp.com/cache/test.txt) (Update หลังจากมีการเรียกใช้ god.php)
+* [List วันหวยออกทั้งหมด (TXT File)]() ไฟล์เบื้องต้นใน Github เมื่อเซิฟเวอร์มีปัญหา หรือ ไฟล์หลังจากเรียกใช้ god.php [[Github](https://raw.githubusercontent.com/Quad-B/lottsanook/main/cache/test.txt)/[TXT File](https://lottsanook.herokuapp.com/cache/test.txt)]
