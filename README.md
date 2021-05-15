@@ -10,10 +10,6 @@
 
 * [List วันหวยออกทั้งหมด (PHP Content)](https://lottsanook.herokuapp.com/god.php) (Update ตลอดเมื่อเรียกใช้)
 
-* [List วันหวยออกทั้งหมด (TXT File)](https://lottsanook.herokuapp.com/cache/test.txt) (Update หลังจากมีการเรียกใช้ god.php)
-
-* [List วันหวยออกทั้งหมด (TXT File)](https://raw.githubusercontent.com/Quad-B/lottsanook/main/cache/test.txt) (ไฟล์เบื้องต้นใน Github เมื่อเซิฟเวอร์มีปัญหา)
-
 * List วันหวยออกของปีนั้นๆ [[heroku](https://lottsanook.herokuapp.com/gdpy.php?year=2555)/[vercel](https://lottsanook.vercel.app/api/gdpy.php?year=2555)]
 
 * ดึงรางวัลที่หนึ่ง สามตัวหน้า สามตัวท้าย และ สองตัว งวดล่าสุด [[heroku](http://lottsanook.herokuapp.com/lastlot/)/[vercel](https://lottsanook.vercel.app/api/lastlot.php)]
@@ -29,3 +25,9 @@
 * [หน้าแสดงผลหวยและราคาทองวันนี้ ขนาด 1600x1066](https://lottsanook.herokuapp.com/viewlot_gold.php) (ทำงานสมูบรณ์เมื่อวันหวยออกเท่านั้น หรือ ใส่ ?test เพื่อเป็นการทดสอบ)
 
 * [หน้าแสดงผลหวยวันนี้ ขนาด 851x315](https://lottsanook.herokuapp.com/viewlo.php) (ประมวลผลนานแต่ใช้งานได้)
+
+# ลิงค์ API สำหรับผู้พัฒนา (ยามจำเป็น)
+
+* [List วันหวยออกทั้งหมด (TXT File)](https://raw.githubusercontent.com/Quad-B/lottsanook/main/cache/test.txt) (ไฟล์เบื้องต้นใน Github เมื่อเซิฟเวอร์มีปัญหา)
+
+* [List วันหวยออกทั้งหมด (TXT File)](https://lottsanook.herokuapp.com/cache/test.txt) (Update หลังจากมีการเรียกใช้ god.php)
