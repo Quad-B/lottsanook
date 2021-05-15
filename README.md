@@ -6,7 +6,7 @@
 
 * เช็คหวยออกวันนั้นๆ (สำรอง) [[heroku](https://lottsanook.herokuapp.com/index2.php?date=01102563)/[vercel](https://lottsanook.vercel.app/api/index2.php?date=01102563)] (เช็คได้แค่ 10 ปี ย้อนหลัง)
 
-* [ตรวจหวย](https://lottsanook.herokuapp.com/checklottery.php?by=01032564&search=835573)
+* ตรวจหวย [[heroku](https://lottsanook.herokuapp.com/checklottery.php?by=01032564&search=835573)/[vercel](https://lottsanook.vercel.app/api/checklottery.php?by=01032564&search=835573)]
 
 * [List วันหวยออกทั้งหมด (PHP Content)](https://lottsanook.herokuapp.com/god.php) (Update ตลอดเมื่อเรียกใช้)
 
@@ -31,8 +31,6 @@
 * [หน้าแสดงผลหวยวันนี้ ขนาด 851x315](https://lottsanook.herokuapp.com/viewlo.php) (ประมวลผลนานแต่ใช้งานได้)
 
 # ลิงค์ API สำหรับผู้พัฒนา (บน Vercel)
-* [ตรวจหวย](https://lottsanook.vercel.app/api/checklottery.php?by=01032564&search=835573)
-
 * [List วันหวยออกของปีนั้นๆ](https://lottsanook.vercel.app/api/gdpy.php?year=2555)
 
 * [ดึงรูปภาพหวย/สลากกินแบ่งฯ เลขเด็ดจากเจ้าต่างๆ](https://lottsanook.vercel.app/api/getchit.php)
