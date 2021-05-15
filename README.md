@@ -8,7 +8,7 @@
 
 * ตรวจหวย [[heroku](https://lottsanook.herokuapp.com/checklottery.php?by=01032564&search=835573)/[vercel](https://lottsanook.vercel.app/api/checklottery.php?by=01032564&search=835573)]
 
-* List วันหวยออกทั้งหมด (Update ตลอดเมื่อเรียกใช้) [heroku](https://lottsanook.herokuapp.com/god.php)
+* List วันหวยออกทั้งหมด (Update ตลอดเมื่อเรียกใช้) [[heroku](https://lottsanook.herokuapp.com/god.php)]
 
 * List วันหวยออกของปีนั้นๆ [[heroku](https://lottsanook.herokuapp.com/gdpy.php?year=2555)/[vercel](https://lottsanook.vercel.app/api/gdpy.php?year=2555)]
 
