@@ -133,7 +133,7 @@ $maxwave = 5;
 }
 echo json_encode($lottapi);*/
 foreach ($bigel as $val) {
-    echo $val;
+    echo $val ->nodeValue;
 }
 if (isset($_GET['from'])) {
     $lottapi[0][0] = "รางวัลที่1";
