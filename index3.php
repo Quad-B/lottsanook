@@ -141,8 +141,8 @@ foreach ($edog as $val) {
             //echo "<br>";
             $lottapi = array_replace($lottapi,
                 array_fill_keys(
-                    array_keys($lottapi, $valtwo->nodeValue),
-                    0
+                    array_keys($lottapi, 0),
+                    $valtwo->nodeValue
                 )
             );
         }
