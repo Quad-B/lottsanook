@@ -134,7 +134,7 @@ $maxwave = 5;
 }
 echo json_encode($lottapi);*/
 foreach ($edog as $val) {
-    echo $val->getElementsByTagName('strong')->nodeValue;
+    echo $val->getElementsByTagName('strong');
 }
 if (isset($_GET['from'])) {
     $lottapi[0][0] = "รางวัลที่1";
