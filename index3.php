@@ -133,12 +133,19 @@ $maxwave = 5;
     }
 }
 echo json_encode($lottapi);*/
+$arcount=0;
 foreach ($edog as $val) {
     //echo $val->getElementsByTagName('strong');
     foreach ($val->getElementsByTagName('strong') as $valtwo) {
         if(is_numeric($valtwo->nodeValue)){
             echo $valtwo->nodeValue;
             echo "<br>";
+            $lottapi = array_replace($lottapi,
+                array_fill_keys(
+                    array_keys($lottapi, $valtwo->nodeValue),
+                    0
+                )
+            );
         }
     }
 }
