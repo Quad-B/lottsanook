@@ -136,7 +136,9 @@ echo json_encode($lottapi);*/
 foreach ($edog as $val) {
     //echo $val->getElementsByTagName('strong');
     foreach ($val->getElementsByTagName('strong') as $valtwo) {
-        echo $valtwo->nodeValue;
+        if(is_numeric($valtwo->nodeValue)){
+            echo $valtwo->nodeValue;
+        }
     }
 }
 if (isset($_GET['from'])) {
