@@ -52,8 +52,9 @@ if($response == ""){
 }
 $dom->loadHTML($response);
 $dom->preserveWhiteSpace = false;
-$bigel = $dom->getElementsByTagName('strong');
-$el = $dom->getElementsByTagName('span');
+//$edog = $dom->getElementsByTagName('section');
+$bigel = $dom->getElementsByTagName('section')->getElementsByTagName('strong');
+//$el = $dom->getElementsByTagName('span');
 $lottapi = array (
     array("รางวัลที่1",0),
     array("เลขหน้า3ตัว",0,0),
@@ -132,7 +133,7 @@ $maxwave = 5;
     }
 }
 echo json_encode($lottapi);*/
-foreach ($bigel as $val) {
+foreach ($edog as $val) {
     echo $val ->nodeValue;
 }
 if (isset($_GET['from'])) {
