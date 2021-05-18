@@ -139,9 +139,44 @@ foreach ($edog as $val) {
         if(is_numeric($valtwo->nodeValue)){
             //echo $valtwo->nodeValue;
             //echo "<br>";
+            $mrcount++;
+            $lottapi[$arcount][$mrcount] = $valtwo->nodeValue;
             if($arcount==0&&$mrcount==1){
                 $arcount+=1;
                 $mrcount=0;
+            }
+            if($arcount==1&&$mrcount==2){
+                $arcount+=1;
+                $mrcount=0;
+            }
+            if($arcount==2&&$mrcount==2){
+                $arcount+=1;
+                $mrcount=0;
+            }
+            if($arcount==3&&$mrcount==1){
+                $arcount+=1;
+                $mrcount=0;
+            }
+            if($arcount==4&&$mrcount==2){
+                $arcount+=1;
+                $mrcount=0;
+            }
+            if($arcount==5&&$mrcount==2){
+                $arcount+=1;
+                $mrcount=0;
+            }
+            if($arcount==6&&$mrcount==10){
+                $arcount+=1;
+                $mrcount=0;
+            }
+            if($arcount==7&&$mrcount==50){
+                $arcount+=1;
+                $mrcount=0;
+            }
+            if($arcount==8&&$mrcount==100){
+                /*$arcount+=1;
+                $mrcount=0;*/
+                break;
             }
         }
     }
