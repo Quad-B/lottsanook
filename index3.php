@@ -138,6 +138,7 @@ foreach ($edog as $val) {
     foreach ($val->getElementsByTagName('strong') as $valtwo) {
         if(is_numeric($valtwo->nodeValue)){
             echo $valtwo->nodeValue;
+            echo "<br>";
         }
     }
 }
