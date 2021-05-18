@@ -139,12 +139,7 @@ foreach ($edog as $val) {
         if(is_numeric($valtwo->nodeValue)){
             //echo $valtwo->nodeValue;
             //echo "<br>";
-            $lottapi = array_replace($lottapi,
-                array_fill_keys(
-                    array_keys($lottapi, 0),
-                    $valtwo->nodeValue
-                )
-            );
+            $lottapi = array_replace($lottapi,array_fill_keys(array_keys($lottapi, "0"),$valtwo->nodeValue));
         }
     }
 }
