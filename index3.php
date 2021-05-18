@@ -37,7 +37,7 @@ if(file_exists("cache/".$filename)){
 }
 $bttf = $year-543;
 $url = "https://lottery.kapook.com/".$year."/".$bttf."-".$month."-".$day;
-echo $url;
+//echo $url;
 //$url = "https://news.sanook.com/lotto/check/".$_GET['date']."/";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
@@ -70,7 +70,7 @@ if (isset($_GET['from'])) {
 }
 $minwave = 0;
 $maxwave = 5;
-foreach($el as $val){
+/*foreach($el as $val){
     if ($val -> getAttribute('class') == 'lotto__number' || $val -> getAttribute('class') == 'default-font--reward') {
         if ($minwave >= 1 && $minwave <= $maxwave) {
             $lottapi[$wave][$minwave] = $val ->nodeValue;
@@ -131,7 +131,10 @@ foreach($el as $val){
         }
     }
 }
-echo json_encode($lottapi);
+echo json_encode($lottapi);*/
+foreach ($bigel as $val) {
+    echo $val;
+}
 if (isset($_GET['from'])) {
     $lottapi[0][0] = "รางวัลที่1";
 }
