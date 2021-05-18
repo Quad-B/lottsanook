@@ -37,6 +37,7 @@ if(file_exists("cache/".$filename)){
 }
 $bttf = $year-543;
 $url = "https://lottery.kapook.com/".$year."/".$bttf."-".$month."-".$day;
+echo $url;
 //$url = "https://news.sanook.com/lotto/check/".$_GET['date']."/";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
