@@ -2,11 +2,11 @@
 เป็นการดึงผลสลากกินแบ่งรัฐบาลจากเว็บ sanook.com และ myhora.com มาเก็บไว้เป็นแบบ json โดยใช้ PHP ในการเขียน
 
 # ลิงค์ API สำหรับผู้พัฒนา
-* เช็คหวยออกวันนั้นๆ [[heroku](https://lottsanook.herokuapp.com/?date=01102563)/[vercel](https://lottsanook.vercel.app/api/?date=01102563)] (ใส่ &from หลังลิงค์เพื่อเปลี่ยน array แถวแรกอันดับแรกเป็นวันที่ในการหวยออก หรือ ใส่ &fresh เพื่อให้หวย Update อยู่ตลอดเวลา)
+* เช็คหวยออกวันนั้นๆ [[vercel](https://lottsanook.vercel.app/api/?date=01102563)/[heroku](https://lottsanook.herokuapp.com/?date=01102563)] (ใส่ &from หลังลิงค์เพื่อเปลี่ยน array แถวแรกอันดับแรกเป็นวันที่ในการหวยออก หรือ ใส่ &fresh เพื่อให้หวย Update อยู่ตลอดเวลา)
 
-* เช็คหวยออกวันนั้นๆ (สำรอง) [[heroku](https://lottsanook.herokuapp.com/index2.php?date=01102563)/[vercel](https://lottsanook.vercel.app/api/index2.php?date=01102563)] (เช็คได้แค่ 10 ปี ย้อนหลัง)
+* เช็คหวยออกวันนั้นๆ (สำรอง) [[vercel](https://lottsanook.vercel.app/api/index2.php?date=01102563)/[heroku](https://lottsanook.herokuapp.com/index2.php?date=01102563)] (เช็คได้แค่ 10 ปี ย้อนหลัง)
 
-* ตรวจหวย [[heroku](https://lottsanook.herokuapp.com/checklottery.php?by=01032564&search=835573)/[vercel](https://lottsanook.vercel.app/api/checklottery.php?by=01032564&search=835573)]
+* ตรวจหวย [[vercel](https://lottsanook.vercel.app/api/checklottery.php?by=01032564&search=835573)/[heroku](https://lottsanook.herokuapp.com/checklottery.php?by=01032564&search=835573)]
 
 * List วันหวยออกทั้งหมด (Update ตลอดเมื่อเรียกใช้) [[heroku](https://lottsanook.herokuapp.com/god.php)]
 
