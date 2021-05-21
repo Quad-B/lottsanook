@@ -16,11 +16,11 @@
 
 * [เช็คหวยออกทั้งหมดว่ากี่ครั้ง แบบง่าย (ตั้งแต่ 2543 ถึง ปัจจุปัน)](https://lottsanook.herokuapp.com/finddol.php?search=81)
 
-* ดึงรูปภาพหวย/สลากกินแบ่งฯ เลขเด็ดจากเจ้าต่างๆ [[heroku](https://lottsanook.herokuapp.com/getchit.php)/[vercel](https://lottsanook.vercel.app/api/getchit.php)]
+* ดึงรูปภาพหวย/สลากกินแบ่งฯ เลขเด็ดจากเจ้าต่างๆ [[vercel](https://lottsanook.vercel.app/api/getchit.php)/[heroku](https://lottsanook.herokuapp.com/getchit.php)]
 
-* เช็คว่าวันนี้หวย/สลากกินแบ่งฯ ออกหรือไม่ (yes คือ ใช่ / no คือ ไม่) [[heroku](https://lottsanook.herokuapp.com/reto.php)/[vercel](https://lottsanook.vercel.app/api/reto.php)]
+* เช็คว่าวันนี้หวย/สลากกินแบ่งฯ ออกหรือไม่ (yes คือ ใช่ / no คือ ไม่) [[vercel](https://lottsanook.vercel.app/api/reto.php)/[heroku](https://lottsanook.herokuapp.com/reto.php)]
 
-* [หน้าแสดงผลหวย ขนาด 1600x1066](http://lottsanook.herokuapp.com/viewlot.php?date=01022563) (สามารถกำหนดวันได้ โดยเปลี่ยนวันเดือนปี หลัง date=)
+* หน้าแสดงผลหวย ขนาด 1600x1066 (สามารถกำหนดวันได้ โดยเปลี่ยนวันเดือนปี หลัง date=) [[heroku](http://lottsanook.herokuapp.com/viewlot.php?date=01022563)]
 
 * [หน้าแสดงผลหวยและราคาทองวันนี้ ขนาด 1600x1066](https://lottsanook.herokuapp.com/viewlot_gold.php) (ทำงานสมูบรณ์เมื่อวันหวยออกเท่านั้น หรือ ใส่ ?test เพื่อเป็นการทดสอบ)
 
