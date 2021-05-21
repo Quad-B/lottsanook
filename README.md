@@ -20,7 +20,7 @@
 
 * เช็คว่าวันนี้หวย/สลากกินแบ่งฯ ออกหรือไม่ (yes คือ ใช่ / no คือ ไม่) [[vercel](https://lottsanook.vercel.app/api/reto.php)/[heroku](https://lottsanook.herokuapp.com/reto.php)]
 
-* หน้าแสดงผลหวย ขนาด 1600x1066 (สามารถกำหนดวันได้ โดยเปลี่ยนวันเดือนปี หลัง date=) [[heroku](http://lottsanook.herokuapp.com/viewlot.php?date=01022563)]
+* หน้าแสดงผลหวย ขนาด 1600x1066 (สามารถกำหนดวันได้ โดยเปลี่ยนวันเดือนปี หลัง date=) [[vercel](https://lottsanook.vercel.app/api/viewlot.php)/[heroku](http://lottsanook.herokuapp.com/viewlot.php?date=01022563)]
 
 * [หน้าแสดงผลหวยและราคาทองวันนี้ ขนาด 1600x1066](https://lottsanook.herokuapp.com/viewlot_gold.php) (ทำงานสมูบรณ์เมื่อวันหวยออกเท่านั้น หรือ ใส่ ?test เพื่อเป็นการทดสอบ)
 
