@@ -22,9 +22,9 @@
 
 * หน้าแสดงผลหวย ขนาด 1600x1066 (สามารถกำหนดวันได้ โดยเปลี่ยนวันเดือนปี หลัง date=) [[vercel](https://lottsanook.vercel.app/api/viewlot.php)/[heroku](http://lottsanook.herokuapp.com/viewlot.php?date=01022563)]
 
-* [หน้าแสดงผลหวยและราคาทองวันนี้ ขนาด 1600x1066](https://lottsanook.herokuapp.com/viewlot_gold.php) (ทำงานสมูบรณ์เมื่อวันหวยออกเท่านั้น หรือ ใส่ ?test เพื่อเป็นการทดสอบ)
+* หน้าแสดงผลหวยและราคาทองวันนี้ ขนาด 1600x1066 (ทำงานสมูบรณ์เมื่อวันหวยออกเท่านั้น หรือ ใส่ ?test เพื่อเป็นการทดสอบ) [[heroku](https://lottsanook.herokuapp.com/viewlot_gold.php)]
 
-* [หน้าแสดงผลหวยวันนี้ ขนาด 851x315](https://lottsanook.herokuapp.com/viewlo.php) (ประมวลผลนานแต่ใช้งานได้)
+* หน้าแสดงผลหวยวันนี้ ขนาด 851x315 (ประมวลผลนานแต่ใช้งานได้) [[heroku](https://lottsanook.herokuapp.com/viewlo.php)]
 
 # ลิงค์ API สำหรับผู้พัฒนา (ยามจำเป็น)
 
