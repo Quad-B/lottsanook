@@ -3,4 +3,4 @@
 
 # ลิงค์ API สำหรับผู้พัฒนา
 
-[![Build Status](https://storage.googleapis.com/code-snippets/connect-on-rapidapi-dark.png)](https://travis-ci.org/Quad-B/saox)
+[![Join API](https://storage.googleapis.com/code-snippets/connect-on-rapidapi-dark.png)](https://rapidapi.com/boyphongsakorn/api/thai-lottery1)
