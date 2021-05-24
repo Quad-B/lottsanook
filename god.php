@@ -67,7 +67,7 @@ while($year <= $nextyear) {
         }
         foreach($preyearsuperlist as $val){
             array_push($preyearlist,$val);
-            $prefile = fopen($day[3].".txt","w");
+            $prefile = fopen("cache/".$day[3].".txt","w");
             fwrite($prefile,json_encode($preyearlist));
             fclose($prefile);
         }
