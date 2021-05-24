@@ -3,4 +3,4 @@
 
 # ลิงค์ API สำหรับผู้พัฒนา
 
-[https://storage.googleapis.com/code-snippets/connect-on-rapidapi-dark.png](https://rapidapi.com/YOUR_USERNAME/api/YOUR_API)
+[](https://storage.googleapis.com/code-snippets/connect-on-rapidapi-dark.png)
