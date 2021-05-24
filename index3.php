@@ -131,14 +131,57 @@ $maxwave = 5;
             $lottapi[4][2] = $bigel[8] ->nodeValue;
         }
     }
-}
-echo json_encode($lottapi);*/
+}*/
+$arcount=0;
 foreach ($edog as $val) {
     //echo $val->getElementsByTagName('strong');
     foreach ($val->getElementsByTagName('strong') as $valtwo) {
-        echo $valtwo->nodeValue;
+        if(is_numeric($valtwo->nodeValue)){
+            //echo $valtwo->nodeValue;
+            //echo "<br>";
+            $mrcount++;
+            $lottapi[$arcount][$mrcount] = $valtwo->nodeValue;
+            if($arcount==0&&$mrcount==1){
+                $arcount+=1;
+                $mrcount=0;
+            }
+            if($arcount==1&&$mrcount==2){
+                $arcount+=1;
+                $mrcount=0;
+            }
+            if($arcount==2&&$mrcount==2){
+                $arcount+=1;
+                $mrcount=0;
+            }
+            if($arcount==3&&$mrcount==1){
+                $arcount+=1;
+                $mrcount=0;
+            }
+            if($arcount==4&&$mrcount==2){
+                $arcount+=1;
+                $mrcount=0;
+            }
+            if($arcount==5&&$mrcount==2){
+                $arcount+=1;
+                $mrcount=0;
+            }
+            if($arcount==6&&$mrcount==10){
+                $arcount+=1;
+                $mrcount=0;
+            }
+            if($arcount==7&&$mrcount==50){
+                $arcount+=1;
+                $mrcount=0;
+            }
+            if($arcount==8&&$mrcount==100){
+                /*$arcount+=1;
+                $mrcount=0;*/
+                break;
+            }
+        }
     }
 }
+echo json_encode($lottapi);
 if (isset($_GET['from'])) {
     $lottapi[0][0] = "รางวัลที่1";
 }
