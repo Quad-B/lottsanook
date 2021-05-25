@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 if(isset($_GET["cache"])){
     $myfile = fopen("cache/test.txt", "r") or die("Unable to open file!");

@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 $myfile = fopen("cache/test.txt","r") or die("Unable to open file!");
 $json_string = fread($myfile,filesize("cache/test.txt"));

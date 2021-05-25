@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 $days=json_decode(file_get_contents("https://lottsanook.herokuapp.com/god.php"));
 $get=json_decode(file_get_contents("https://lottsanook.herokuapp.com/?date=".end($days)));
