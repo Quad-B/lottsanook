@@ -95,13 +95,13 @@ if ($mydate != "") {
     $file = fopen("cache/test.txt","w");
     fwrite($file,json_encode($mydate));
     fclose($file);
-
+    echo "test";
     echo json_encode($mydate);
 }else{
     $file = fopen("cache/test.txt","w");
     fwrite($file,json_encode($yearlist));
     fclose($file);
-
+    echo "test2";
     echo json_encode($yearlist);
 }
 ?>
