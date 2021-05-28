@@ -19,19 +19,19 @@ if(file_exists("cache/test.txt")){
     $mydate = json_decode(fgets($myfile));
     if(substr(end($mydate),4,4) == date('Y')+543){
         $year = date('Y')+543;
-        echo "yes this year";
+        //echo "yes this year";
         foreach ($mydate as $key => $value) {
             if(substr($value,4,4) == $year){
-                echo $value;
+                //echo $value;
                 unset($mydate[$key]);
             }
         }
     }else{
         $year = substr(end($mydate),4,4);
-        echo "yes that year ".substr(end($mydate),4,4);
+        //echo "yes that year ".substr(end($mydate),4,4);
         foreach ($mydate as $key => $value) {
             if(substr($value,4,4) == $year){
-                echo $value;
+                //echo $value;
                 unset($mydate[$key]);
             }
         }
@@ -107,13 +107,13 @@ if ($mydate != "") {
     $file = fopen("cache/test.txt","w");
     fwrite($file,json_encode($mydate));
     fclose($file);
-    echo "test";
+    //echo "test";
     echo json_encode($mydate);
 }else{
     $file = fopen("cache/test.txt","w");
     fwrite($file,json_encode($yearlist));
     fclose($file);
-    echo "test2";
+    //echo "test2";
     echo json_encode($yearlist);
 }
 ?>
