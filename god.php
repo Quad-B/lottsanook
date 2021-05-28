@@ -13,6 +13,19 @@ $preyearsuperlist = array();
 $yearlist = array();
 $nextyear = date('Y')+543;
 $channel = [];
+$mydate = "";
+if(file_exists("cache/test.txt")){
+    $myfile = fopen("cache/test.txt", "r") or die("Unable to open file!");
+    $mydate = json_decode(fgets($myfile));
+    if(substr(end($mydate),4,4) == date('Y')+543){
+        $year = date('Y')+543;
+        foreach ($mydate as $key => $value) {
+            if(substr($value,4,4) == date('Y')+543){
+                unset($mydate[$key]);
+            }
+        }
+    }
+}
 while($year <= $nextyear) {
     $mh = curl_multi_init();
     $channel = [];
@@ -65,6 +78,9 @@ while($year <= $nextyear) {
         }
         foreach($peryear as $val){
             array_push($yearlist,$val);
+            if($mydate != ""){
+                array_push($mydate,$val);
+            }
         }
         foreach($preyearsuperlist as $val){
             array_push($preyearlist,$val);
@@ -75,9 +91,17 @@ while($year <= $nextyear) {
     }
     $year += 10;
 }
-$file = fopen("cache/test.txt","w");
-fwrite($file,json_encode($yearlist));
-fclose($file);
+if ($mydate != "") {
+    $file = fopen("cache/test.txt","w");
+    fwrite($file,json_encode($mydate));
+    fclose($file);
 
-echo json_encode($yearlist);
+    echo json_encode($mydate);
+}else{
+    $file = fopen("cache/test.txt","w");
+    fwrite($file,json_encode($yearlist));
+    fclose($file);
+
+    echo json_encode($yearlist);
+}
 ?>
