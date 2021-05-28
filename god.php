@@ -19,8 +19,10 @@ if(file_exists("cache/test.txt")){
     $mydate = json_decode(fgets($myfile));
     if(substr(end($mydate),4,4) == date('Y')+543){
         $year = date('Y')+543;
+        echo "yes this year";
         foreach ($mydate as $key => $value) {
             if(substr($value,4,4) == date('Y')+543){
+                echo $value;
                 unset($mydate[$key]);
             }
         }
