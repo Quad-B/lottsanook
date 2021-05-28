@@ -21,7 +21,16 @@ if(file_exists("cache/test.txt")){
         $year = date('Y')+543;
         echo "yes this year";
         foreach ($mydate as $key => $value) {
-            if(substr($value,4,4) == date('Y')+543){
+            if(substr($value,4,4) == $year){
+                echo $value;
+                unset($mydate[$key]);
+            }
+        }
+    }else{
+        $year = substr(end($mydate),4,4);
+        echo "yes that year ".substr(end($mydate),4,4);
+        foreach ($mydate as $key => $value) {
+            if(substr($value,4,4) == $year){
                 echo $value;
                 unset($mydate[$key]);
             }
