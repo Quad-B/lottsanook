@@ -7,6 +7,9 @@
 
 # สำหรับไปรันใน เซิฟเวอร์ตัวเอง
 [lottsanook](https://github.com/Quad-B/lottsanook) สำหรับ PHP
-[lottsanook-vercel](https://github.com/Quad-B/lottsanook) สำหรับ PHP รันใน Vercel
-[lottsanook-nodejs](https://github.com/Quad-B/lottsanook) สำหรับ Node.js
-[lottsanook-docker](https://github.com/Quad-B/lottsanook) สำหรับ Node.js รันผ่าน Docker
+
+[https://github.com/boyphongsakorn/lottsanook-vercel](https://github.com/Quad-B/lottsanook) สำหรับ PHP รันใน Vercel
+
+[https://github.com/boyphongsakorn/lottsanook-nodejs](https://github.com/Quad-B/lottsanook) สำหรับ Node.js
+
+[https://github.com/boyphongsakorn/lottsanook-docker](https://github.com/Quad-B/lottsanook) สำหรับ Node.js รันผ่าน Docker
