@@ -36,6 +36,7 @@ if(file_exists("cache/test.txt")){
             }
         }
     }
+    $mydate = array_values($mydate)
 }
 while($year <= $nextyear) {
     $mh = curl_multi_init();
