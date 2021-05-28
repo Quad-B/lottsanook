@@ -4,3 +4,9 @@
 # ลิงค์ API สำหรับผู้พัฒนา
 
 [![Join API](https://storage.googleapis.com/code-snippets/connect-on-rapidapi-dark.png)](https://rapidapi.com/boyphongsakorn/api/thai-lottery1)
+
+# สำหรับไปรันใน เซิฟเวอร์ตัวเอง
+[lottsanook](https://github.com/Quad-B/lottsanook) สำหรับ PHP
+[lottsanook-vercel](https://github.com/Quad-B/lottsanook) สำหรับ PHP รันใน Vercel
+[lottsanook-nodejs](https://github.com/Quad-B/lottsanook) สำหรับ Node.js
+[lottsanook-docker](https://github.com/Quad-B/lottsanook) สำหรับ Node.js รันผ่าน Docker
