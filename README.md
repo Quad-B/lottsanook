@@ -10,6 +10,6 @@
 
 [lottsanook-vercel](https://github.com/boyphongsakorn/lottsanook-vercel) สำหรับ PHP รันใน Vercel
 
-[lottsanook-nodejs](https://github.com/boyphongsakorn/lottsanook-nodejs) สำหรับ Node.js
+[lottsanook-nodejs](https://github.com/Quad-B/lottsanook-nodejs) สำหรับ Node.js
 
-[lottsanook-docker](https://github.com/boyphongsakorn/lottsanook-docker) สำหรับ Node.js รันผ่าน [Docker](https://hub.docker.com/r/boyphongsakorn/lottsanook)
+[lottsanook-docker](https://github.com/Quad-B/lottsanook-docker) สำหรับ Node.js รันผ่าน [Docker](https://hub.docker.com/r/boyphongsakorn/lottsanook)
