@@ -13,3 +13,7 @@
 [lottsanook-nodejs](https://github.com/Quad-B/lottsanook-nodejs) สำหรับ Node.js
 
 [lottsanook-docker](https://github.com/Quad-B/lottsanook-docker) สำหรับ Node.js รันผ่าน [Docker](https://hub.docker.com/r/boyphongsakorn/lottsanook)
+
+[lottsanook-resultimage-nodejs](https://github.com/Quad-B/lottsanook-resultimage-nodejs) สร้างรูปสรุปผลโดยใช้ nodejs
+
+[lottsanook-resultimage-docker](https://github.com/Quad-B/lottsanook-resultimage-docker) สร้างรูปสรุปผลโดยใช้ nodejs ใน [Docker](https://hub.docker.com/r/boyphongsakorn/lottsanook-resultimage)
