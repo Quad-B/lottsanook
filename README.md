@@ -3,7 +3,7 @@
 
 # ลิงค์ API สำหรับผู้พัฒนา
 
-[![Join API](https://storage.googleapis.com/code-snippets/connect-on-rapidapi-dark.png)](https://rapidapi.com/boyphongsakorn/api/thai-lottery1)
+[![Join API](https://files.readme.io/7002e7f-c563a12-rapidapi-badge-dark.png)](https://rapidapi.com/boyphongsakorn/api/thai-lottery1)
 
 # สำหรับไปรันใน เซิฟเวอร์ตัวเอง
 [lottsanook](https://github.com/Quad-B/lottsanook) สำหรับ PHP
