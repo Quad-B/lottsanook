@@ -5,15 +5,8 @@
 
 [![Join API](https://files.readme.io/7002e7f-c563a12-rapidapi-badge-dark.png)](https://rapidapi.com/boyphongsakorn/api/thai-lottery1)
 
-# สำหรับไปรันใน เซิฟเวอร์ตัวเอง
-[lottsanook](https://github.com/Quad-B/lottsanook) สำหรับ PHP
+# Warning
 
-[lottsanook-vercel](https://github.com/boyphongsakorn/lottsanook-vercel) สำหรับ PHP รันใน Vercel
+ถ้าคุณต้องการช่วยเราในการแก้ไขบัค หรือ เพิ่มฟังก์ชั่น ได้โปรดส่งคำขอไปยังที่ [GitHub Pages](lottsanook-nodejs) สำหรับ NodeJS หรือ [GitHub Pages](lottsanook) สำหรับ PHP
 
-[lottsanook-nodejs](https://github.com/Quad-B/lottsanook-nodejs) สำหรับ Node.js
-
-[lottsanook-docker](https://github.com/Quad-B/lottsanook-docker) สำหรับ Node.js รันผ่าน [Docker](https://hub.docker.com/r/boyphongsakorn/lottsanook)
-
-[lottsanook-resultimage-nodejs](https://github.com/Quad-B/lottsanook-resultimage-nodejs) สร้างรูปสรุปผลโดยใช้ nodejs
-
-[lottsanook-resultimage-docker](https://github.com/Quad-B/lottsanook-resultimage-docker) สร้างรูปสรุปผลโดยใช้ nodejs ใน [Docker](https://hub.docker.com/r/boyphongsakorn/lottsanook-resultimage)
+![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/Quad-B/lottsanook-nodejs?label=Pull%20request%20for%20helped&logo=github)
