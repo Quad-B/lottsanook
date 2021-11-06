@@ -150,8 +150,8 @@ echo json_encode($lottapi);
 if (isset($_GET['from'])) {
     $lottapi[0][0] = "รางวัลที่1";
 }
-//if time > 14:30 and time < 16:00
-if (!empty($response["response"]) && (date('H:i:s') > '14:30:00' && date('H:i:s') < '16:00:00')) {
+
+if (!empty($response["response"]) && (date('H:i:s') > '16:00:00' && date('H:i:s') < '14:30:00')) {
     $myfile = fopen("cache/".$filename, "w") or die("Unable to open file!");
     fwrite($myfile, json_encode($lottapi));
     fclose($myfile);
