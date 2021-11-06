@@ -93,7 +93,11 @@ $response = curl_exec($curl);
 
 curl_close($curl);
 
+echo $response["response"];
+
 $response = json_decode($response);
+
+echo $response["response"];
 
 if($response["response"] == null){
     echo json_encode($lottapi);
