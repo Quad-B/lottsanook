@@ -104,8 +104,22 @@ $lottapi[0][1] = $response["response"]["data"]["first"]["number"][0]["value"];
 
 foreach ($response["response"]["data"]["last3f"]["number"] as $key=>$value) {
 
-  $lottapi[1][$key+1] = $value["value"];
+    $lottapi[1][$key+1] = $value["value"];
 
+}
+
+foreach ($response["response"]["data"]["last3b"]["number"] as $key=>$value) {
+
+    $lottapi[2][$key+1] = $value["value"];
+  
+}
+
+$lottapi[3][1] = $response["response"]["data"]["last2"]["number"][0]["value"];
+
+foreach ($response["response"]["data"]["near1"]["number"] as $key=>$value) {
+
+    $lottapi[4][$key+1] = $value["value"];
+  
 }
 
 echo json_encode($lottapi);
