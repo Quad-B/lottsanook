@@ -1,10 +1,10 @@
 <?php
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
-$filename = $_GET['date'].".txt";
 if (empty($_GET['date'])) {
     $_GET['date'] = date("d").date("m").(date("Y")+543);
 }
+$filename = $_GET['date'].".txt";
 $day = substr($_GET['date'], 0,2);
 $month = substr($_GET['date'], 2,2);
 $year = substr($_GET['date'], 4,4);
