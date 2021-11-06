@@ -122,6 +122,30 @@ foreach ($response["response"]["data"]["near1"]["number"] as $key=>$value) {
   
 }
 
+foreach ($response["response"]["data"]["second"]["number"] as $key=>$value) {
+
+    $lottapi[5][$key+1] = $value["value"];
+  
+}
+
+foreach ($response["response"]["data"]["third"]["number"] as $key=>$value) {
+
+    $lottapi[6][$key+1] = $value["value"];
+  
+}
+
+foreach ($response["response"]["data"]["fourth"]["number"] as $key=>$value) {
+
+    $lottapi[7][$key+1] = $value["value"];
+  
+}
+
+foreach ($response["response"]["data"]["fifth"]["number"] as $key=>$value) {
+
+    $lottapi[8][$key+1] = $value["value"];
+  
+}
+
 echo json_encode($lottapi);
 if (isset($_GET['from'])) {
     $lottapi[0][0] = "รางวัลที่1";
