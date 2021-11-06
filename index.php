@@ -156,5 +156,4 @@ if (!empty($response["response"]) && (date('H:i:s') > '16:00:00' && date('H:i:s'
     fwrite($myfile, json_encode($lottapi));
     fclose($myfile);
 }
-
 ?>
