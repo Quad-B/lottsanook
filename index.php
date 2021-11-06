@@ -85,6 +85,7 @@ if($bigel[2] ->nodeValue == null){
     echo json_encode($lottapi);
     exit();
 }
+
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -96,7 +97,7 @@ curl_setopt_array($curl, array(
   CURLOPT_FOLLOWLOCATION => true,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
-  CURLOPT_POSTFIELDS =>'{"date": '.$day.', "month": '.$month.', "year": '.$year-543.'}',
+  CURLOPT_POSTFIELDS =>'{"date": '.$day.', "month": '.$month.', "year": '.($year-543).'}',
   CURLOPT_HTTPHEADER => array(
     'Content-Type: application/json'
   ),
