@@ -111,7 +111,7 @@ $lottapi[0][1] = $response["response"]["data"]["first"]["number"][0]["value"];
 
 foreach ($response["response"]["data"]["last3f"]["number"] as $key=>$value) {
 
-  $lottapi[1][$key+1] = $value["value"]
+  $lottapi[1][$key+1] = $value["value"];
 
 }
 
