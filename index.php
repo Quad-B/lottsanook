@@ -37,7 +37,7 @@ if(file_exists("cache/".$filename)){
     fclose($myfile);
     exit();
 }
-if ($year == date('Y')+543) {
+/*if ($year == date('Y')+543) {
     if (isset($_GET['from'])) {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://lottsanook.herokuapp.com/index2.php?date='.$_GET['date'].'&from');
@@ -54,19 +54,7 @@ if ($year == date('Y')+543) {
         echo $response;
     }
     exit();
-}
-$url = "https://www.myhora.com/%E0%B8%AB%E0%B8%A7%E0%B8%A2/%E0%B8%87%E0%B8%A7%E0%B8%94-".$day."-".urlencode($monthtext)."-".$year.".aspx";
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-$response = curl_exec($ch);
-curl_close($ch);
-$dom = new DOMDocument();
-$dom->loadHTML($response);
-$dom->preserveWhiteSpace = false;
-$findday = $dom->getElementsByTagName('strong');
-$bigel = $dom->getElementsByTagName('b');
-$el = $dom->getElementsByTagName('div');
+}*/
 $lottapi = array (
     array("รางวัลที่1",0),
     array("เลขหน้า3ตัว",0,0),
@@ -81,11 +69,6 @@ $lottapi = array (
 if (isset($_GET['from'])) {
     $lottapi[0][0] = $day.' '.$monthtext.' '.$year;
 }
-if($bigel[2] ->nodeValue == null){
-    echo json_encode($lottapi);
-    exit();
-}
-
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -106,6 +89,11 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 
 curl_close($curl);
+
+if($response["response"] == null){
+    echo json_encode($lottapi);
+    exit();
+}
 
 $lottapi[0][1] = $response["response"]["data"]["first"]["number"][0]["value"];
 
