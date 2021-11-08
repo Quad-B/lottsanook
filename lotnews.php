@@ -56,16 +56,12 @@ for($i=0;$i<5;$i++){
     $description = strip_tags($array['channel']['item'][$i]['description']);
     $pubDate = $array['channel']['item'][$i]['pubDate'];
     //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
-    /*echo $title;
-    echo $link;
-    echo $description;
-    echo $pubDate;
-    echo $image;*/
     //cut description to 100 char and add ...
-    $test = substr($description,0,100)."...";
-    $a=array($title,$link,$test,$pubDate);
+    $a=array($title,$link,$description,$pubDate);
     array_push($cars,$a);
 }
+
+$cars[0][2] = substr($cars[0][2],0,100)."...";
 
 echo json_encode($cars);
 
