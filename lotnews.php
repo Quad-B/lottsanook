@@ -68,7 +68,7 @@ for($i=0;$i<5;$i++){
      array_push($cars,$a);
 }
 
-$curl = curl_init();
+/*$curl = curl_init();
 
 curl_setopt_array($curl, array(
   CURLOPT_URL => 'https://www.khaosod.co.th/tag/เลขเด็ด/feed',
@@ -106,7 +106,7 @@ for($i=0;$i<5;$i++){
     echo $pubDate;
     echo $image;*/
     //cut description to 100 char and add ...
-    $description = substr($description,0,100);
+    /*$description = substr($description,0,100);
     $description = $description."...";
     $a=array($title,$link,$description,$pubDate);
     array_push($cars,$a);
