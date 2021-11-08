@@ -60,7 +60,7 @@ for($i=0;$i<5;$i++){
      //cut description to 100 char and add ...
      //$description = substr($description,0,100);
      //$description = $description."...";
-     $a=array($title,$link,substr($description,0,100)."...",$pubDate);
+     $a=array($title,$link,substr(strval($description),0,100)."...",$pubDate);
      array_push($cars,$a);
 }
 
