@@ -70,7 +70,7 @@ for($i=0;$i<5;$i++){
     $link = $array['channel']['item'][$i]['link'];
     $description = mb_substr(strip_tags($array['channel']['item'][$i]['description']),0,100,'UTF-8').'...';
     $pubDate = $array['channel']['item'][$i]['pubDate'];
-    $image = $array['channel']['item'][$i]->children("media:thumbnail", true);
+    $image = $array['channel']['item'][$i]->children("media:thumbnail")->attributes("src");
     //$image_link = $image['url'];
     echo $image;
     //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
