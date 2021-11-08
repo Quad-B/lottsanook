@@ -58,8 +58,7 @@ for($i=0;$i<5;$i++){
      echo $pubDate;
      echo $image;*/
      //cut description to 100 char and add ...
-     $description = substr(strip_tags($array['channel']['item'][$i]['description']),0,100);
-     $description = $description."...";
+     $description = strip_tags($array['channel']['item'][$i]['description']);
      $a=array($title,$link,$description,$pubDate);
      array_push($cars,$a);
 }
