@@ -62,8 +62,8 @@ for($i=0;$i<5;$i++){
     echo $pubDate;
     echo $image;*/
     //cut description to 100 char and add ...
-    echo substr($description,0,100)."...";
-    $a=array($title,$link,$description,$pubDate);
+    $test = substr($description,0,100)."...";
+    $a=array($title,$link,$test,$pubDate);
     array_push($cars,$a);
 }
 
