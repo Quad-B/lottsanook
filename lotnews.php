@@ -25,7 +25,7 @@ curl_close($curl);
 //$removed = preg_replace('/^\s*\/\/<!\[CDATA\[([\s\S]*)\/\/\]\]>\s*\z/', '$1', $response);
 
 //get from xml
-$xml = new SimpleXMLElement($response);
+/*$xml = new SimpleXMLElement($response);
 //get title and link of each news
 print_r($xml->channel->item->description);
 foreach ($xml->channel->item as $item) {
@@ -37,10 +37,10 @@ foreach ($xml->channel->item as $item) {
     'pubDate' => $item->pubDate,
     'guid' => $item->guid,
   );
-}
-print_r(json_encode($cars));
+}*/
+//print_r(json_encode($cars));
 
-$xml = simplexml_load_string($response, null, LIBXML_NOCDATA);
+$xml = simplexml_load_string($response, 'SimpleXMLElement', LIBXML_NOCDATA);
 $json = json_encode($xml);
 $array = json_decode($json,TRUE);
 //print_r($array);
