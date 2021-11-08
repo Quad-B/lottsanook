@@ -4,11 +4,6 @@ header('Access-Control-Allow-Origin: *');
 
 $cars = array(); 
 
-$xml=simplexml_load_file("https://www.khaosod.co.th/tag/เลขเด็ด/feed") or die("Error: Cannot create object");
-$content = $xml->channel->item[0]->children('media', true)->content;
-$contentattr = $content->attributes();
-echo $contentattr;
-
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -44,7 +39,7 @@ for($i=0;$i<5;$i++){
     array_push($cars,$a);
 }
 
-$curl = curl_init();
+/*$curl = curl_init();
 
 curl_setopt_array($curl, array(
   CURLOPT_URL => 'https://www.khaosod.co.th/tag/เลขเด็ด/feed',
@@ -78,6 +73,20 @@ for($i=0;$i<5;$i++){
     //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
     //cut description to 100 char and add ...
     $a=array($title,$link,$description,$pubDate);
+    array_push($cars,$a);
+}*/
+
+$xml=simplexml_load_file("https://www.khaosod.co.th/tag/เลขเด็ด/feed") or die("Error: Cannot create object");
+//for 5 times
+for($i=0;$i<5;$i++){
+    $title = $xml->channel->item[$i]->title;
+    $link = $xml->channel->item[$i]->link;
+    //cut description to 100 char and add ...
+    $description = mb_substr(strip_tags($xml->channel->item[$i]->description),0,100,'UTF-8').'...';
+    $pubDate = $xml->channel->item[$i]->pubDate;
+    $content = $xml->channel->item[0]->children('media:content', true)->content;
+    $image = $content->attributes();
+    $a=array($title,$link,$description,$image,$pubDate);
     array_push($cars,$a);
 }
 
@@ -116,6 +125,6 @@ for($i=0;$i<5;$i++){
     array_push($cars,$a);
 }
 
-//echo json_encode($cars);
+echo json_encode($cars);
 //print_r($json);
 ?>
