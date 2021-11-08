@@ -5,7 +5,7 @@ header('Access-Control-Allow-Origin: *');
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://www.brighttv.co.th/tag/%25e0%25b9%2580%25e0%25b8%25a5%25e0%25b8%2582%25e0%25b9%2580%25e0%25b8%2594%25e0%25b9%2587%25e0%25b8%2594/feed',
+  CURLOPT_URL => 'https://www.brighttv.co.th/tag/เลขเด็ด/feed',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -26,7 +26,7 @@ $json = json_encode($xml);
 $array = json_decode($json,TRUE);
 //print_r($array);
 //loop news 5 times
-/*for($i=0;$i<5;$i++){
+for($i=0;$i<5;$i++){
     $title = $array['channel']['item'][$i]['title'];
     $link = $array['channel']['item'][$i]['link'];
     $description = $array['channel']['item'][$i]['description'];
@@ -37,5 +37,5 @@ $array = json_decode($json,TRUE);
     echo $description;
     echo $pubDate;
     echo $image;
-}*/
-print_r($json);
+}
+//print_r($json);
