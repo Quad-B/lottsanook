@@ -25,7 +25,7 @@ curl_close($curl);
 //get from xml
 $xml = new SimpleXMLElement($response);
 //get title and link of each news
-print_r($xml->channel->item);
+print_r($xml->channel->item->description);
 foreach ($xml->channel->item as $item) {
   $cars[] = array(
     'title' => $item->title,
