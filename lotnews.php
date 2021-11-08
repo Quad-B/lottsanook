@@ -24,4 +24,17 @@ echo $response;
 $xml = simplexml_load_string($response);
 $json = json_encode($xml);
 $array = json_decode($json,TRUE);
-print_r($array);
+//print_r($array);
+//loop news 5 times
+for($i=0;$i<5;$i++){
+    $title = $array['channel']['item'][$i]['title'];
+    $link = $array['channel']['item'][$i]['link'];
+    $description = $array['channel']['item'][$i]['description'];
+    $pubDate = $array['channel']['item'][$i]['pubDate'];
+    $image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
+    echo $title;
+    echo $link;
+    echo $description;
+    echo $pubDate;
+    echo $image;
+}
