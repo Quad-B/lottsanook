@@ -66,14 +66,13 @@ $array = json_decode($json,TRUE);
 //print_r($array);
 //echo json_encode($array);
 for($i=0;$i<5;$i++){
-    echo json_encode($array['channel']['item'][$i]);
     $title = $array['channel']['item'][$i]['title'];
     $link = $array['channel']['item'][$i]['link'];
     $description = mb_substr(strip_tags($array['channel']['item'][$i]['description']),0,100,'UTF-8').'...';
     $pubDate = $array['channel']['item'][$i]['pubDate'];
-    $image = $array['channel']['item'][$i]->children("media:thumbnail")->thumbnail[0]->attributes();
-    $image_link = $image['url'];
-    echo $image_link;
+    $image = $array['channel']['item'][$i]->children("media:thumbnail", true);
+    //$image_link = $image['url'];
+    echo $image;
     //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
     //cut description to 100 char and add ...
     $a=array($title,$link,$description,$pubDate);
