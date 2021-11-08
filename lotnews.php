@@ -22,119 +22,138 @@ $response = curl_exec($curl);
 curl_close($curl);
 //echo $response;
 
-//get items from xml
-$xml = simplexml_load_string($response);
-$json = json_encode($xml);
-$array = json_decode($json,TRUE);
-//print_r($array);
-//loop news 5 times
-//print_r($array);
-for($i=0;$i<5;$i++){
-    $title = $array['channel']['item'][$i]['title'];
-    $link = $array['channel']['item'][$i]['link'];
-    $description = $array['channel']['item'][$i]['description'];
-    $pubDate = $array['channel']['item'][$i]['pubDate'];
-    //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
-    /*echo $title;
-    echo $link;
-    echo $description;
-    echo $pubDate;
-    echo $image;*/
-    //cut description to 100 char and add ...
-    /*$description = substr($description,0,100);
-    $description = $description."...";*/
-    $a=array($title,$link,$description,$pubDate);
-    array_push($cars,$a);
+//get from xml
+$xml = new SimpleXMLElement($response);
+//get title and link of each news
+foreach ($xml->channel->item as $item) {
+  $cars[] = array(
+    'title' => $item->title,
+    'link' => $item->link,
+    'description' => $item->description,
+    'pubDate' => $item->pubDate,
+    'guid' => $item->guid,
+  );
 }
+print_r(json_encode($cars));
 
-echo json_encode($cars);
 
-$curl = curl_init();
 
-curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://www.khaosod.co.th/tag/เลขเด็ด/feed',
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => '',
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 0,
-  CURLOPT_FOLLOWLOCATION => true,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => 'GET',
-));
 
-$response = curl_exec($curl);
 
-curl_close($curl);
-//echo $response;
 
-//get items from xml
-$xml = simplexml_load_string($response);
-$json = json_encode($xml);
-$array = json_decode($json,TRUE);
-//print_r($array);
-//loop news 5 times
-//print_r($array);
-for($i=0;$i<5;$i++){
-    $title = $array['channel']['item'][$i]['title'];
-    $link = $array['channel']['item'][$i]['link'];
-    $description = $array['channel']['item'][$i]['description'];
-    print_r($array['channel']['item'][$i]['description']);
-    $pubDate = $array['channel']['item'][$i]['pubDate'];
-    //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
-    /*echo $title;
-    echo $link;
-    echo $description;
-    echo $pubDate;
-    echo $image;*/
-    //cut description to 100 char and add ...
-    /*$description = substr($description,0,100);
-    $description = $description."...";*/
-    $a=array($title,$link,$description,$pubDate);
-    array_push($cars,$a);
-}
 
-$curl = curl_init();
+// $xml = simplexml_load_string($response);
+// $json = json_encode($xml);
+// $array = json_decode($json,TRUE);
+// //print_r($array);
+// //loop news 5 times
+// //print_r($array);
+// for($i=0;$i<5;$i++){
+//     $title = $array['channel']['item'][$i]['title'];
+//     $link = $array['channel']['item'][$i]['link'];
+//     $description = $array['channel']['item'][$i]['description'];
+//     $pubDate = $array['channel']['item'][$i]['pubDate'];
+//     //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
+//     /*echo $title;
+//     echo $link;
+//     echo $description;
+//     echo $pubDate;
+//     echo $image;*/
+//     //cut description to 100 char and add ...
+//     /*$description = substr($description,0,100);
+//     $description = $description."...";*/
+//     $a=array($title,$link,$description,$pubDate);
+//     array_push($cars,$a);
+// }
 
-curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://www.brighttv.co.th/tag/หวยแม่น้ำหนึ่ง/feed',
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => '',
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 0,
-  CURLOPT_FOLLOWLOCATION => true,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => 'GET',
-));
+// echo json_encode($cars);
 
-$response = curl_exec($curl);
+// $curl = curl_init();
 
-curl_close($curl);
-//echo $response;
+// curl_setopt_array($curl, array(
+//   CURLOPT_URL => 'https://www.khaosod.co.th/tag/เลขเด็ด/feed',
+//   CURLOPT_RETURNTRANSFER => true,
+//   CURLOPT_ENCODING => '',
+//   CURLOPT_MAXREDIRS => 10,
+//   CURLOPT_TIMEOUT => 0,
+//   CURLOPT_FOLLOWLOCATION => true,
+//   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+//   CURLOPT_CUSTOMREQUEST => 'GET',
+// ));
 
-//get items from xml
-$xml = simplexml_load_string($response);
-$json = json_encode($xml);
-$array = json_decode($json,TRUE);
-//print_r($array);
-//loop news 5 times
-//print_r($array);
-for($i=0;$i<5;$i++){
-    $title = $array['channel']['item'][$i]['title'];
-    $link = $array['channel']['item'][$i]['link'];
-    $description = $array['channel']['item'][$i]['description'];
-    $pubDate = $array['channel']['item'][$i]['pubDate'];
-    //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
-    /*echo $title;
-    echo $link;
-    echo $description;
-    echo $pubDate;
-    echo $image;*/
-    //cut description to 100 char and add ...
-    /*$description = substr($description,0,100);
-    $description = $description."...";*/
-    $a=array($title,$link,$description,$pubDate);
-    array_push($cars,$a);
-}
+// $response = curl_exec($curl);
 
-echo json_decode($cars);
+// curl_close($curl);
+// //echo $response;
+
+// //get items from xml
+// $xml = simplexml_load_string($response);
+// $json = json_encode($xml);
+// $array = json_decode($json,TRUE);
+// //print_r($array);
+// //loop news 5 times
+// //print_r($array);
+// for($i=0;$i<5;$i++){
+//     $title = $array['channel']['item'][$i]['title'];
+//     $link = $array['channel']['item'][$i]['link'];
+//     $description = $array['channel']['item'][$i]['description'];
+//     print_r($array['channel']['item'][$i]['description']);
+//     $pubDate = $array['channel']['item'][$i]['pubDate'];
+//     //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
+//     /*echo $title;
+//     echo $link;
+//     echo $description;
+//     echo $pubDate;
+//     echo $image;*/
+//     //cut description to 100 char and add ...
+//     /*$description = substr($description,0,100);
+//     $description = $description."...";*/
+//     $a=array($title,$link,$description,$pubDate);
+//     array_push($cars,$a);
+// }
+
+// $curl = curl_init();
+
+// curl_setopt_array($curl, array(
+//   CURLOPT_URL => 'https://www.brighttv.co.th/tag/หวยแม่น้ำหนึ่ง/feed',
+//   CURLOPT_RETURNTRANSFER => true,
+//   CURLOPT_ENCODING => '',
+//   CURLOPT_MAXREDIRS => 10,
+//   CURLOPT_TIMEOUT => 0,
+//   CURLOPT_FOLLOWLOCATION => true,
+//   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+//   CURLOPT_CUSTOMREQUEST => 'GET',
+// ));
+
+// $response = curl_exec($curl);
+
+// curl_close($curl);
+// //echo $response;
+
+// //get items from xml
+// $xml = simplexml_load_string($response);
+// $json = json_encode($xml);
+// $array = json_decode($json,TRUE);
+// //print_r($array);
+// //loop news 5 times
+// //print_r($array);
+// for($i=0;$i<5;$i++){
+//     $title = $array['channel']['item'][$i]['title'];
+//     $link = $array['channel']['item'][$i]['link'];
+//     $description = $array['channel']['item'][$i]['description'];
+//     $pubDate = $array['channel']['item'][$i]['pubDate'];
+//     //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
+//     /*echo $title;
+//     echo $link;
+//     echo $description;
+//     echo $pubDate;
+//     echo $image;*/
+//     //cut description to 100 char and add ...
+//     /*$description = substr($description,0,100);
+//     $description = $description."...";*/
+//     $a=array($title,$link,$description,$pubDate);
+//     array_push($cars,$a);
+// }
+
+// echo json_decode($cars);
 //print_r($json);
