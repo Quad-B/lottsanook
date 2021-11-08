@@ -2,6 +2,10 @@
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
+function fcn(&$item) {
+    $item = substr($item,0,100)."...";
+}
+
 $cars = array(); 
 
 $curl = curl_init();
@@ -60,13 +64,11 @@ for($i=0;$i<5;$i++){
      //cut description to 100 char and add ...
      $description = strip_tags($array['channel']['item'][$i]['description']);
      $a=array($title,$link,$description,$pubDate);
-     $a[2] = substr($a[2],0,100)."...";
+     $a[2] = array_walk($description, "fcn");
      array_push($cars,$a);
 }
 
-echo json_encode($cars);
-
-/*$curl = curl_init();
+$curl = curl_init();
 
 curl_setopt_array($curl, array(
   CURLOPT_URL => 'https://www.khaosod.co.th/tag/เลขเด็ด/feed',
@@ -104,13 +106,13 @@ for($i=0;$i<5;$i++){
     echo $pubDate;
     echo $image;*/
     //cut description to 100 char and add ...
-    /*$description = substr($description,0,100);
+    $description = substr($description,0,100);
     $description = $description."...";
     $a=array($title,$link,$description,$pubDate);
     array_push($cars,$a);
 }
 
-$curl = curl_init();
+/*$curl = curl_init();
 
 curl_setopt_array($curl, array(
   CURLOPT_URL => 'https://www.brighttv.co.th/tag/หวยแม่น้ำหนึ่ง/feed',
