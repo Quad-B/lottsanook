@@ -22,6 +22,8 @@ $response = curl_exec($curl);
 curl_close($curl);
 //echo $response;
 
+$removed = preg_replace('/^\s*\/\/<!\[CDATA\[([\s\S]*)\/\/\]\]>\s*\z/', '$1', $response);
+
 //get from xml
 $xml = new SimpleXMLElement($response);
 //get title and link of each news
