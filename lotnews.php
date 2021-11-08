@@ -60,6 +60,7 @@ for($i=0;$i<5;$i++){
      //cut description to 100 char and add ...
      $description = strip_tags($array['channel']['item'][$i]['description']);
      $a=array($title,$link,$description,$pubDate);
+     $a[2] = substr($a[2],0,100)."...";
      array_push($cars,$a);
 }
 
