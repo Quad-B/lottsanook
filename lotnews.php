@@ -47,6 +47,8 @@ for($i=0;$i<5;$i++){
     array_push($cars,$a);
 }
 
+echo json_decode($cars);
+
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
