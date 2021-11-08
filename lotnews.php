@@ -2,10 +2,6 @@
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
-function fcn(&$item) {
-    $item = substr($item,0,100)."...";
-}
-
 $cars = array(); 
 
 $curl = curl_init();
@@ -79,7 +75,9 @@ for($i=0;$i<5;$i++){
     array_push($cars,$a);
 }
 
-$cars[0][2] = substr($cars[0][2],0,100)."...";
+for ($i=0; $i < count($cars); $i++) { 
+    $cars[$i][2] = substr($cars[$i][2],0,100)."...";
+}
 
 echo json_encode($cars);
 
