@@ -76,14 +76,14 @@ for($i=0;$i<5;$i++){
     array_push($cars,$a);
 }*/
 
-$xml=simplexml_load_file("https://www.khaosod.co.th/tag/เลขเด็ด/feed") or die("Error: Cannot create object");
+$xml=simplexml_load_file("https://www.khaosod.co.th/tag/เลขเด็ด/feed", 'SimpleXMLElement', LIBXML_NOCDATA) or die("Error: Cannot create object");
 //for 5 times
 for($i=0;$i<5;$i++){
-    $title = $xml->channel->item[$i]->title;
-    $link = $xml->channel->item[$i]->link;
+    $title = $xml->channel->item[$i]->title[0];
+    $link = $xml->channel->item[$i]->link[0];
     //cut description to 100 char and add ...
-    $description = mb_substr(strip_tags($xml->channel->item[$i]->description),0,100,'UTF-8').'...';
-    $pubDate = $xml->channel->item[$i]->pubDate;
+    $description = mb_substr(strip_tags($xml->channel->item[$i]->description[0]),0,100,'UTF-8').'...';
+    $pubDate = $xml->channel->item[$i]->pubDate[0];
     $content = $xml->channel->item[$i]->children('media:content', true)->content;
     $image = $content->attributes();
     echo $image;
