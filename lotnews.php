@@ -84,8 +84,9 @@ for($i=0;$i<5;$i++){
     //cut description to 100 char and add ...
     $description = mb_substr(strip_tags($xml->channel->item[$i]->description),0,100,'UTF-8').'...';
     $pubDate = $xml->channel->item[$i]->pubDate;
-    $content = $xml->channel->item[0]->children('media:content', true)->content;
+    $content = $xml->channel->item[$i]->children('media:content', true)->content;
     $image = $content->attributes();
+    echo $image;
     $a=array($title,$link,$description,$image,$pubDate);
     array_push($cars,$a);
 }
