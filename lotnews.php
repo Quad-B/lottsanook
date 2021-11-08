@@ -70,7 +70,7 @@ for($i=0;$i<5;$i++){
     $link = $array['channel']['item'][$i]['link'];
     $description = mb_substr(strip_tags($array['channel']['item'][$i]['description']),0,100,'UTF-8').'...';
     $pubDate = $array['channel']['item'][$i]['pubDate'];
-    $image = $rss->children("https://www.khaosod.co.th/wpapp/uploads/")->thumbnail[1]->attributes();
+    $image = $array['channel']['item'][$i]->children("https://www.khaosod.co.th/wpapp/uploads/")->thumbnail[1]->attributes();
     $image_link = $image['url'];
     echo $image_link;
     //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
