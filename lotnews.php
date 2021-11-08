@@ -31,7 +31,7 @@ $array = json_decode($json,TRUE);
 for($i=0;$i<5;$i++){
     $title = $array['channel']['item'][$i]['title'];
     $link = $array['channel']['item'][$i]['link'];
-    $description = mb_substr(strip_tags($array['channel']['item'][$i]['description']),0,5,'UTF-8');
+    $description = mb_substr(strip_tags($array['channel']['item'][$i]['description']),0,100,'UTF-8').'...';
     $pubDate = $array['channel']['item'][$i]['pubDate'];
     //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
     //cut description to 100 char and add ...
@@ -64,10 +64,11 @@ $array = json_decode($json,TRUE);
 //print_r($array);
 //loop news 5 times
 //print_r($array);
+echo json_encode($array);
 for($i=0;$i<5;$i++){
     $title = $array['channel']['item'][$i]['title'];
     $link = $array['channel']['item'][$i]['link'];
-    $description = mb_substr(strip_tags($array['channel']['item'][$i]['description']),0,5,'UTF-8');
+    $description = mb_substr(strip_tags($array['channel']['item'][$i]['description']),0,100,'UTF-8').'...';
     $pubDate = $array['channel']['item'][$i]['pubDate'];
     //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
     //cut description to 100 char and add ...
@@ -75,8 +76,7 @@ for($i=0;$i<5;$i++){
     array_push($cars,$a);
 }
 
-echo json_encode($cars);
-/*$curl = curl_init();
+$curl = curl_init();
 
 curl_setopt_array($curl, array(
   CURLOPT_URL => 'https://www.brighttv.co.th/tag/หวยแม่น้ำหนึ่ง/feed',
@@ -104,21 +104,13 @@ $array = json_decode($json,TRUE);
 for($i=0;$i<5;$i++){
     $title = $array['channel']['item'][$i]['title'];
     $link = $array['channel']['item'][$i]['link'];
-    $description = $array['channel']['item'][$i]['description'];
+    $description = mb_substr(strip_tags($array['channel']['item'][$i]['description']),0,100,'UTF-8').'...';
     $pubDate = $array['channel']['item'][$i]['pubDate'];
     //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
-    /*echo $title;
-    echo $link;
-    echo $description;
-    echo $pubDate;
-    echo $image;*/
-    //cut description to 100 char and add ...
-    /*$description = substr($description,0,100);
-    $description = $description."...";
     $a=array($title,$link,$description,$pubDate);
     array_push($cars,$a);
 }
 
-echo json_encode($cars);*/
+//echo json_encode($cars);
 //print_r($json);
 ?>
