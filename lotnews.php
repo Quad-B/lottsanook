@@ -80,10 +80,10 @@ $xml=simplexml_load_file("https://www.khaosod.co.th/tag/เลขเด็ด/fe
 //for 5 times
 for($i=0;$i<5;$i++){
     $title = strval($xml->channel->item[$i]->title);
-    $link = $xml->channel->item[$i]->link;
+    $link = strval($xml->channel->item[$i]->link);
     //cut description to 100 char and add ...
     $description = mb_substr(strip_tags($xml->channel->item[$i]->description[0]),0,100,'UTF-8').'...';
-    $pubDate = $xml->channel->item[$i]->pubDate;
+    $pubDate = strval($xml->channel->item[$i]->pubDate);
     $content = $xml->channel->item[$i]->children('media', true)->content;
     $image = $content->attributes()['url'];
     //echo $image;
