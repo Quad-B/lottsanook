@@ -2,6 +2,8 @@
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
+$cars = array(); 
+
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -18,7 +20,7 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 
 curl_close($curl);
-echo $response;
+//echo $response;
 
 //get items from xml
 $xml = simplexml_load_string($response);
@@ -32,10 +34,16 @@ for($i=0;$i<5;$i++){
     $description = $array['channel']['item'][$i]['description'];
     $pubDate = $array['channel']['item'][$i]['pubDate'];
     $image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
-    echo $title;
+    /*echo $title;
     echo $link;
     echo $description;
     echo $pubDate;
-    echo $image;
+    echo $image;*/
+    //cut description to 100 char and add ...
+    $description = substr($description,0,100);
+    $description = $description."...";
+    $a=array($title,$link,$description,$pubDate,$image);
+    array_push($cars,$a);
 }
+echo json_decode($cars);
 //print_r($json);
