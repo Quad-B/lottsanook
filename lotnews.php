@@ -67,7 +67,7 @@ $array = json_decode($json,TRUE);
 for($i=0;$i<5;$i++){
     $title = $array['channel']['item'][$i]['title'];
     $link = $array['channel']['item'][$i]['link'];
-    $description = substr(strip_tags($array['channel']['item'][$i]['description']),0,100);
+    $description = substr(strip_tags($array['channel']['item'][$i]['description']),0,5);
     $pubDate = $array['channel']['item'][$i]['pubDate'];
     //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
     //cut description to 100 char and add ...
