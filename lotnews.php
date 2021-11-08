@@ -129,7 +129,7 @@ curl_close($curl);
 //echo $response;
 
 //get items from xml
-$xml = simplexml_load_string($response);
+$xml = simplexml_load_string($response, 'SimpleXMLElement', LIBXML_NOCDATA);
 $json = json_encode($xml);
 $array = json_decode($json,TRUE);
 //print_r($array);
