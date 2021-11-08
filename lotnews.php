@@ -22,17 +22,18 @@ $response = curl_exec($curl);
 curl_close($curl);
 //echo $response;
 
-$removed = preg_replace('/^\s*\/\/<!\[CDATA\[([\s\S]*)\/\/\]\]>\s*\z/', '$1', $response);
+//$removed = preg_replace('/^\s*\/\/<!\[CDATA\[([\s\S]*)\/\/\]\]>\s*\z/', '$1', $response);
 
 //get from xml
 $xml = new SimpleXMLElement($removed);
 //get title and link of each news
 print_r($xml->channel->item->description);
 foreach ($xml->channel->item as $item) {
+    preg_match("/^<!\[CDATA\[(.*)\]\]>$/s", $item->description, $out);
   $cars[] = array(
     'title' => $item->title,
     'link' => $item->link,
-    'description' => $item->description,
+    'description' => $out[1],
     'pubDate' => $item->pubDate,
     'guid' => $item->guid,
   );
