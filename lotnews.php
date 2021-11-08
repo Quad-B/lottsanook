@@ -25,7 +25,7 @@ curl_close($curl);
 //$removed = preg_replace('/^\s*\/\/<!\[CDATA\[([\s\S]*)\/\/\]\]>\s*\z/', '$1', $response);
 
 //get from xml
-$xml = new SimpleXMLElement($removed);
+$xml = new SimpleXMLElement($response);
 //get title and link of each news
 print_r($xml->channel->item->description);
 foreach ($xml->channel->item as $item) {
@@ -40,37 +40,31 @@ foreach ($xml->channel->item as $item) {
 }
 print_r(json_encode($cars));
 
+$xml = simplexml_load_string($response, null, LIBXML_NOCDATA);
+$json = json_encode($xml);
+$array = json_decode($json,TRUE);
+//print_r($array);
+//loop news 5 times
+//print_r($array);
+for($i=0;$i<5;$i++){
+     $title = $array['channel']['item'][$i]['title'];
+     $link = $array['channel']['item'][$i]['link'];
+     $description = $array['channel']['item'][$i]['description'];
+     $pubDate = $array['channel']['item'][$i]['pubDate'];
+     //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
+     /*echo $title;
+     echo $link;
+     echo $description;
+     echo $pubDate;
+     echo $image;*/
+     //cut description to 100 char and add ...
+     /*$description = substr($description,0,100);
+     $description = $description."...";*/
+     $a=array($title,$link,$description,$pubDate);
+     array_push($cars,$a);
+}
 
-
-
-
-
-
-// $xml = simplexml_load_string($response);
-// $json = json_encode($xml);
-// $array = json_decode($json,TRUE);
-// //print_r($array);
-// //loop news 5 times
-// //print_r($array);
-// for($i=0;$i<5;$i++){
-//     $title = $array['channel']['item'][$i]['title'];
-//     $link = $array['channel']['item'][$i]['link'];
-//     $description = $array['channel']['item'][$i]['description'];
-//     $pubDate = $array['channel']['item'][$i]['pubDate'];
-//     //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
-//     /*echo $title;
-//     echo $link;
-//     echo $description;
-//     echo $pubDate;
-//     echo $image;*/
-//     //cut description to 100 char and add ...
-//     /*$description = substr($description,0,100);
-//     $description = $description."...";*/
-//     $a=array($title,$link,$description,$pubDate);
-//     array_push($cars,$a);
-// }
-
-// echo json_encode($cars);
+echo json_encode($cars);
 
 // $curl = curl_init();
 
