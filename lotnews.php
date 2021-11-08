@@ -66,7 +66,7 @@ $array = json_decode($json,TRUE);
 //print_r($array);
 //echo json_encode($array);
 for($i=0;$i<5;$i++){
-    echo json_encode($array['channel']['item'][$i]['title']);
+    echo json_encode($array['channel']['item'][$i]);
     $title = $array['channel']['item'][$i]['title'];
     $link = $array['channel']['item'][$i]['link'];
     $description = mb_substr(strip_tags($array['channel']['item'][$i]['description']),0,100,'UTF-8').'...';
