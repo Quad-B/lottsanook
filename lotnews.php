@@ -155,3 +155,4 @@ for($i=0;$i<5;$i++){
 
 echo json_encode($cars);
 //print_r($json);
+?>
