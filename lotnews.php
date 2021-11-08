@@ -75,7 +75,8 @@ print_r($array);
 for($i=0;$i<5;$i++){
     $title = $array['channel']['item'][$i]['title'];
     $link = $array['channel']['item'][$i]['link'];
-    $description = $array['channel']['item'][$i]['description'];
+    $description = $array['channel']['item'][$i]['description'][0];
+    echo $description;
     $pubDate = $array['channel']['item'][$i]['pubDate'];
     //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
     /*echo $title;
