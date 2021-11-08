@@ -153,5 +153,5 @@ for($i=0;$i<5;$i++){
     array_push($cars,$a);
 }
 
-echo json_decode($cars);
+echo json_encode($cars);
 //print_r($json);
