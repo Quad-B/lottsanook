@@ -26,7 +26,7 @@ $json = json_encode($xml);
 $array = json_decode($json,TRUE);
 //print_r($array);
 //loop news 5 times
-for($i=0;$i<5;$i++){
+/*for($i=0;$i<5;$i++){
     $title = $array['channel']['item'][$i]['title'];
     $link = $array['channel']['item'][$i]['link'];
     $description = $array['channel']['item'][$i]['description'];
@@ -37,4 +37,5 @@ for($i=0;$i<5;$i++){
     echo $description;
     echo $pubDate;
     echo $image;
-}
+}*/
+print_r($json);
