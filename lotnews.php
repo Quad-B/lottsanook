@@ -41,8 +41,8 @@ for($i=0;$i<5;$i++){
     echo $pubDate;
     echo $image;*/
     //cut description to 100 char and add ...
-    $description = substr($description,0,100);
-    $description = $description."...";
+    /*$description = substr($description,0,100);
+    $description = $description."...";*/
     $a=array($title,$link,$description,$pubDate);
     array_push($cars,$a);
 }
@@ -84,8 +84,8 @@ for($i=0;$i<5;$i++){
     echo $pubDate;
     echo $image;*/
     //cut description to 100 char and add ...
-    $description = substr($description,0,100);
-    $description = $description."...";
+    /*$description = substr($description,0,100);
+    $description = $description."...";*/
     $a=array($title,$link,$description,$pubDate);
     array_push($cars,$a);
 }
@@ -127,8 +127,8 @@ for($i=0;$i<5;$i++){
     echo $pubDate;
     echo $image;*/
     //cut description to 100 char and add ...
-    $description = substr($description,0,100);
-    $description = $description."...";
+    /*$description = substr($description,0,100);
+    $description = $description."...";*/
     $a=array($title,$link,$description,$pubDate);
     array_push($cars,$a);
 }
