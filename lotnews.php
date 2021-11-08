@@ -82,10 +82,10 @@ for($i=0;$i<5;$i++){
     $title = strval($xml->channel->item[$i]->title);
     $link = strval($xml->channel->item[$i]->link);
     //cut description to 100 char and add ...
-    $description = mb_substr(strip_tags($xml->channel->item[$i]->description[0]),0,100,'UTF-8').'...';
+    $description = mb_substr(strip_tags($xml->channel->item[$i]->description),0,100,'UTF-8').'...';
     $pubDate = strval($xml->channel->item[$i]->pubDate);
     $content = $xml->channel->item[$i]->children('media', true)->content;
-    $image = $content->attributes()['url'];
+    $image = strval($content->attributes()['url']);
     //echo $image;
     $a=array($title,$link,$description,$image,$pubDate);
     array_push($cars,$a);
