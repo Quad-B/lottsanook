@@ -71,12 +71,12 @@ $json = json_encode($xml);
 $array = json_decode($json,TRUE);
 //print_r($array);
 //loop news 5 times
-print_r($array);
+//print_r($array);
 for($i=0;$i<5;$i++){
     $title = $array['channel']['item'][$i]['title'];
     $link = $array['channel']['item'][$i]['link'];
-    $description = $array['channel']['item'][$i]['description'][0];
-    echo $description;
+    $description = $array['channel']['item'][$i]['description'];
+    print_r($array['channel']['item'][$i]['description']);
     $pubDate = $array['channel']['item'][$i]['pubDate'];
     //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
     /*echo $title;
