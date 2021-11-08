@@ -5,7 +5,9 @@ header('Access-Control-Allow-Origin: *');
 $cars = array(); 
 
 $xml=simplexml_load_file("https://www.khaosod.co.th/tag/เลขเด็ด/feed") or die("Error: Cannot create object");
-echo $xml->channel->item[0]->title . "<br>";
+$content = $xml->channel->item[0]->children('media', true)->content;
+$contentattr = $content->attributes();
+echo $content;
 
 $curl = curl_init();
 
