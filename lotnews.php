@@ -79,9 +79,7 @@ for($i=0;$i<5;$i++){
     array_push($cars,$a);
 }
 
-foreach ($cars as $key => $value) {
-    $cars[$key][2] = substr($cars[$key][2],0,100)."...";
-}
+$cars[0][2] = substr($cars[0][2],0,100)."...";
 
 echo json_encode($cars);
 
