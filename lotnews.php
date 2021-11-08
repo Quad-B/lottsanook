@@ -67,16 +67,12 @@ $array = json_decode($json,TRUE);
 for($i=0;$i<5;$i++){
     $title = $array['channel']['item'][$i]['title'];
     $link = $array['channel']['item'][$i]['link'];
-    $description = strip_tags($array['channel']['item'][$i]['description']);
+    $description = substr(strip_tags($array['channel']['item'][$i]['description']),0,100);
     $pubDate = $array['channel']['item'][$i]['pubDate'];
     //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
     //cut description to 100 char and add ...
     $a=array($title,$link,$description,$pubDate);
     array_push($cars,$a);
-}
-
-for ($i=0; $i < count($cars); $i++) { 
-    $cars[$i][2] = substr($cars[$i][2],0,100)."...";
 }
 
 echo json_encode($cars);
