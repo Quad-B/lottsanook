@@ -80,7 +80,7 @@ for($i=0;$i<5;$i++){
 }
 
 foreach ($cars as $key => $value) {
-    $cars[$key][2] = substr($value,0,100)."...";
+    $cars[$key][2] = substr($value[2],0,100)."...";
 }
 
 echo json_encode($cars);
