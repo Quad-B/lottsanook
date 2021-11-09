@@ -5,21 +5,23 @@ header('Access-Control-Allow-Origin: *');
 $countnumber = array(); 
 //mod by 3
 if(isset($_GET['count'])){
-  if($_GET['count']%3 == 0){
-    $countnumber[0] = $_GET['count']/3;
-    $countnumber[1] = $_GET['count']/3;
-    $countnumber[2] = $_GET['count']/3;
+  if(intval($_GET['count'])%3 == 0){
+    $countnumber[0] = intval($_GET['count'])/3;
+    $countnumber[1] = intval($_GET['count'])/3;
+    $countnumber[2] = intval($_GET['count'])/3;
   }else{
-    if($_GET['count']%3 == 1){
+    if(intval($_GET['count'])%3 == 1){
       //round down
-      $countnumber[0] = floor($_GET['count']/3);
+      $countnumber[0] = floor(intval($_GET['count'])/3);
       //round up
-      $countnumber[1] = ceil($_GET['count']/3);
-      $countnumber[2] = floor($_GET['count']/3);
+      $countnumber[1] = ceil(intval($_GET['count'])/3);
+      $countnumber[2] = floor(intval($_GET['count'])/3);
     }else{
-      $countnumber[0] = $_GET['count']/3;
-      $countnumber[1] = $_GET['count']/3;
-      $countnumber[2] = $_GET['count']/3;
+      //round down
+      $countnumber[0] = floor(intval($_GET['count'])/3);
+      //round up
+      $countnumber[1] = ceil(intval($_GET['count'])/3);
+      $countnumber[2] = ceil(intval($_GET['count'])/3);
     }
   }
 }
@@ -50,14 +52,15 @@ $array = json_decode($json,TRUE);
 //print_r($array);
 //loop news 5 times
 //print_r($array);
-for($i=0;$i<5;$i++){
+for($i=0;$i<$countnumber[0];$i++){
     $title = $array['channel']['item'][$i]['title'];
     $link = $array['channel']['item'][$i]['link'];
     $description = mb_substr(strip_tags($array['channel']['item'][$i]['description']),0,100,'UTF-8').'...';
     $pubDate = $array['channel']['item'][$i]['pubDate'];
     //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
     //cut description to 100 char and add ...
-    $a=array($title,$link,$description,$pubDate);
+    //$a=array($title,$link,$description,$pubDate);
+    $a=array("title"=>$title, "link"=>$link, "description"=>$description, "pubDate"=>$pubDate);
     array_push($cars,$a);
 }
 
@@ -100,7 +103,7 @@ for($i=0;$i<5;$i++){
 
 $xml=simplexml_load_file("https://www.khaosod.co.th/tag/เลขเด็ด/feed", 'SimpleXMLElement', LIBXML_NOCDATA) or die("Error: Cannot create object");
 //for 5 times
-for($i=0;$i<5;$i++){
+for($i=0;$i<$countnumber[1];$i++){
     $title = strval($xml->channel->item[$i]->title);
     $link = strval($xml->channel->item[$i]->link);
     //cut description to 100 char and add ...
@@ -109,7 +112,8 @@ for($i=0;$i<5;$i++){
     $content = $xml->channel->item[$i]->children('media', true)->content;
     $image = strval($content->attributes()['url']);
     //echo $image;
-    $a=array($title,$link,$description,$image,$pubDate);
+    //$a=array($title,$link,$description,$image,$pubDate);
+    $a=array("title"=>$title, "link"=>$link, "description"=>$description, "image"=>$image, "pubDate"=>$pubDate);
     array_push($cars,$a);
 }
 
@@ -138,13 +142,14 @@ $array = json_decode($json,TRUE);
 //print_r($array);
 //loop news 5 times
 //print_r($array);
-for($i=0;$i<5;$i++){
+for($i=0;$i<$countnumber[2];$i++){
     $title = $array['channel']['item'][$i]['title'];
     $link = $array['channel']['item'][$i]['link'];
     $description = mb_substr(strip_tags($array['channel']['item'][$i]['description']),0,100,'UTF-8').'...';
     $pubDate = $array['channel']['item'][$i]['pubDate'];
     //$image = $array['channel']['item'][$i]['enclosure']['@attributes']['url'];
-    $a=array($title,$link,$description,$pubDate);
+    //$a=array($title,$link,$description,$pubDate);
+    $a=array("title"=>$title, "link"=>$link, "description"=>$description, "pubDate"=>$pubDate);
     array_push($cars,$a);
 }
 
