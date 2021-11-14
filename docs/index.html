@@ -20,7 +20,8 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"
     rel="stylesheet"
     />
-</head>
+    <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css">
+</head>  
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -40,18 +41,19 @@
         </button>
     
         <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
             <!-- Navbar brand -->
             <a class="navbar-brand mt-2 mt-lg-0" href="#">
-            <img
+            <!--img
                 src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png"
                 height="15"
                 alt=""
                 loading="lazy"
-            />
+            /-->
+            Thai Lottery API
             </a>
             <!-- Left links -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
                 <a class="nav-link" href="#">Home</a>
             </li>
@@ -67,8 +69,8 @@
         <!-- Collapsible wrapper -->
     
         <!-- Right elements -->
-        <div class="d-flex align-items-center">
-            <!-- Icon -->
+        <!--div class="d-flex align-items-center">
+            < Icon -->
             <!--a class="text-reset me-3" href="#">
             <i class="fas fa-shopping-cart"></i>
             </a-->
@@ -131,16 +133,293 @@
                 <a class="dropdown-item" href="#">Logout</a>
             </li>
             </ul-->
-        </div>
+        <!--/div-->
         <!-- Right elements -->
         </div>
         <!-- Container wrapper -->
     </nav>
     <!-- Navbar -->
+    <!-- Jumbotron -->
+    <div class="p-5 text-center bg-light">
+        <h1 class="mb-3">Thai Lottery API</h1>
+        <h4 class="mb-3">API ลอตเตอร์รี่ของไทย</h4>
+        <a class="btn btn-primary" href="" role="button">Call to action</a>
+    </div>
+    <!-- Jumbotron -->
+    <!--div class="container-fluid py-5" style="background: #6a85b6;background: -webkit-linear-gradient(to right, rgba(106, 133, 182, 0.5), rgba(186, 200, 224, 0.5));background: linear-gradient(to right, rgba(106, 133, 182, 0.5), rgba(186, 200, 224, 0.5))">
+        <div class="container py-5 text-center">
+            <!-- Content here >
+            <h1>Thai Lottery API</h1>
+            <p>API ลอตเตอร์รี่ของไทย</p>
+        </div>
+    </div-->
+    <div class="container py-3">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingMain">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-mdb-toggle="collapse"
+                      data-mdb-target="#collapseMain"
+                      aria-expanded="true"
+                      aria-controls="collapseMain"
+                    >
+                      รางวัลที่หนึ่ง,รางวัลใกล้เคียง,สามตัวหน้า,สามตัวท้าย และ สองตัวท้าย
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseMain"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="headingMain"
+                    data-mdb-parent="#accordionExample"
+                  >
+                    <div class="accordion-body text-center" id="mainshow">
+                      <h2>รางวัลที่หนึ่ง</h2>
+                      <p class="fs-1"><div class="ph-item ph-row justify-content-center m-0 p-0 border-0"><div class="ph-col-6 big"></div></div></p>
+                      <h3>รางวัลใกล้เคียง</h3>
+                      <p class="fs-2"><div class="ph-item ph-row justify-content-center m-0 p-0 border-0 d-inline"><div class="ph-col-6 big d-inline"></div></div> | <div class="ph-item ph-row justify-content-center m-0 p-0 border-0 d-inline"><div class="ph-col-6 big d-inline"></div></div></p>
+                      <div class="row">
+                        <div class="col-md">
+                          <h4>เลขหน้าสามตัว</h4>
+                          <p class="fs-3"><div class="ph-item ph-row justify-content-center m-0 p-0 border-0 d-inline"><div class="ph-col-6 big d-inline"></div></div> | <div class="ph-item ph-row justify-content-center m-0 p-0 border-0 d-inline"><div class="ph-col-6 big d-inline"></div></div></p>
+                        </div>
+                        <div class="col-md">
+                          <h4>เลขท้ายสามตัว</h4>
+                          <p class="fs-3"><div class="ph-item ph-row justify-content-center m-0 p-0 border-0 d-inline"><div class="ph-col-6 big d-inline"></div></div> | <div class="ph-item ph-row justify-content-center m-0 p-0 border-0 d-inline"><div class="ph-col-6 big d-inline"></div></div></p>
+                        </div>
+                        <div class="col-md">
+                          <h4>เลขท้ายสองตัว</h4>
+                          <p class="fs-3"><div class="ph-item ph-row justify-content-center m-0 p-0 border-0"><div class="ph-col-6 big"></div></div></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-mdb-toggle="collapse"
+                      data-mdb-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      รางวัลที่สอง
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseOne"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingOne"
+                    data-mdb-parent="#accordionExample"
+                  >
+                    <div class="accordion-body" id="wintwoshow">
+                      <div class="row">
+                        <div class="col-md">
+                          <p class="fs-3"><div class="ph-item ph-row justify-content-center m-0 p-0 border-0"><div class="ph-col-6 big"></div></div></p>
+                        </div>
+                        <div class="col-md">
+                          <p class="fs-3"><div class="ph-item ph-row justify-content-center m-0 p-0 border-0"><div class="ph-col-6 big"></div></div></p>
+                        </div>
+                        <div class="col-md">
+                          <p class="fs-3"><div class="ph-item ph-row justify-content-center m-0 p-0 border-0"><div class="ph-col-6 big"></div></div></p>
+                        </div>
+                        <div class="col-md">
+                          <p class="fs-3"><div class="ph-item ph-row justify-content-center m-0 p-0 border-0"><div class="ph-col-6 big"></div></div></p>
+                        </div>
+                        <div class="col-md">
+                          <p class="fs-3"><div class="ph-item ph-row justify-content-center m-0 p-0 border-0"><div class="ph-col-6 big"></div></div></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-mdb-toggle="collapse"
+                      data-mdb-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                    รางวัลที่สาม
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingTwo"
+                    data-mdb-parent="#accordionExample"
+                  >
+                    <div class="accordion-body" id="winthreeshow">
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-mdb-toggle="collapse"
+                      data-mdb-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                    รางวัลที่สี่
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingThree"
+                    data-mdb-parent="#accordionExample"
+                  >
+                    <div class="accordion-body" id="winfourshow">
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-mdb-toggle="collapse"
+                        data-mdb-target="#collapseFour"
+                        aria-expanded="false"
+                        aria-controls="collapseFour"
+                      >
+                      รางวัลที่ห้า
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseFour"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingFour"
+                      data-mdb-parent="#accordionExample"
+                    >
+                      <div class="accordion-body" id="winfiveshow">
+                        
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6 text-center my-auto">
+            <h1>ดูสลากกินแบ่งฯด้วยวันที่</h1>
+            <div class="card mb-3">
+              <div class="card-body"><p class="d-inline" id="indexurl">https://thai-lottery1.p.rapidapi.com/?date=</p><p class="fw-bold d-inline" id="thatday"></p></div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="document.getElementById('indexurl').innerText = 'https://thai-lottery1.p.rapidapi.com/?date='">หลัก</button>
+            <button type="button" class="btn btn-secondary" onclick="document.getElementById('indexurl').innerText = 'https://thai-lottery1.p.rapidapi.com/index2?date='">สำรอง</button>
+            <button type="button" class="btn btn-dark" onclick="document.getElementById('indexurl').innerText = 'https://thai-lottery1.p.rapidapi.com/index3?date='">สำรอง 2</button>
+          </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-black bg-gradient">
+      <div class="container py-3 text-white">
+        <div class="row">
+          <div class="col-6 text-center my-auto">
+            <h2>ลิลต์วันที่สลากกินแบ่งฯออกทั้งหมดของปี</h2>
+            <div class="card mb-3">
+              <div class="card-body text-black">https://thai-lottery1.p.rapidapi.com/gdpy?date=<p class="fw-bold d-inline" id="thatyear"></p></div>
+            </div>
+          </div>
+          <div class="col-6 my-auto" id="datelist">
+            <center>
+            <ul class="list-group w-50">
+              <li class="list-group-item"><div class="ph-item ph-row justify-content-center m-0 p-0 border-0"><div class="ph-col-6 big"></div></div></li>
+            </ul>      
+            </center>      
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- MDB -->
     <script
     type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"
     ></script>
+    <script>
+      document.getElementById('thatyear').innerText = new Date().getFullYear()+543;
+      fetch("https://thai-lottery1.p.rapidapi.com/gdpy?year="+document.getElementById('thatyear').innerText, {
+        "method": "GET",
+        "headers": {
+          "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
+          "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        //console.log(data)
+        document.getElementById("thatday").innerText = data[data.length-1];
+        let daylist
+        daylist = "<center><ul class=\"list-group w-50\">"
+        data.forEach(element => {
+           daylist += "<li class=\"list-group-item\">"+element+"</li>"
+        });
+        document.getElementById("datelist").innerHTML = daylist+"</ul></center>"
+        fetch("https://thai-lottery1.p.rapidapi.com/?date="+data[data.length-1], {
+          "method": "GET",
+          "headers": {
+            "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
+            "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
+          }
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data)
+          document.getElementById("mainshow").innerHTML = "<h2>รางวัลที่หนึ่ง</h2><p class=\"fs-1\">"+data[0][1]+"</p><h3>รางวัลใกล้เคียง</h3><p class=\"fs-2\">"+data[4][1]+" | "+data[4][2]+"</p><div class=\"row\"><div class=\"col-md\"><h4>เลขหน้าสามตัว</h4><p class=\"fs-3\">"+data[1][1]+" | "+data[1][2]+"</p></div><div class=\"col-md\"><h4>เลขท้ายสามตัว</h4><p class=\"fs-3\">"+data[2][1]+" | "+data[2][2]+"</p></div><div class=\"col-md\"><h4>เลขท้ายสองตัว</h4><p class=\"fs-3\">"+data[3][1]+"</p></div></div>";
+          document.getElementById("wintwoshow").innerHTML = "<div class=\"row\"><div class=\"col-md\"><p class=\"fs-3\">"+data[5][1]+"</p></div><div class=\"col-md\"><p class=\"fs-3\">"+data[5][2]+"</p></div><div class=\"col-md\"><p class=\"fs-3\">"+data[5][3]+"</p></div><div class=\"col-md\"><p class=\"fs-3\">"+data[5][4]+"</p></div><div class=\"col-md\"><p class=\"fs-3\">"+data[5][5]+"</p></div></div>"
+          let three
+          three = "<div class=\"row\">"
+          data[6].shift()
+          data[6].forEach(element => {
+            three += "<div class=\"col-md\"><p class=\"fs-3\">"+element+"</p></div>"
+          });
+          document.getElementById("winthreeshow").innerHTML = three+"</div>"
+          let four
+          four = "<div class=\"row\">"
+          data[7].shift()
+          data[7].forEach(element => {
+            four += "<div class=\"col-md-3\"><p class=\"fs-3\">"+element+"</p></div>"
+          });
+          document.getElementById("winfourshow").innerHTML = four+"</div>"
+          let five
+          five = "<div class=\"row\">"
+          data[8].shift()
+          data[8].forEach(element => {
+            five += "<div class=\"col-md-3\"><p class=\"fs-4\">"+element+"</p></div>"
+          });
+          document.getElementById("winfiveshow").innerHTML = five+"</div>"
+        })
+        .catch(err => {
+          console.error(err);
+        });
+      })
+      .catch(err => {
+        console.error(err);
+      });
+      /*fetch("https://thai-lottery1.p.rapidapi.com/?date=16052564", {
+        "method": "GET",
+        "headers": {
+          "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
+          "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
+        }
+      })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.error(err);
+      });*/
+    </script>
 </body>
 </html>
