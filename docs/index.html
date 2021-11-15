@@ -55,7 +55,7 @@
             <!-- Left links -->
             <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="">Home</a>
             </li>
             <!--li class="nav-item">
                 <a class="nav-link" href="#">Team</a>
@@ -142,7 +142,7 @@
     <!-- Jumbotron -->
     <div class="p-5 text-center bg-light">
         <h1 class="mb-3">Thai Lottery API</h1>
-        <h4 class="mb-3">API ลอตเตอร์รี่ของไทย</h4>
+        <h4 class="mb-3">สลากกินแบ่งฯ/หวยไทย API</h4>
         <a class="btn btn-primary" href="" role="button">Call to action</a>
     </div>
     <!-- Jumbotron -->
@@ -313,7 +313,7 @@
               </div>
           </div>
           <div class="col-md-6 text-center my-auto">
-            <h1>ดูสลากกินแบ่งฯด้วยวันที่</h1>
+            <span class="badge bg-primary">Basic</span><h1>ดูสลากกินแบ่งฯด้วยวันที่</h1>
             <div class="card mb-3">
               <div class="card-body"><p class="d-inline" id="indexurl">https://thai-lottery1.p.rapidapi.com/?date=</p><p class="fw-bold d-inline" id="thatday" data-mdb-toggle="tooltip" title="วันเดือนปี"></p></div>
             </div>
@@ -327,7 +327,7 @@
       <div class="container py-3 text-white">
         <div class="row">
           <div class="col-6 text-center my-auto">
-            <h2>ลิลต์วันที่สลากกินแบ่งฯออกทั้งหมดของปี</h2>
+            <span class="badge bg-primary">Basic</span><h2>ลิลต์วันที่สลากกินแบ่งฯออกทั้งหมดของปี</h2>
             <div class="card mb-3">
               <div class="card-body text-black">https://thai-lottery1.p.rapidapi.com/gdpy?date=<p class="fw-bold d-inline" id="thatyear" data-mdb-toggle="tooltip" title="ปี"></p></div>
             </div>
@@ -346,7 +346,7 @@
       <div class="container py-3 text-black">
         <div class="row">
           <div class="col-4 text-center my-auto">
-            <h2>วันนี้สลากกินแบ่งฯออกหรือไม่</h2>
+            <span class="badge bg-primary">Basic</span><h2>วันนี้สลากกินแบ่งฯออกหรือไม่</h2>
             <div class="card">
               <div class="card-body text-black">https://thai-lottery1.p.rapidapi.com/reto</div>
             </div>
@@ -355,7 +355,7 @@
             </div>
           </div>
           <div class="col-4 text-center my-auto">
-            <p class="fs-4">แสดงวันที่ทั้งหมดที่เลขสลากฯนี้เคยออก</p>
+            <span class="badge bg-primary">Basic</span><p class="fs-4">แสดงวันที่ทั้งหมดที่เลขสลากฯนี้เคยออก</p>
             <div class="card">
               <div class="card-body text-black">https://thai-lottery1.p.rapidapi.com/finddol?search=<p class="fw-bold d-inline" data-mdb-toggle="tooltip" title="เลขสลากฯ">912306</p></div>
             </div>
@@ -364,16 +364,71 @@
             </div>
           </div>
           <div class="col-4 text-center my-auto">
-            <h2>ตรวจสลากกินแบ่งฯในวันนั้นๆ</h2>
+            <span class="badge bg-primary">Basic</span><h2>ตรวจสลากกินแบ่งฯในวันนั้นๆ</h2>
             <div class="card">
               <div class="card-body text-black">https://thai-lottery1.p.rapidapi.com/checklottery?by=<p class="fw-bold d-inline" data-mdb-toggle="tooltip" title="วันเดือนปี">01032564</p>&search=<p class="fw-bold d-inline" data-mdb-toggle="tooltip" title="เลขสลากฯที่ต้องการตรวจ">835573</p></div>
             </div>
             <div class="card mt-1">
-              <div class="card-body">ผลลัพธ์ : <div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div> กำลังโหลด</div>
+              <div class="card-body" id="checklottery">ผลลัพธ์ : <div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div> กำลังโหลด</div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="container-fluid" style="background: linear-gradient(to bottom, #D4AF37 0%, #C5A028 100%);">
+      <div class="container py-3 text-black">
+        <div class="row">
+          <div class="col-6">
+            
+          </div>
+          <div class="col-6 text-center">
+            <h2>ดึงข่าวเลขเด็ด</h2>
+            <div class="card mb-3">
+              <div class="card-body text-black">https://thai-lottery1.p.rapidapi.com/lotnews?count=<p class="fw-bold d-inline" data-mdb-toggle="tooltip" title="จำนวนข่าวที่ต้องการ">9</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+    >
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">ทำไมต้องเป็น 000022 และใช้งานยังไง</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-mdb-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          เมื่อเรียกใช้งาน แล้วเลขสลากฯที่ตรวจถูกรางวัลจะขึ้นผลลัพธ์ดังต่อไปนี้<br>
+          รางวัลที่หนึ่ง แสดงผลเป็น 111111<br>
+          เลขหน้าสามตัว แสดงผลเป็น 333000<br>
+          เลขท้ายสามตัว แสดงผลเป็น 000333<br>
+          เลขท้ายสองตัว แสดงผลเป็น 000022<br>
+          รางวัลใกล้เคียงรางวัลที่หนึ่ง แสดงผลเป็น 111112<br>
+          รางวัลที่สอง แสดงผลเป็น 222222<br>
+          รางวัลที่สาม แสดงผลเป็น 333333<br>
+          รางวัลที่สี่ แสดงผลเป็น 444444<br>
+          รางวัลที่ห้า แสดงผลเป็น 555555<br>
+        </div>
+        <div class="modal-footer">
+          <!--button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-primary">Save changes</button-->
+        </div>
+      </div>
+    </div>
     </div>
     <!-- MDB -->
     <script
@@ -476,6 +531,21 @@
       .then(response => response.json())
       .then(data => {
         document.getElementById("finddol").innerHTML = 'ผลลัพธ์ : '+JSON.stringify(data);
+      })
+      .catch(err => {
+        console.error(err);
+      });
+
+      fetch("https://thai-lottery1.p.rapidapi.com/checklottery?by=01032564&search=835573", {
+        "method": "GET",
+        "headers": {
+          "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
+          "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
+        }
+      })
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("checklottery").innerHTML = 'ผลลัพธ์ : '+data+' <i class="fas fa-question-circle" data-mdb-toggle="modal" data-mdb-target="#exampleModal"></i>';
       })
       .catch(err => {
         console.error(err);
