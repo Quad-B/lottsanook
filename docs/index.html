@@ -754,7 +754,7 @@
           .then(response => response.json())
           .then(data => {
             // if number is not 6 length then add 0 to the front
-            document.getElementById("lastlot").innerHTML = "<h2>รางวัลที่หนึ่ง</h2><p class=\"fs-1\">"+data['win']+"</p><h3>รางวัลใกล้เคียง</h3><p class=\"fs-2\">"+((parseInt(data['win'])-1)).slice(-6)+" | "+((parseInt(data['win'])-1)).slice(-6)+"</p><div class=\"row\"><div class=\"col-md\"><h4>เลขหน้าสามตัว</h4><p class=\"fs-3\">"+data['threefirst']+"</p></div><div class=\"col-md\"><h4>เลขท้ายสามตัว</h4><p class=\"fs-3\">"+data['threeend']+"</p></div><div class=\"col-md\"><h4>เลขท้ายสองตัว</h4><p class=\"fs-3\">"+data['twoend']+"</p></div></div>";;
+            document.getElementById("lastlot").innerHTML = "<h2>รางวัลที่หนึ่ง</h2><p class=\"fs-1\">"+data['win']+"</p><h3>รางวัลใกล้เคียง</h3><p class=\"fs-2\">"+((parseInt(data['win'])-1)).slice(-6)+" | "+((parseInt(data['win'])+1)).slice(-6)+"</p><div class=\"row\"><div class=\"col-md\"><h4>เลขหน้าสามตัว</h4><p class=\"fs-3\">"+data['threefirst']+"</p></div><div class=\"col-md\"><h4>เลขท้ายสามตัว</h4><p class=\"fs-3\">"+data['threeend']+"</p></div><div class=\"col-md\"><h4>เลขท้ายสองตัว</h4><p class=\"fs-3\">"+data['twoend']+"</p></div></div>";;
           })
           .catch(err => {
             console.error(err);
