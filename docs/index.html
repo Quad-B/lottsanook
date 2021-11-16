@@ -158,7 +158,7 @@
             <p>API ลอตเตอร์รี่ของไทย</p>
         </div>
     </div-->
-    <div class="container py-3">
+    <div class="container py-3 lazy" data-lazy-function="main">
         <div class="row">
           <div class="col-md-6">
             <div class="accordion" id="accordionExample">
@@ -350,7 +350,7 @@
     <div class="container-fluid bg-white bg-gradient">
       <div class="container py-3 text-black">
         <div class="row">
-          <div class="col-4 text-center my-auto">
+          <div class="col-4 text-center my-auto lazy" data-lazy-function="todayiswhat">
             <span class="badge bg-primary">Basic</span><h2>วันนี้สลากกินแบ่งฯออกหรือไม่</h2>
             <div class="card">
               <div class="card-body text-black">https://thai-lottery1.p.rapidapi.com/reto</div>
@@ -359,7 +359,7 @@
               <div class="card-body" id="todaylot">ผลลัพธ์ : <div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div> กำลังโหลด</div>
             </div>
           </div>
-          <div class="col-4 text-center my-auto">
+          <div class="col-4 text-center my-auto lazy" data-lazy-function="findsearch">
             <span class="badge bg-primary">Basic</span><p class="fs-4">แสดงวันที่ทั้งหมดที่เลขสลากฯนี้เคยออก</p>
             <div class="card">
               <div class="card-body text-black">https://thai-lottery1.p.rapidapi.com/finddol?search=<p class="fw-bold d-inline" data-mdb-toggle="tooltip" title="เลขสลากฯ">912306</p></div>
@@ -368,7 +368,7 @@
               <div class="card-body" id="finddol">ผลลัพธ์ : <div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div> กำลังโหลด</div>
             </div>
           </div>
-          <div class="col-4 text-center my-auto">
+          <div class="col-4 text-center my-auto lazy" data-lazy-function="checklottery">
             <span class="badge bg-primary">Basic</span><h2>ตรวจสลากกินแบ่งฯในวันนั้นๆ</h2>
             <div class="card">
               <div class="card-body text-black">https://thai-lottery1.p.rapidapi.com/checklottery?by=<p class="fw-bold d-inline" data-mdb-toggle="tooltip" title="วันเดือนปี">01032564</p>&search=<p class="fw-bold d-inline" data-mdb-toggle="tooltip" title="เลขสลากฯที่ต้องการตรวจ">835573</p></div>
@@ -383,7 +383,7 @@
     <div class="container-fluid" style="background: linear-gradient(to bottom, #D4AF37 0%, #C5A028 100%);">
       <div class="container py-3 text-black">
         <div class="row">
-          <div class="col-6">
+          <div class="col-6 lazy" data-lazy-function="carousel">
             <!-- Carousel wrapper -->
             <div
             id="carouselBasicExample"
@@ -497,7 +497,7 @@
               <div class="card-body text-black">https://thai-lottery1.p.rapidapi.com/lastlot</div>
             </div>
           </div>
-          <div class="col-6" id="lastlot">
+          <div class="col-6 lazy" data-lazy-function="lastlot" id="lastlot">
             <h2>รางวัลที่หนึ่ง</h2>
             <p class="fs-1" id="lastlotwin"><div class="ph-item ph-row justify-content-center m-0 p-0 border-0"><div class="ph-col-6 big"></div></div></p>
             <h3>รางวัลใกล้เคียง</h3>
@@ -524,7 +524,7 @@
       <div class="container py-3 text-black text-center">
         <div class="row">
           <div class="col-6">
-            <div class="row" id="richimage">
+            <div class="row lazy" data-lazy-function="getchit" id="richimage">
               <div class="col-md">
                 One of three columns
               </div>
@@ -586,195 +586,213 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.0/dist/lazyload.min.js"></script>
     <script>
-      document.getElementById('thatyear').innerText = new Date().getFullYear()+543;
-      fetch("https://thai-lottery1.p.rapidapi.com/gdpy?year="+document.getElementById('thatyear').innerText, {
-        "method": "GET",
-        "headers": {
-          "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
-          "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
-        }
-      })
-      .then(response => response.json())
-      .then(data => {
-        //console.log(data)
-        document.getElementById("thatday").innerText = data[data.length-1];
-        let daylist
-        /*daylist = "<center><ul class=\"list-group w-50\">"
-        data.forEach(element => {
-           daylist += "<li class=\"list-group-item\">"+element+"</li>"
-        });
-        document.getElementById("datelist").innerHTML = daylist+"</ul></center>"*/
-        daylist = "<center><div class=\"row mx-5\">"
-        data.forEach(element => {
-           daylist += "<div class=\"col-md\"><div class=\"card text-black mb-1\"><div class=\"card-body p-1\">"+element+"</div></div></div>"
-        });
-        document.getElementById("datelist").innerHTML = daylist+"</div></center>"
-        fetch("https://thai-lottery1.p.rapidapi.com/?date="+data[data.length-1], {
-          "method": "GET",
-          "headers": {
-            "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
-            "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
-          }
-        })
-        .then(response => response.json())
-        .then(data => {
-          console.log(data)
-          document.getElementById("mainshow").innerHTML = "<h2>รางวัลที่หนึ่ง</h2><p class=\"fs-1\">"+data[0][1]+"</p><h3>รางวัลใกล้เคียง</h3><p class=\"fs-2\">"+data[4][1]+" | "+data[4][2]+"</p><div class=\"row\"><div class=\"col-md\"><h4>เลขหน้าสามตัว</h4><p class=\"fs-3\">"+data[1][1]+" | "+data[1][2]+"</p></div><div class=\"col-md\"><h4>เลขท้ายสามตัว</h4><p class=\"fs-3\">"+data[2][1]+" | "+data[2][2]+"</p></div><div class=\"col-md\"><h4>เลขท้ายสองตัว</h4><p class=\"fs-3\">"+data[3][1]+"</p></div></div>";
-          document.getElementById("wintwoshow").innerHTML = "<div class=\"row\"><div class=\"col-md\"><p class=\"fs-3\">"+data[5][1]+"</p></div><div class=\"col-md\"><p class=\"fs-3\">"+data[5][2]+"</p></div><div class=\"col-md\"><p class=\"fs-3\">"+data[5][3]+"</p></div><div class=\"col-md\"><p class=\"fs-3\">"+data[5][4]+"</p></div><div class=\"col-md\"><p class=\"fs-3\">"+data[5][5]+"</p></div></div>"
-          let three
-          three = "<div class=\"row\">"
-          data[6].shift()
-          data[6].forEach(element => {
-            three += "<div class=\"col-md\"><p class=\"fs-3\">"+element+"</p></div>"
-          });
-          document.getElementById("winthreeshow").innerHTML = three+"</div>"
-          let four
-          four = "<div class=\"row\">"
-          data[7].shift()
-          data[7].forEach(element => {
-            four += "<div class=\"col-md-3\"><p class=\"fs-3\">"+element+"</p></div>"
-          });
-          document.getElementById("winfourshow").innerHTML = four+"</div>"
-          let five
-          five = "<div class=\"row\">"
-          data[8].shift()
-          data[8].forEach(element => {
-            five += "<div class=\"col-md-3\"><p class=\"fs-4\">"+element+"</p></div>"
-          });
-          document.getElementById("winfiveshow").innerHTML = five+"</div>"
-        })
-        .catch(err => {
-          console.error(err);
-        });
-      })
-      .catch(err => {
-        console.error(err);
-      });
-
-      fetch("https://thai-lottery1.p.rapidapi.com/reto", {
-        "method": "GET",
-        "headers": {
-          "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
-          "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
-        }
-      })
-      .then(response => response.text())
-      .then(data => {
-        console.log(data)
-        if(data == 'yes'){
-          document.getElementById("todaylot").innerText = 'ผลลัพธ์ : ใช่ ('+data+')';
-        }else{
-          document.getElementById("todaylot").innerText = 'ผลลัพธ์ : ไม่ ('+data+')';
-        }
-      })
-      .catch(err => {
-        console.error(err);
-      });
-
-      fetch("https://thai-lottery1.p.rapidapi.com/finddol?search=912306", {
-        "method": "GET",
-        "headers": {
-          "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
-          "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
-        }
-      })
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById("finddol").innerHTML = 'ผลลัพธ์ : '+JSON.stringify(data);
-      })
-      .catch(err => {
-        console.error(err);
-      });
-
-      fetch("https://thai-lottery1.p.rapidapi.com/checklottery?by=01032564&search=835573", {
-        "method": "GET",
-        "headers": {
-          "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
-          "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
-        }
-      })
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("checklottery").innerHTML = 'ผลลัพธ์ : '+data+' <i class="fas fa-question-circle" data-mdb-toggle="modal" data-mdb-target="#exampleModal"></i>';
-      })
-      .catch(err => {
-        console.error(err);
-      });
-
-      //fetch https://thai-lottery1.p.rapidapi.com/lotnews?count=9 with headers
-      fetch("https://thai-lottery1.p.rapidapi.com/lotnews?count=9", {
-        "method": "GET",
-        "headers": {
-          "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
-          "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
-        }
-      })
-      .then(response => response.json())
-      .then(data => {
-        let carind = "";
-        let carinn = "";
-        // loop array object
-        data.forEach(element => {
-          if(data.indexOf(element) == 0){
-            carind += "<button type=\"button\" data-mdb-target=\"#carouselBasicExample\" data-mdb-slide-to=\"0\" class=\"active\" aria-current=\"true\" aria-label=\"Slide 1\"></button>"
-            if(element['image']){
-              carinn += "<div class=\"carousel-item active\"><img src=\""+element['image']+"\" class=\"d-block w-100\" alt=\"...\"/><div class=\"carousel-caption d-none d-md-block\" style=\"background-color: rgba(0, 0, 0, 0.6);\"><h5>"+element['title']+"</h5><p>"+element['description']+"</p></div></div>"
-            }else{
-              carinn += "<div class=\"carousel-item active\"><img src=\"https://colorlib.com/wp/wp-content/uploads/sites/2/404-error-template-6.png\" class=\"d-block w-100\" alt=\"...\"/><div class=\"carousel-caption d-none d-md-block\" style=\"background-color: rgba(0, 0, 0, 0.6);\"><h5>"+element['title']+"</h5><p>"+element['description']+"</p></div></div>"
+      window.lazyFunctions = {
+        main: function (element) {
+          document.getElementById('thatyear').innerText = new Date().getFullYear()+543;
+          fetch("https://thai-lottery1.p.rapidapi.com/gdpy?year="+document.getElementById('thatyear').innerText, {
+            "method": "GET",
+            "headers": {
+              "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
+              "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
             }
-          }else{
-            carind += "<button type=\"button\" data-mdb-target=\"#carouselBasicExample\" data-mdb-slide-to=\""+data.indexOf(element)+"\" aria-label=\"Slide "+(data.indexOf(element)+1)+"\"></button>"
-            if(element['image']){
-              carinn += "<div class=\"carousel-item\"><img src=\""+element['image']+"\" class=\"d-block w-100\" alt=\"...\"/><div class=\"carousel-caption d-none d-md-block\" style=\"background-color: rgba(0, 0, 0, 0.6);\"><h5>"+element['title']+"</h5><p>"+element['description']+"</p></div></div>"
-            }else{
-              carinn += "<div class=\"carousel-item\"><img src=\"https://colorlib.com/wp/wp-content/uploads/sites/2/404-error-template-6.png\" class=\"d-block w-100\" alt=\"...\"/><div class=\"carousel-caption d-none d-md-block\" style=\"background-color: rgba(0, 0, 0, 0.6);\"><h5>"+element['title']+"</h5><p>"+element['description']+"</p></div></div>"
+          })
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById("thatday").innerText = data[data.length-1];
+            let daylist
+            daylist = "<center><div class=\"row mx-5\">"
+            data.forEach(element => {
+              daylist += "<div class=\"col-md\"><div class=\"card text-black mb-1\"><div class=\"card-body p-1\">"+element+"</div></div></div>"
+            });
+            document.getElementById("datelist").innerHTML = daylist+"</div></center>"
+            fetch("https://thai-lottery1.p.rapidapi.com/?date="+data[data.length-1], {
+              "method": "GET",
+              "headers": {
+                "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
+                "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
+              }
+            })
+            .then(response => response.json())
+            .then(data => {
+              console.log(data)
+              document.getElementById("mainshow").innerHTML = "<h2>รางวัลที่หนึ่ง</h2><p class=\"fs-1\">"+data[0][1]+"</p><h3>รางวัลใกล้เคียง</h3><p class=\"fs-2\">"+data[4][1]+" | "+data[4][2]+"</p><div class=\"row\"><div class=\"col-md\"><h4>เลขหน้าสามตัว</h4><p class=\"fs-3\">"+data[1][1]+" | "+data[1][2]+"</p></div><div class=\"col-md\"><h4>เลขท้ายสามตัว</h4><p class=\"fs-3\">"+data[2][1]+" | "+data[2][2]+"</p></div><div class=\"col-md\"><h4>เลขท้ายสองตัว</h4><p class=\"fs-3\">"+data[3][1]+"</p></div></div>";
+              document.getElementById("wintwoshow").innerHTML = "<div class=\"row\"><div class=\"col-md\"><p class=\"fs-3\">"+data[5][1]+"</p></div><div class=\"col-md\"><p class=\"fs-3\">"+data[5][2]+"</p></div><div class=\"col-md\"><p class=\"fs-3\">"+data[5][3]+"</p></div><div class=\"col-md\"><p class=\"fs-3\">"+data[5][4]+"</p></div><div class=\"col-md\"><p class=\"fs-3\">"+data[5][5]+"</p></div></div>"
+              let three
+              three = "<div class=\"row\">"
+              data[6].shift()
+              data[6].forEach(element => {
+                three += "<div class=\"col-md\"><p class=\"fs-3\">"+element+"</p></div>"
+              });
+              document.getElementById("winthreeshow").innerHTML = three+"</div>"
+              let four
+              four = "<div class=\"row\">"
+              data[7].shift()
+              data[7].forEach(element => {
+                four += "<div class=\"col-md-3\"><p class=\"fs-3\">"+element+"</p></div>"
+              });
+              document.getElementById("winfourshow").innerHTML = four+"</div>"
+              let five
+              five = "<div class=\"row\">"
+              data[8].shift()
+              data[8].forEach(element => {
+                five += "<div class=\"col-md-3\"><p class=\"fs-4\">"+element+"</p></div>"
+              });
+              document.getElementById("winfiveshow").innerHTML = five+"</div>"
+            })
+            .catch(err => {
+              console.error(err);
+            });
+          })
+          .catch(err => {
+            console.error(err);
+          });
+        },
+        todayiswhat: function (element) {
+          fetch("https://thai-lottery1.p.rapidapi.com/reto", {
+            "method": "GET",
+            "headers": {
+              "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
+              "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
             }
-          }
-        });
-        document.getElementById("carind").innerHTML = carind;
-        document.getElementById("carinn").innerHTML = carinn;
-        /*let news = "<div class=\"row\">"
-        data.forEach(element => {
-          news += "<div class=\"col-md-3\"><p class=\"fs-4\">"+element+"</p></div>"
-        });
-        document.getElementById("lotnews").innerHTML = news+"</div>"*/
-      })
-      .catch(err => {
-        console.error(err);
-      });
-
-      fetch("https://thai-lottery1.p.rapidapi.com/lastlot", {
-        "method": "GET",
-        "headers": {
-          "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
-          "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
+          })
+          .then(response => response.text())
+          .then(data => {
+            console.log(data)
+            if(data == 'yes'){
+              document.getElementById("todaylot").innerText = 'ผลลัพธ์ : ใช่ ('+data+')';
+            }else{
+              document.getElementById("todaylot").innerText = 'ผลลัพธ์ : ไม่ ('+data+')';
+            }
+          })
+          .catch(err => {
+            console.error(err);
+          });
+        },
+        findsearch: function (element) {
+          fetch("https://thai-lottery1.p.rapidapi.com/finddol?search=912306", {
+            "method": "GET",
+            "headers": {
+              "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
+              "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
+            }
+          })
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById("finddol").innerHTML = 'ผลลัพธ์ : '+JSON.stringify(data);
+          })
+          .catch(err => {
+            console.error(err);
+          });
+        },
+        checklottery: function (element) {
+          fetch("https://thai-lottery1.p.rapidapi.com/checklottery?by=01032564&search=835573", {
+            "method": "GET",
+            "headers": {
+              "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
+              "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
+            }
+          })
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("checklottery").innerHTML = 'ผลลัพธ์ : '+data+' <i class="fas fa-question-circle" data-mdb-toggle="modal" data-mdb-target="#exampleModal"></i>';
+          })
+          .catch(err => {
+            console.error(err);
+          });
+        },
+        carousel: function (element) {
+          //fetch https://thai-lottery1.p.rapidapi.com/lotnews?count=9 with headers
+          fetch("https://thai-lottery1.p.rapidapi.com/lotnews?count=9", {
+            "method": "GET",
+            "headers": {
+              "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
+              "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
+            }
+          })
+          .then(response => response.json())
+          .then(data => {
+            let carind = "";
+            let carinn = "";
+            // loop array object
+            data.forEach(element => {
+              if(data.indexOf(element) == 0){
+                carind += "<button type=\"button\" data-mdb-target=\"#carouselBasicExample\" data-mdb-slide-to=\"0\" class=\"active\" aria-current=\"true\" aria-label=\"Slide 1\"></button>"
+                if(element['image']){
+                  carinn += "<div class=\"carousel-item active\"><img src=\""+element['image']+"\" class=\"d-block w-100\" alt=\"...\"/><div class=\"carousel-caption d-none d-md-block\" style=\"background-color: rgba(0, 0, 0, 0.6);\"><h5>"+element['title']+"</h5><p>"+element['description']+"</p></div></div>"
+                }else{
+                  carinn += "<div class=\"carousel-item active\"><img src=\"https://colorlib.com/wp/wp-content/uploads/sites/2/404-error-template-6.png\" class=\"d-block w-100\" alt=\"...\"/><div class=\"carousel-caption d-none d-md-block\" style=\"background-color: rgba(0, 0, 0, 0.6);\"><h5>"+element['title']+"</h5><p>"+element['description']+"</p></div></div>"
+                }
+              }else{
+                carind += "<button type=\"button\" data-mdb-target=\"#carouselBasicExample\" data-mdb-slide-to=\""+data.indexOf(element)+"\" aria-label=\"Slide "+(data.indexOf(element)+1)+"\"></button>"
+                if(element['image']){
+                  carinn += "<div class=\"carousel-item\"><img src=\""+element['image']+"\" class=\"d-block w-100\" alt=\"...\"/><div class=\"carousel-caption d-none d-md-block\" style=\"background-color: rgba(0, 0, 0, 0.6);\"><h5>"+element['title']+"</h5><p>"+element['description']+"</p></div></div>"
+                }else{
+                  carinn += "<div class=\"carousel-item\"><img src=\"https://colorlib.com/wp/wp-content/uploads/sites/2/404-error-template-6.png\" class=\"d-block w-100\" alt=\"...\"/><div class=\"carousel-caption d-none d-md-block\" style=\"background-color: rgba(0, 0, 0, 0.6);\"><h5>"+element['title']+"</h5><p>"+element['description']+"</p></div></div>"
+                }
+              }
+            });
+            document.getElementById("carind").innerHTML = carind;
+            document.getElementById("carinn").innerHTML = carinn;
+            /*let news = "<div class=\"row\">"
+            data.forEach(element => {
+              news += "<div class=\"col-md-3\"><p class=\"fs-4\">"+element+"</p></div>"
+            });
+            document.getElementById("lotnews").innerHTML = news+"</div>"*/
+          })
+          .catch(err => {
+            console.error(err);
+          });
+        },
+        lastlot: function (element) {
+          fetch("https://thai-lottery1.p.rapidapi.com/lastlot", {
+            "method": "GET",
+            "headers": {
+              "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
+              "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
+            }
+          })
+          .then(response => response.json())
+          .then(data => {
+            // if number is not 6 length then add 0 to the front
+            document.getElementById("lastlot").innerHTML = "<h2>รางวัลที่หนึ่ง</h2><p class=\"fs-1\">"+data['win']+"</p><h3>รางวัลใกล้เคียง</h3><p class=\"fs-2\">"+((parseInt(data['win'])-1)).slice(-6)+" | "+((parseInt(data['win'])-1)).slice(-6)+"</p><div class=\"row\"><div class=\"col-md\"><h4>เลขหน้าสามตัว</h4><p class=\"fs-3\">"+data['threefirst']+"</p></div><div class=\"col-md\"><h4>เลขท้ายสามตัว</h4><p class=\"fs-3\">"+data['threeend']+"</p></div><div class=\"col-md\"><h4>เลขท้ายสองตัว</h4><p class=\"fs-3\">"+data['twoend']+"</p></div></div>";;
+          })
+          .catch(err => {
+            console.error(err);
+          });
+        },
+        getchit: function (element) {
+          fetch("https://thai-lottery1.p.rapidapi.com/getchit", {
+            "method": "GET",
+            "headers": {
+              "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
+              "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
+            }
+          })
+          .then(response => response.json())
+          .then(data => {
+            let chit = ""
+            data.forEach(element => {
+              chit += "<div class=\"col-md-4\"><img src=\""+element+"\" class=\"img-fluid rounded-3\" alt=\"...\" /></div>"
+            });
+            document.getElementById("richimage").innerHTML = chit;
+          })
+          .catch(err => {
+            console.error(err);
+          });
         }
-      })
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById("lastlot").innerHTML = "<h2>รางวัลที่หนึ่ง</h2><p class=\"fs-1\">"+data['win']+"</p><h3>รางวัลใกล้เคียง</h3><p class=\"fs-2\">"+(data['win']-1)+" | "+(data['win']+1)+"</p><div class=\"row\"><div class=\"col-md\"><h4>เลขหน้าสามตัว</h4><p class=\"fs-3\">"+data['threefirst']+"</p></div><div class=\"col-md\"><h4>เลขท้ายสามตัว</h4><p class=\"fs-3\">"+data['threeend']+"</p></div><div class=\"col-md\"><h4>เลขท้ายสองตัว</h4><p class=\"fs-3\">"+data['twoend']+"</p></div></div>";;
-      })
-      .catch(err => {
-        console.error(err);
-      });
+      };
 
-      fetch("https://thai-lottery1.p.rapidapi.com/getchit", {
-        "method": "GET",
-        "headers": {
-          "x-rapidapi-host": "thai-lottery1.p.rapidapi.com",
-          "x-rapidapi-key": "c34ed3c573mshbdf38eb6814e7a7p1e0eedjsnab10f5aef137"
-        }
-      })
-      .then(response => response.json())
-      .then(data => {
-        let chit = ""
-        data.forEach(element => {
-          chit += "<div class=\"col-md-4\"><img src=\""+element+"\" class=\"img-fluid rounded-3\" alt=\"...\" /></div>"
-        });
-        document.getElementById("richimage").innerHTML = chit;
-      })
-      .catch(err => {
-        console.error(err);
+      function executeLazyScript(element) {
+        //logElementEvent("🔑 ENTERED", element);
+        var lazyFunctionName = element.getAttribute("data-lazy-function");
+        var lazyFunction = lazyFunctions[lazyFunctionName];
+        if (!lazyFunction) return;
+        lazyFunction(element);
+      }
+
+      var lazyLoadInstance = new LazyLoad({
+        unobserve_entered: true,
+        callback_enter: executeLazyScript
       });
     </script>
 </body>
