@@ -1,3 +1,5 @@
+*warning this project is discontinued (only php, [nodjs is continue](../../../../quad-b/lottsanook-nodejs))
+
 # ล็อตสนุก
 เป็นการดึงผลสลากกินแบ่งรัฐบาลจากเว็บ sanook.com และ myhora.com มาเก็บไว้เป็นแบบ json โดยใช้ PHP ในการเขียน
 
